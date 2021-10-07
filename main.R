@@ -2,27 +2,109 @@
 library(reshape2)
 library(ggplot2)
 
-##---------------------------------------------------------------------##
+##----------------------------------------------------------------------------##
+## Function setup
+
+## i. Research function: This function "does the research"
+#   i.i   It generates a set of priors for the researcher population
+#   i.ii  It compares the priors to the submission thresholds of the 
+#         population and calculates who submits an RR and who a normal study
+#   i.iii It calculates everyone's study result based on their prior
+#   i.iv  It calculates and outputs everyone's payoff, based on their
+#         chosen submission format, study result, and rewards and costs for
+#         RRs and normal studies
+research.fun <- function(n = length(researcher_ID), 
+                         prior.dist = "uniform", prior.dist.m, prior.dist.sd,
+                         submission_threshold){
+  # 1.  Each researcher is assigned a hypothesis with a random prior 
+  #     probability, either uniformly distributed between 0 and 1, or
+  #     drawn from a normal distribution centred on prior.dist.m with
+  #     sd = prior.dist.sd and truncated to lie between 0 and 1
+  if (prior.dist == "uniform") {
+    prior <- runif(n, 0, 1)
+  } else if (prior.dist == "normal") {
+    prior <- pmin(pmax(rnorm(n, mean = prior.dist.m, sd = prior.dist.sd), 0), 1)
+  }
+  
+  # 2.  Researchers decide to run an RR or a normal study by comparing their
+  #     current prior with their current submission threshold
+  submit_as_RR <-  ifelse(prior < submission_threshold, 1, 0)
+  
+  # 3.  Researchers test their hypotheses and get either a positive or a 
+  #     negative result (based on their prior)
+  result <- rbinom(n, 1, prior)
+  
+  # 4.  Researchers get a payoff depending on their chosen submission format
+  #     and the result of their hypothesis test
+  new_payoff <- ifelse(submit_as_RR == 1, reward_RR - cost_RR,
+                       ifelse(result == 1,
+                              reward_normal_pos-cost_normal, reward_normal_neg))
+  
+  # generate output
+  invisible(list(generation = i, round = j,
+                 prior = prior, submission_threshold = submission_threshold,
+                 submit_as_RR = submit_as_RR, result = result, 
+                 new_payoff = new_payoff))
+}
+
+## ii. Utility function:
+#     This function translates payoffs into utility or fitness. In the present
+#     model, utility equals fitness because it is the probability with which
+#     a researcher's submission threshold will be passed on to the next
+#     generation.
+#     ii.i  Three different function shapes are available:
+#           Linear:              f(x) = a * x
+#           Diminishing returns: f(x) = a * x^(1/e)
+#           Increasing returns:  f(x) = a * x^e
+#     ii.ii Threshold/budget rule:
+#           In addition, we can specify a "survival threshold". 
+#           Payoffs below the survival threshold give 0 utility, which 
+#           means that these individuals won't pass on their submission 
+#           thresholds to the next generation (they "starve"). 
+#           Payoffs at or above the threshold are translated into utility
+#           as usual (according to the chosen function).
+utility.fun <- function(x, e = 2, a = 1, 
+                        survival_threshold = 0, shape = "linear"){
+  if (shape == "linear") {
+    ifelse(x < survival_threshold, 0, a * x) # linear
+  } else if (shape == "diminishing") {
+    ifelse(x < survival_threshold, 0, a * x^(1/e)) # diminishing returns
+  } else if (shape == "increasing") {
+    ifelse(x < survival_threshold, 0, a * x^e)} # increasing returns
+}
+
+##----------------------------------------------------------------------------##
 ## Model setup: initial parameters
 
-# Payoffs:
-payoff_RR <- 0.5  #payoff for a Registered Report (fixed)
-payoff_normal_pos <- 1  #payoff for a positive result published as a normal paper
-payoff_normal_neg <- 0  #payoff for a negative result published as a normal paper
-cost_RR <- 0 #cost of conducting a RR (subtracted from payoff)
-cost_normal <- 0 #cost of publishing a normal paper (subtracted from payoff)
+# Rewards and costs: 
+#   We define the payoff researchers get for their studies as 
+#   payoff = reward - cost.
+# Here we set the rewards and costs for RRs and normal studies:
+reward_RR <- 0.5  # reward for a Registered Report (fixed)
+reward_normal_pos <- 1  # reward for a positive result in a normal study
+reward_normal_neg <- 0  # reward for a negative result in a normal study
+cost_RR <- 0 # cost of conducting a RR (subtracted from reward)
+cost_normal <- 0 # cost of publishing a normal paper (subtracted from reward)
 
-# Error rates for hypothesis tests
-# alpha_error <- 0  #alpha error, perhaps for later
-# beta_error <- 0  #beta error, perhaps for later
+# Parameters of the prior distribution:
+prior.dist <- "uniform" # distribution type: uniform or normal
+prior.dist.m <- 0.3 # mean of the prior distribution IF prior.dist = "normal"
+prior.dist.sd <- 0.15 # sd of the prior distribution IF prior.dist = "normal"
+
+# Parameters of the utility/fitness function:
+utility_shape <- "linear" # shape of the utility function
+a <- 1  # multiplier of x to influence the shape
+e <- 2  # exponent of x to influence the shape
+survival_threshold <- 0  # threshold below which all payoffs give 0 utility
 
 # Population size & number of generations
 researcher_ID <-  seq(1:1e3) # initialise researcher population & set pop size
-generations <- 1e3 # set number of generations the model will loop through
-generation_duration <- 1
-mutation_sd <- .01
+generations <- 3e2 # set number of generations the model will loop through
+generation_duration <- 1 # number of research rounds in each generation
+mutation_sd <- .01 # amount of noise added by mutations during evolution
 
-#-----------------------------------------------------------------------#
+
+##============================================================================##
 ## Model setup: create dataframe
 
 # Create an empty data frame w/ 1 column for researcher ID, one for the
@@ -37,61 +119,68 @@ names(df_loop) <- c("researcher_ID", as.character(0:generations))
 df_loop$researcher_ID <- researcher_ID # fill in the researcher ID column
 df_loop$`0` <- runif(length(researcher_ID), 0,1) # initialise submission threshold of generation 0
 
-#-----------------------------------------------------------------------#
+#------------------------------------------------------------------------------#
 ## Here comes the loop:
 for (i in 1:generations) {
-  payoffs <- rep(0, length(researcher_ID))
   
+  # initialise the payoff vector: before conducting any research, 
+  # everybody starts with 0 payoff
+  payoff <- rep(0, length(researcher_ID))
+  
+  ## 1. Research phase:
   for (j in 1:generation_duration) {
-  ## 1. Research phase
+    
+    # 1.1 We use research.fun to "do the research":
+    #     Assign priors, compare with submission thresholds, decide who submits
+    #     RRs and who doesn't, calculate results, and calculate payoffs
+    research <- research.fun(prior.dist = "uniform",
+                             prior.dist.m = prior.dist.m,
+                             prior.dist.sd = prior.dist.sd,
+                             submission_threshold = df_loop[,1+i])
   
-  # 1.1 Each researcher is assigned a hypothesis with a random prior probability 
-  #     I made two versions: the first is a uniform distribution between 0 and 1,
-  #     the second is a normal distribution with mean = .2, sd = .15, truncated
-  #     to 0-1. Comment/un-comment depending on preference
-  prior <- runif(length(researcher_ID), 0,1)
-  # prior <- pmin(pmax(rnorm(length(researcher_ID), mean = .25, sd = 0.15), 0),1)
-    # prior <- rep(1, length(researcher_ID))
+    # Check:  Stop the loop if something went wrong with submission decisions
+      stopifnot(sum(research$prior < research$submission_threshold) == 
+              sum(research$submit_as_RR))
+    # Check:  Payoffs should be the same for all RR authors, hence sd = 0.
+    #         Stop the loop if this is false:
+    #         (Caution: this check fails when only 1 or 0 researchers
+    #         submitted RRs.)
+      stopifnot(sd(research$new_payoff[which(research$submit_as_RR == 1)]) == 0)
   
-  # 1.2 Researchers decide to run an RR or a normal study by comparing their
-  #     current prior with their current submission threshold
-  submit_as_RR <- ifelse(prior < df_loop[,1+i], 1, 0) 
-  # mean(result) - sum(prior)X
-  
-  # 1.3 Researcheres test their hypotheses and get either a positive or a 
-  #     negative result (based on their prior)
-  result <- rbinom(length(prior), 1, prior)
-  
-  # 1.4 Researchers get a payoff depending on their chosen submission format
-  #     and the result of their hypothesis test
-  # payoffs = result
-  # payoffs[submit_as_RR == 1] <- payoff_RR
-  # 
-  payoffs <- payoffs + ifelse(submit_as_RR == 1, payoff_RR-cost_RR,
-                            ifelse(result == 1,
-                                   payoff_normal_pos-cost_normal, payoff_normal_neg))
-
+    # 1.2   Update payoff: 
+    #       add the payoffs of this round to the previous amount
+    payoff <- payoff + research$new_payoff
   }
   
-  # 1.5 Researchers' fitness is calculated based on their payoff,
-  #     relative to the population
-  fitness <- payoffs/sum(payoffs)
+  ## 2. Evolution phase:
   
+  # 2.1 We use utility.fun to calculate researchers' fitness from their payoffs
+  utility <- utility.fun(x = payoff, e = e, a = a, 
+                         survival_threshold = survival_threshold,
+                         shape = utility_shape)
+  #     Calculate fitness as a standardised score between 0 and 1
+  #     The ifelse construction makes sure that fitness doesn't turn to NA 
+  #     when sum(utility) == 0
+  fitness <- ifelse(utility == 0, 0, utility/sum(utility)) 
   
-  ## 2. Evolution phase
+  # Check:
+    #alt.fitness <- payoff/sum(payoff)
+    #stopifnot(alt.fitness == fitness) # only works for linear fitness function w/o survival threshold
   
-  # 2.1 Select whose submission threshold trait makes it into 
+  # 2.2 Selection: 
+  #     Select whose submission threshold trait makes it into 
   #     the next generation, based on fitness
-  evolved_submission_threshold <- sample(df_loop[,1+i], 
+   inherited_submission_threshold <- sample(df_loop[,1+i], 
                                          size = length(researcher_ID), 
                                          replace = TRUE, prob = fitness)
-
-  # 2.2 New submission thresholds mutate
-  #     (change sd to change the size of mutations)
-  evolved_submission_threshold <- evolved_submission_threshold + 
+   # Check: Stop the loop if any of the selected submission threshold is NA
+    stopifnot(all(!is.na(inherited_submission_threshold)))
+   
+  # 2.3 Mutation:
+  #     New submission thresholds mutate (sd changes the size of mutations)
+  evolved_submission_threshold <- inherited_submission_threshold + 
                                           rnorm(length(researcher_ID), 
                                                 0, mutation_sd)
-  
   # Truncate the mutated numbers so that they're between 0 and 1
   evolved_submission_threshold <- pmin(pmax(evolved_submission_threshold, 0), 1)
   
@@ -99,7 +188,8 @@ for (i in 1:generations) {
   df_loop[,1+i+1] <- evolved_submission_threshold
 }
 
-#-----------------------------------------------------------------------#
+##============================================================================##
+## Prepare the plot:
 # Turn the data frame into long format with numbers 0-100 for generation 
 # and one variable for evolving submission thresholds
 df_plot <- melt(df_loop,
@@ -108,23 +198,11 @@ df_plot <- melt(df_loop,
                 value.name = "submission_threshold")
 df_plot$generation <- as.numeric(as.character(df_plot$generation))
 
-eleven_generations <- seq(0, generations, generations/10)
-
-df_plot_subset <- df_plot[df_plot$generation == eleven_generations[1] |
-                       df_plot$generation == eleven_generations[2] |
-                       df_plot$generation == eleven_generations[3] |
-                       df_plot$generation == eleven_generations[4] |
-                       df_plot$generation == eleven_generations[5] |
-                       df_plot$generation == eleven_generations[6] |
-                       df_plot$generation == eleven_generations[7] |
-                       df_plot$generation == eleven_generations[8] |
-                       df_plot$generation == eleven_generations[9] |
-                       df_plot$generation == eleven_generations[10] |
-                       df_plot$generation == eleven_generations[11], ]
-##---------------------------------------------------------------------##
-## Plot the submission thresholds of every 10th generation
+##----------------------------------------------------------------------------##
+## Plot the submission thresholds
 # Basic plot setup:
-basic_plot <- ggplot(df_plot_subset,
+basic_plot <- ggplot(
+  df_plot,
                      aes(x = generation,
                        y = submission_threshold,
                        # group = generation
@@ -138,8 +216,73 @@ basic_plot <- ggplot(df_plot_subset,
   ggtitle(paste(generations, "generations", sep = " "),
           subtitle = paste("population size: ", length(researcher_ID), "\n", 
                            "generation length: ", generation_duration, 
+                           ifelse(generation_duration ==1, 
+                                  " round", " rounds"), "\n",
+                           "mutation size: ", mutation_sd, " SD", "\n",
+                           "prior distribution: ", 
+                           ifelse(prior.dist == "uniform", 
+                                  prior.dist, paste(prior.dist, ", m = ", 
+                                                    prior.dist.m, ", sd = ",
+                                                    prior.dist.sd, sep = "")),
+                           "\n",
+                           "fitness function: ", utility_shape, ", e = ", e, 
+                           ", a = ", a, "; threshold = ", survival_threshold,
+                           sep = ""))
+
+# Output a plot with median (dashed blue line), mean (solid red-ish line),
+# and 95% coverage (from quantile .025 to quantile .975, shaded light blue)
+basic_plot +
+  stat_summary(geom = "ribbon", 
+               fun.data = median_hilow, fill = "lightskyblue1") +
+  stat_summary(geom = "line", fun = median, 
+               linetype="dashed", colour = "dodgerblue4")+
+  # stat_summary(geom = "ribbon", fun.data = mean_cl_boot, fill = "salmon") +
+  stat_summary(geom = "line", fun = mean, colour="salmon4")
+
+
+
+
+
+
+
+
+##============================================================================##
+## OLD STUFF BELOW: 
+## Old visualisation plotting all data from every 10th generation in a dot plot
+eleven_generations <- seq(0, generations, generations/10)
+
+df_plot_subset <- df_plot[df_plot$generation == eleven_generations[1] |
+                            df_plot$generation == eleven_generations[2] |
+                            df_plot$generation == eleven_generations[3] |
+                            df_plot$generation == eleven_generations[4] |
+                            df_plot$generation == eleven_generations[5] |
+                            df_plot$generation == eleven_generations[6] |
+                            df_plot$generation == eleven_generations[7] |
+                            df_plot$generation == eleven_generations[8] |
+                            df_plot$generation == eleven_generations[9] |
+                            df_plot$generation == eleven_generations[10] |
+                            df_plot$generation == eleven_generations[11], ]
+
+# Basic plot setup:
+basic_plot <- ggplot(
+  df_plot_subset,
+  aes(x = generation,
+      y = submission_threshold,
+      # group = generation
+  )) +
+  scale_x_continuous(breaks = seq(0, generations, generations / 10),
+                     name = "generation") +
+  scale_y_continuous(lim = c(0, 1),
+                     breaks = seq(0, 1, .1),
+                     name = "submission threshold") +
+  theme_bw() +
+  ggtitle(paste(generations, "generations", sep = " "),
+          subtitle = paste("population size: ", length(researcher_ID), "\n", 
+                           "generation length: ", generation_duration, 
                            ifelse(generation_duration ==1, " round", " rounds"), "\n",
-                           "mutation size: ", mutation_sd, " SD",
+                           "mutation size: ", mutation_sd, " SD", "\n",
+                           "fitness function: ", utility_shape, ", e = ", e, 
+                           ", a = ", a, "; threshold = ", survival_threshold,
                            sep = ""))
 
 # Show plot with jitter and regression line:
@@ -148,5 +291,7 @@ basic_plot +
   geom_smooth(method = "lm", se = TRUE)
 
 
+
+  
 
 
