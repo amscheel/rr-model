@@ -315,9 +315,7 @@ One such situation is depicted in Figure~\ref{fig:varianceplot}.
 
 
 \begin{figure}
-\centering
-\includegraphics{rr-risk-sensitivity_files/figure-latex/varianceplot-1.pdf}
-\caption{\label{fig:varianceplot}Survival thresholds. When fitness drops to zero below the low threshold (dashed line), individuals should be risk-averse because the outcomes of the low-risk option (narrow curve) are guaranteed to lie above the threshold and the outcomes of the high-risk option (wide cuve) have a non-negligible risk of falling below the threshold. When fitness drops to zero below the high threshold (dotted line), individuals should be risk-prone because only the high-risk option provides a chance of passing the threshold.}
+\includegraphics[width=0.6\linewidth]{rr-risk-sensitivity_files/figure-latex/varianceplot-1} \caption{Survival thresholds. When fitness drops to zero below the low threshold (dashed line), individuals should be risk-averse because the outcomes of the low-risk option (narrow curve) are guaranteed to lie above the threshold and the outcomes of the high-risk option (wide cuve) have a non-negligible risk of falling below the threshold. When fitness drops to zero below the high threshold (dotted line), individuals should be risk-prone because only the high-risk option provides a chance of passing the threshold.}\label{fig:varianceplot}
 \end{figure}
 
 Although comparable cutoff points in academic careers may have somewhat less severe consequences, they certainly exist:
@@ -430,16 +428,21 @@ The evolved values of \(s\) over many generations indicate the optimal strategy 
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-When interpreting the results below, it is important to keep in mind that the analysed parameter values are arbitrary.
+When interpreting the results below, it is important to keep in mind that the analysed parameter values are inherently arbitrary.
 Although the model parameters are chosen to capture important characteristics of real-world concepts, the parameter values do not represent real-world units.
-The goal of this analysis is to understand the general effects of the model parameters in an artificial world, meaning that the results are inherently relative.
+The goal of this analysis is to understand the relative effects of the model parameters in a simplified artificial system, and thus the results are only meaningful in relation to each other.
 
 The general principle of the simulation is shown in Figure~\ref{fig:evoplot}.
 
 
 
 \begin{figure}
-\includegraphics[width=5.04in]{/zephyr/Documents/Uni/_projects/rr-model/plots/plot_evo} \caption{Evolution of submission threshold for different values of \(b_{RR}\). Shown are 10 runs per condition over 250 generations. Thin lines represent the median submission threshold of the population in each run, shaded areas represent the inter-quartile range of submission thresholds in the population in each run, thick lines represent the median of run medians per condition.}\label{fig:evoplot}
+
+{\centering \includegraphics[width=5.04in]{/zephyr/Documents/Uni/_projects/rr-model/plots/plot_evo} 
+
+}
+
+\caption{Evolution of submission threshold \(s\) with 3 different payoffs for Registered Reports (\(b_{RR}\)). Simulations are based on a population of \(n = 500\) researchers over 250 generations, with payoffs for standard reports fixed at 0 for negative results (\(b_{SR-} = 0\)) and 1 for positive results (\(b_{SR+} = 1\)), one research cycle per generation (\(m = 1\)), no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)). Each condition was run 10 times. Thin lines represent the median submission threshold of the population in each run, shaded areas represent the inter-quartile range of submission thresholds in the population in each run, thick lines represent the median of run medians per condition.}\label{fig:evoplot}
 \end{figure}
 
 \hypertarget{non-linear-fitness-functions-1}{%

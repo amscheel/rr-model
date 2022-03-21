@@ -1,4 +1,6 @@
 library(ggplot2)
+library(here)
+library(data.table)
 
 
 # load m data
@@ -34,7 +36,7 @@ data_m_tile$generation_duration <- as.factor(as.character(
   data_m_tile$generation_duration))
 data_m_tile$generation_duration <- factor(data_m_tile$generation_duration,
                                           levels = c("1", "2", "4", 
-                                                     "8", "16"))
+                                                     "8", "16", "32"))
 
 saveRDS(data_m_tile, "data_m_tile_forplotting.RData")
 
@@ -57,5 +59,5 @@ plot_m <- ggplot(data_m_tile,
   facet_grid(e ~ .)
 
 ggsave("plot_m.png", plot_m, bg = "white",
-       width = 10, height = 12, units = "cm")
+       width = 10, height = 13.5, units = "cm")
 
