@@ -432,8 +432,6 @@ When interpreting the results below, it is important to keep in mind that the an
 Although the model parameters are chosen to capture important characteristics of real-world concepts, the parameter values do not represent real-world units.
 The goal of this analysis is to understand the relative effects of the model parameters in a simplified artificial system, and thus the results are only meaningful in relation to each other.
 
-The general principle of the simulation is shown in Figure~\ref{fig:evoplot}.
-
 
 
 \begin{figure}
@@ -442,19 +440,45 @@ The general principle of the simulation is shown in Figure~\ref{fig:evoplot}.
 
 }
 
-\caption{Evolution of submission threshold \(s\) with 3 different payoffs for Registered Reports (\(b_{RR}\)). Simulations are based on a population of \(n = 500\) researchers over 250 generations, with payoffs for standard reports fixed at 0 for negative results (\(b_{SR-} = 0\)) and 1 for positive results (\(b_{SR+} = 1\)), one research cycle per generation (\(m = 1\)), no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)). Each condition was run 10 times. Thin lines represent the median submission threshold of the population in each run, shaded areas represent the inter-quartile range of submission thresholds in the population in each run, thick lines represent the median of run medians per condition.}\label{fig:evoplot}
+\caption{Evolution of submission threshold \(s\) with 3 different payoffs for Registered Reports (\(b_{RR}\)). Simulations are based on a population of \(n = 500\) researchers over 250 generations, with payoffs for standard reports fixed at 0 for negative results (\(b_{SR-} = 0\)) and 1 for positive results (\(b_{SR+} = 1\)), a linear fitness function \(\epsilon = 1\), one research cycle per generation (\(m = 1\)), no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)). Each condition was run 10 times. Thin lines represent the median submission threshold of the population in each run, shaded areas represent the inter-quartile range of submission thresholds in the population in each run, thick lines represent the median of run medians per condition.}\label{fig:evoplot}
+\end{figure}
+
+The first generation of researchers in each simulation run is initialised with randomly distributed submission thresholds \(s\) (drawn from a uniform distribution {[}0--1{]}), which are then allowed to evolve over the subsequent generations.
+All variations of the simulation model reported here were run with a population size of \(n = 500\) researchers over 250 generations and payoffs for negative and positive results in standard reports fixed at \(b_{SR-} = 0\) and \(b_{SR+} = 1\), respectively.
+Figure~\ref{fig:evoplot} shows the effect of varying the payoffs for Registered Reports when the fitness function is linear (\(\epsilon = 1\)), with no survival threshold (\(\delta = 0\)) or competition (\(\gamma = 1\)), and one research cycle per generation (\(m = 1\)).
+The overall pattern of results is unsurprising\(\,\)---\(\,\)the higher the payoff for Registered Reports, the more popular they become.
+When \(b_{RR}\) is low, Registered Reports are unpopular and only used for the least probable hypotheses; when \(b_{RR}\) is high, Registered Reports are very popular and only hypotheses with extremely high priors are studied in standard reports.
+
+In this very simple case illustrated here, evolved submission thresholds approximate the payoff for Registered Reports in each condition, indicating that the optimal submission threshold is always equal to \(b_{RR}\) (\(s_{optimal} = 0.2\) when \(b_{RR} = 0.2\), \(s_{optimal} = 0.5\) when \(b_{RR} = 0.5\), \(s_{optimal} = 0.8\) when \(b_{RR} = 0.8\)).
+The reason behind this is the uniform distribution {[}0--1{]} of hypothesis priors and the payoff structure \(b_{SR-} = 0\) and \(b_{SR+} = 1\), which means that the expected payoff of a standard report is always equal to the prior of the tested hypothesis:
+
+\begin{align}
+E[b_{SR}] = p b_{SR+} + (1-p)b_{SR-} = p * 1 +  (1-p) * 0 = p
+\end{align}
+
+For example, testing a hypothesis with \(p = 0.2\) in a standard report would yield the expected payoff \(0.2 * 1 + 0.8 * 0 = 0.2\).
+The optimal strategy is to submit a Registered Report whenever the expected payoff of a standard report is lower than the payoff for a Registered Report, \(E[b_{SR}] < b_{RR}\), and thus whenever \(p < b_{RR}\).
+The strategy is optimal because it ensures that researchers always get the best of both worlds, minimising shortfalls when priors are (too) low and maximising winning chances when priors are (sufficiently) high.
+For example, \(b_{RR} = 0.5\) is larger than \(E[b_{SR}]\) for all hypotheses with \(p < 0.5\) but lower than \(E[b_{SR}]\) for all hypotheses with \(p > 0.5\).
+In this situation, researcheres who submit Registered Reports whenever \(p<0.5\) and standard reports whenever \(p>0.5\) protect themselves against losing a bad bet by instead taking the fixed payoff \(b_{RR} = 0.5\) but always play a good bet and thus maximise their chances of winning \(b_{SR+} = 1\).
+Every alternative is inferior in the long run because researchers with \(s > b_{RR}\) lose out on increased chances of publishing a standard report and researchers with \(s < b_{RR}\) take unnecessary risks and go empty-handed too often.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.65\linewidth]{/zephyr/Documents/Uni/_projects/rr-model/plots/plot_b_e} 
+
+}
+
+\caption{Figure note).}\label{fig:epsilonplot}
 \end{figure}
 
 \hypertarget{non-linear-fitness-functions-1}{%
 \subsection{Non-linear fitness functions}\label{non-linear-fitness-functions-1}}
 
-A reference to Figure~\ref{fig:epsilonplot}.
-
-
-
-\begin{figure}
-\includegraphics[width=0.65\linewidth]{/zephyr/Documents/Uni/_projects/rr-model/plots/plot_b_e} \caption{Figure note).}\label{fig:epsilonplot}
-\end{figure}
+With this basic understanding of the payoff structure in hand, we can take a look at what happens when payoffs have non-linear consequences for researchers' fitness.
+Figure~\ref{fig:epsilonplot} illustrates\ldots{}
 
 \hypertarget{number-of-decision-events-before-evaluation-1}{%
 \subsection{Number of decision events before evaluation}\label{number-of-decision-events-before-evaluation-1}}
