@@ -125,6 +125,7 @@
 \usepackage{caption}
 \usepackage{setspace}
 \usepackage{amsmath}
+\usepackage{wrapfig}
 \captionsetup[figure]{font={stretch=1, small}, skip=10pt}
 \captionsetup[textbox]{name=Box,labelsep=period,labelfont=it}
 \newfloat{textbox}{thp}{lop}
@@ -185,14 +186,14 @@ xxx Abstract xxx
 
 Being a powerful bias-prevention tool that is increasingly popular, it is important to develop a better understanding of when, where, and by whom Registered Reports are most likely to be used.
 First, such knowledge can help identify research areas in which the format is unlikely to gain traction by itself and anticipate the need for further intervention (e.g., via policy) when there is a demand for unbiased results.
-Second, understanding when researchers' choice between Registered Reports and the standard publication route is likely to be influenced by factors that also influence the eventual results (e.g., the prior probability of the studied hypotheses) is important for meta-scientific studies that compare published studies in both formats and must take such confounds into account (e.g., {\textbf{???}}).
+Second, understanding when researchers' choice between Registered Reports and the standard publication route is likely to be influenced by factors that also influence the eventual results (e.g., the prior probability of the studied hypotheses) is important for meta-scientific studies that compare published studies in both formats and must take such confounds into account (e.g., Scheel, Schijen, \& Lakens, 2021).
 As a final, perhaps less urgent motivation for such research, \ldots{} RISK OF DEVALUATION LIKE JOURNALS OF NEGATIVE RESULTS
 The goal of this chapter is to shed light on these questions by studying the potential impact of a key feature of Registered Reports: results-independent publication guarantee as an incentive for authors.
 
 \hypertarget{registered-reports-as-a-low-risk-publication-option}{%
 \subsection{Registered Reports as a low-risk publication option}\label{registered-reports-as-a-low-risk-publication-option}}
 
-In addition to protecting against publication bias and QRPs, Registered Reports are designed to \enquote{serve the interests of individual scientists} (p.~12, {\textbf{???}}) by providing a publication guarantee irrespective of the study results.
+In addition to protecting against publication bias and QRPs, Registered Reports are designed to \enquote{serve the interests of individual scientists} (p.~12, Chambers \& Tzavella, 2021) by providing a publication guarantee irrespective of the study results.
 As such, Registered Reports make use of existing incentive structures in academia and do not rely on changes in norms or policy (in contrast to other reforms such as preregistration () or data sharing ()).
 
 Amount and impact of peer-reviewed publications is a central currency for academic researchers {[}add some evidence{]}. In the standard publication model, researchers face uncertainty about whether and where they will be able to publish the results of their study. Translated into currency terms, the payoff a researcher receives for conducting a study can vary extremely: from near zero when the resulting manuscript is rejected by all peer-reviewed journals the author submits to --- or when the author file-drawers the study because the chances of successful publication appear too low to justify the costs of submission and peer review --- to an extremely high, perhaps career-making amount when a manuscript is published in a high-impact journal like Nature or Science.
@@ -296,7 +297,12 @@ While the payoffs \(b_-\), \(b_{safe}\), and \(b_+\) are equidistant on the x-ax
 
 
 \begin{figure}
-\includegraphics[width=0.5\linewidth]{rr-risk-sensitivity_files/figure-latex/fitnessplot-1} \caption{Consequences of non-linear fitness functions. Payoffs \(b_-\), \(b_{safe}\), and \(b_+\) are converted into fitness with a diminishing (blue), linear (grey), or increasing (red) returns function.}\label{fig:fitnessplot}
+
+{\centering \includegraphics[width=0.5\linewidth]{rr-risk-sensitivity_files/figure-latex/fitnessplot-1} 
+
+}
+
+\caption{Consequences of non-linear fitness functions. Payoffs \(b_-\), \(b_{safe}\), and \(b_+\) are converted into fitness with a diminishing (blue), linear (grey), or increasing (red) returns function.}\label{fig:fitnessplot}
 \end{figure}
 
 Non-linear relationships are arguably the norm in the natural world and linear relationships the exception.
@@ -315,7 +321,12 @@ One such situation is depicted in Figure~\ref{fig:varianceplot}.
 
 
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{rr-risk-sensitivity_files/figure-latex/varianceplot-1} \caption{Survival thresholds. When fitness drops to zero below the low threshold (dashed line), individuals should be risk-averse because the outcomes of the low-risk option (narrow curve) are guaranteed to lie above the threshold and the outcomes of the high-risk option (wide cuve) have a non-negligible risk of falling below the threshold. When fitness drops to zero below the high threshold (dotted line), individuals should be risk-prone because only the high-risk option provides a chance of passing the threshold.}\label{fig:varianceplot}
+
+{\centering \includegraphics[width=0.6\linewidth]{rr-risk-sensitivity_files/figure-latex/varianceplot-1} 
+
+}
+
+\caption{Survival thresholds. When fitness drops to zero below the low threshold (dashed line), individuals should be risk-averse because the outcomes of the low-risk option (narrow curve) are guaranteed to lie above the threshold and the outcomes of the high-risk option (wide cuve) have a non-negligible risk of falling below the threshold. When fitness drops to zero below the high threshold (dotted line), individuals should be risk-prone because only the high-risk option provides a chance of passing the threshold.}\label{fig:varianceplot}
 \end{figure}
 
 Although comparable cutoff points in academic careers may have somewhat less severe consequences, they certainly exist:
@@ -471,14 +482,25 @@ Every alternative is inferior in the long run because researchers with \(s > b_{
 
 }
 
-\caption{Figure note).}\label{fig:epsilonplot}
+\caption{Effect of fitness functions on evolved submission thresholds. Shown are median submission thresholds in the final (\(250^{th}\)) generations of 50 runs for different values of \(b_{RR}\) (x-axis) and different fitness functions (characterised by exponent \(\epsilon\)), with one research cycle per generation (\(m = 1\)), no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)). Fitness functions with \(\epsilon = 0.2\) and \(\epsilon = 0.5\) (blue lines) are concave with diminishing returns, functions with \(\epsilon = 2\) and \(\epsilon = 5\) (red lines) are convex with increasing returns, and the function with \(\epsilon = 1\) (grey line) is linear. Small dots represent median \(s\) of the final generation in each run, large dots represent the median of these 50 run medians per condition. Error bars represent the \(95\%\) capture probability around the median of medians.}\label{fig:epsilonplot}
 \end{figure}
 
 \hypertarget{non-linear-fitness-functions-1}{%
 \subsection{Non-linear fitness functions}\label{non-linear-fitness-functions-1}}
 
 With this basic understanding of the payoff structure in hand, we can take a look at what happens when payoffs have non-linear consequences for researchers' fitness.
-Figure~\ref{fig:epsilonplot} illustrates\ldots{}
+Figure~\ref{fig:epsilonplot} contrasts the effects of two diminishing fitness functions (\(\epsilon = 0.2\) and \(\epsilon = 0.5\), shown in blue shades) and two increasing fitness functions (\(\epsilon = 2\) and \(\epsilon = 5\), shown in red shades) with a linear function (\(\epsilon = 1\), grey line) for different payoffs for Registered Reports.
+The grey line for \(\epsilon = 1\) represents the already familiar situation from Figure~\ref{fig:evoplot} above:
+When the fitness function is linear, the optimal strategy is \(s_{optimal} = b_{RR}\), making Registered Reports relatively popular when they are worth more than 0.5 and relatively unpopular when they are worth less than 0.5.
+Non-linear fitness functions change this picture.
+When additional payoffs yield diminishing returns (\(\epsilon <1\)), Registered Reports become more attractive even when they are worth less than half of published (positive) standard reports.
+This is because concave functions \enquote{shrink} the difference between moderate and high payoffs relative to the difference between low and moderate payoffs (as illustrated in Figure~\ref{fig:fitnessplot}).
+Conversely, when additional payoffs yield increasing returns (\(\epsilon > 1\)), Registered Reports are unattractive unless their payoffs are almost as large as those for published standard reports because convex functions increase the difference between moderate and high payoffs relative to low versus moderate payoffs.
+
+When different fitness functions are taken to reflect different career stages\(\,\)---\(\,\)such that senior researchers' returns on career success per publication (or per increment of publication impact) are diminishing and those of early-career researchers are increasing\(\,\)---\(\,\)this pattern suggests that Registered Reports should be more attractive for senior researchers and a tough sell for early-career researchers.
+This observation is interesting because it seems at odds with preliminary evidence suggesting that Registered Reports may be more likely to have early-career researchers as first authors than standard reports (Chambers \& Tzavella, 2021).
+One explanation for such data (if robust) could be that the effect of concave versus convex fitness functions is swamped out by factors unrelated to risk sensitivity (e.g., younger researchers being more likely to adopt new methods).
+However, as we will see below, the effects of different fitness functions are not always as straightforward as in the simple case illustrated in Figure~\ref{fig:epsilonplot} but produce different results in interaction with other risk-related factors.
 
 \hypertarget{number-of-decision-events-before-evaluation-1}{%
 \subsection{Number of decision events before evaluation}\label{number-of-decision-events-before-evaluation-1}}
@@ -540,7 +562,7 @@ payoff\_RR is \(0.60\) and e\_low is 0.25.
 \subsubsection{Data, materials, and online resources}\label{data-materials-and-online-resources}}
 
 \href{https://osf.io/aqr2s/}{Data} and code necessary to reproduce all analyses reported here, as well as the \href{https://osf.io/qw798/}{Appendix}, the \href{https://osf.io/sy927/}{preregistration}, and additional supplementary files, are available at \url{https://osf.io/dbhgr}.
-The manuscript, including figures and statistical analyses, the \href{https://osf.io/qw798/}{Appendix}, and the \href{https://osf.io/6jrkz/}{codebook} available in the supplement were created using RStudio (1.2.5019, {\textbf{???}}) and R (Version 3.6.0; R Core Team, 2019) and the R-packages \emph{bookdown} (Version 0.24; Xie, 2016), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{here} (Version 1.0.1; Müller, 2020), \emph{knitr} (Version 1.37; Xie, 2015), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2018), \emph{rmarkdown} (Version 2.12; Xie, Allaire, \& Grolemund, 2018), \emph{stringr} (Version 1.4.0; Wickham, 2019), and \emph{tinylabels} (Version 0.2.3; Barth, 2022).
+The manuscript, including figures and statistical analyses, the \href{https://osf.io/qw798/}{Appendix}, and the \href{https://osf.io/6jrkz/}{codebook} available in the supplement were created using RStudio (1.2.5019, {\textbf{???}}) and R (Version 3.6.0; R Core Team, 2019) and the R-packages \emph{bookdown} (Version 0.24; Xie, 2016), \emph{ggplot2} (Version 3.3.5; Wickham, 2016), \emph{here} (Version 1.0.1; Müller, 2017), \emph{knitr} (Version 1.37; Xie, 2015), \emph{papaja} (Version 0.1.0.9997; Aust \& Barth, 2018), \emph{rmarkdown} (Version 2.12; Xie, Allaire, \& Grolemund, 2018), \emph{stringr} (Version 1.4.0; Wickham, 2019), and \emph{tinylabels} (Version 0.2.3; Barth, 2022).
 
 \hypertarget{reporting}{%
 \subsubsection{Reporting}\label{reporting}}
@@ -575,11 +597,17 @@ Aust, F., \& Barth, M. (2018). \emph{papaja: Create APA manuscripts with R Markd
 \leavevmode\hypertarget{ref-R-tinylabels}{}%
 Barth, M. (2022). \emph{tinylabels: Lightweight variable labels}. Retrieved from \url{https://cran.r-project.org/package=tinylabels}
 
+\leavevmode\hypertarget{ref-Chambers2021}{}%
+Chambers, C. D., \& Tzavella, L. (2021). The past, present and future of Registered Reports. \emph{Nature Human Behaviour}, 1--14. \url{https://doi.org/10.1038/s41562-021-01193-7}
+
 \leavevmode\hypertarget{ref-R-here}{}%
-Müller, K. (2020). \emph{Here: A simpler way to find your files}. Retrieved from \url{https://CRAN.R-project.org/package=here}
+Müller, K. (2017). \emph{Here: A simpler way to find your files}.
 
 \leavevmode\hypertarget{ref-R-base}{}%
 R Core Team. (2019). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing.
+
+\leavevmode\hypertarget{ref-Scheel2021}{}%
+Scheel, A. M., Schijen, M. R. M. J., \& Lakens, D. (2021). An Excess of Positive Results: Comparing the Standard Psychology Literature With Registered Reports. \emph{Advances in Methods and Practices in Psychological Science}, \emph{4}(2), 251524592110074. \url{https://doi.org/10.1177/25152459211007467}
 
 \leavevmode\hypertarget{ref-Smaldino2016}{}%
 Smaldino, P. E., \& McElreath, R. (2016). The natural selection of bad science. \emph{Royal Society Open Science}, \emph{3}, 160384. \url{https://doi.org/10.1098/rsos.160384}

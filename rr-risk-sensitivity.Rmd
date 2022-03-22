@@ -34,6 +34,7 @@ header-includes:
   - \usepackage{caption}
   - \usepackage{setspace}
   - \usepackage{amsmath}
+  - \usepackage{wrapfig}
   - \captionsetup[figure]{font={stretch=1, small}, skip=10pt}
   - \captionsetup[textbox]{name=Box,labelsep=period,labelfont=it}
   - \newfloat{textbox}{thp}{lop}
@@ -169,7 +170,7 @@ While the payoffs $b_-$, $b_{safe}$, and $b_+$ are equidistant on the x-axis, $b
 
 (ref:fitnessplot) Consequences of non-linear fitness functions. Payoffs $b_-$, $b_{safe}$, and $b_+$ are converted into fitness with a diminishing (blue), linear (grey), or increasing (red) returns function.
 
-```{r fitnessplot, echo=FALSE, warning=FALSE, out.width="50%", fig.cap="(ref:fitnessplot)"}
+```{r fitnessplot, echo=FALSE, warning=FALSE, out.width="50%", fig.cap="(ref:fitnessplot)", fig.align='center'}
 #mainplot
 
 #####
@@ -180,6 +181,9 @@ While the payoffs $b_-$, $b_{safe}$, and $b_+$ are equidistant on the x-axis, $b
 source("fitnesscurves_plot.R")
 fitness_plot
 ```
+
+
+
 
 Non-linear relationships are arguably the norm in the natural world and linear relationships the exception. 
 This plausibly holds for academia as well, where the effect of publication success on researchers' career success might change over time:
@@ -196,7 +200,7 @@ One such situation is depicted in Figure\ \@ref(fig:varianceplot).
 
 (ref:varianceplot) Survival thresholds. When fitness drops to zero below the low threshold (dashed line), individuals should be risk-averse because the outcomes of the low-risk option (narrow curve) are guaranteed to lie above the threshold and the outcomes of the high-risk option (wide cuve) have a non-negligible risk of falling below the threshold. When fitness drops to zero below the high threshold (dotted line), individuals should be risk-prone because only the high-risk option provides a chance of passing the threshold.
 
-```{r varianceplot, echo=FALSE, warning=FALSE, fig.height=4, fig.cap="(ref:varianceplot)", out.width="60%"}
+```{r varianceplot, echo=FALSE, warning=FALSE, fig.cap="(ref:varianceplot)", out.width="60%", fig.align='center'}
 
 ggplot(data.frame(x=c(0,1)), aes(x)) + 
   scale_x_continuous(name="payoff", limits = c(0, 1),
@@ -344,10 +348,9 @@ In this situation, researcheres who submit Registered Reports whenever $p<0.5$ a
 Every alternative is inferior in the long run because researchers with $s > b_{RR}$ lose out on increased chances of publishing a standard report and researchers with $s < b_{RR}$ take unnecessary risks and go empty-handed too often.
 
 
+(ref:epsilonplot) Effect of fitness functions on evolved submission thresholds. Shown are median submission thresholds in the final ($250^{th}$) generations of 50 runs for different values of $b_{RR}$ (x-axis) and different fitness functions (characterised by exponent $\epsilon$), with one research cycle per generation ($m = 1$), no survival threshold ($\delta = 0$) and no competition ($\gamma = 1$). Fitness functions with $\epsilon = 0.2$ and $\epsilon = 0.5$ (blue lines) are concave with diminishing returns, functions with $\epsilon = 2$ and $\epsilon = 5$ (red lines) are convex with increasing returns, and the function with $\epsilon = 1$ (grey line) is linear. Small dots represent median $s$ of the final generation in each run, large dots represent the median of these 50 run medians per condition. Error bars represent the $95\%$ capture probability around the median of medians.
 
-(ref:epsilonplot) Figure note).
-
-```{r epsilonplot, echo=FALSE, warning=FALSE, fig.cap = "(ref:epsilonplot)", out.width="65%", fig.align = 'center'}
+```{r epsilonplot, echo=FALSE, warning=FALSE, fig.cap = "(ref:epsilonplot)", out.width="65%", fig.align='center'}
 
 # Important additional chunk option when using journal mode: fig.env="figure*"
 
@@ -356,7 +359,18 @@ knitr::include_graphics(here("plots", "plot_b_e.png"))
 
 ## Non-linear fitness functions
 With this basic understanding of the payoff structure in hand, we can take a look at what happens when payoffs have non-linear consequences for researchers' fitness.
-Figure\ \@ref(fig:epsilonplot) illustrates...
+Figure\ \@ref(fig:epsilonplot) contrasts the effects of two diminishing fitness functions ($\epsilon = 0.2$ and $\epsilon = 0.5$, shown in blue shades) and two increasing fitness functions ($\epsilon = 2$ and $\epsilon = 5$, shown in red shades) with a linear function ($\epsilon = 1$, grey line) for different payoffs for Registered Reports.
+The grey line for $\epsilon = 1$ represents the already familiar situation from Figure\ \@ref(fig:evoplot) above: 
+When the fitness function is linear, the optimal strategy is $s_{optimal} = b_{RR}$, making Registered Reports relatively popular when they are worth more than 0.5 and relatively unpopular when they are worth less than 0.5.
+Non-linear fitness functions change this picture.
+When additional payoffs yield diminishing returns ($\epsilon <1$), Registered Reports become more attractive even when they are worth less than half of published (positive) standard reports.
+This is because concave functions "shrink" the difference between moderate and high payoffs relative to the difference between low and moderate payoffs (as illustrated in Figure\ \@ref(fig:fitnessplot)).
+Conversely, when additional payoffs yield increasing returns ($\epsilon > 1$), Registered Reports are unattractive unless their payoffs are almost as large as those for published standard reports because convex functions increase the difference between moderate and high payoffs relative to low versus moderate payoffs.
+
+When different fitness functions are taken to reflect different career stages$\,$---$\,$such that senior researchers' returns on career success per publication (or per increment of publication impact) are diminishing and those of early-career researchers are increasing$\,$---$\,$this pattern suggests that Registered Reports should be more attractive for senior researchers and a tough sell for early-career researchers.
+This observation is interesting because it seems at odds with preliminary evidence suggesting that Registered Reports may be more likely to have early-career researchers as first authors than standard reports [@Chambers2021].
+One explanation for such data (if robust) could be that the effect of concave versus convex fitness functions is swamped out by factors unrelated to risk sensitivity (e.g., younger researchers being more likely to adopt new methods).
+However, as we will see below, the effects of different fitness functions are not always as straightforward as in the simple case illustrated in Figure\ \@ref(fig:epsilonplot) but produce different results in interaction with other risk-related factors.
 
 
 ## Number of decision events before evaluation
