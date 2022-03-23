@@ -54,9 +54,11 @@ tablelist         : no
 footnotelist      : no
 lineno            : no
 numbersections    : false 
+mask              : true
 
+documentclass     : "apa6"
 lang              : "en-UK"
-class             : "man"
+class             : "doc"
 output            : papaja::apa6_pdf
 ---
 
@@ -70,33 +72,52 @@ library("ggplot2")
 library("stringr")
 ```
 
-* publication bias & QRPs
-* Registered Reports
-  + what they are
-  + how they protect against bias
-  + evidence 
-* however, little data is available about the demographics of RR authors and characteristics of the research questions studied in RRs.
+``TO DO:``
+
+* General introduction describing the problem of publication bias and questionable research practices (QRPs)
+  + Publication bias: positive results are more likely to get published than negative results; can happen due to reviewer bias [@Greenwald1975; evidence: @Mahoney1977;@Atkinson1982] or file-drawering [@Rosenthal1979; evidence: @Franco2014;@Franco2016]
+  + QRPs: exploiting undisclosed flexbility in data collection and analysis to obtain more desirable results [@Simmons2011; evidence: @John2012;@Fiedler2016;@Agnoli2017;@Fraser2018]. QRPs inflate the error rates of statistical tests, typically the false-positive rate
+  + consequence of publication bias and QRPs: the literature in psychology is excessively ($>90\%$) positive [@Scheel2021;@Sterling1959;@Sterling1995;@Fanelli2010] and unreliable [@Wacholder2004; evidence: @Nosek2022]
+* Reform efforts to address the problem:
+  + preregistration to reduce QRPs [@Wagenmakers2012;@Nosek2018;@Lakens2019b]
+  + various journals of negative results to reduce publication bias (these never seem to be successful though and always shut down after a while; add examples/references)
+  + **Registered Reports** to reduce QRPs and publication bias at the same time (most powerful reform proposal to date)
+
+Registered Reports are an alternative publication format in which the review process is split in two stages:
+At Stage 1, reviewers evaluate a pre-study protocol containing research questions, hypotheses, and planned methods of a proposed study.
+In case of a positive decision, the journal provides authors with an in-principle acceptance and commits to publishing the eventual report regardless of the direction of the results.
+Once authors have collected and analysed the data and written up the results, the final report is submitted to a second review stage, but this time only to ensure that the study was carried out as planned, that the data pass any pre-specified quality checks, and that authors' conclusions are justified by the evidence.
+
+By moving the publication decision to a time point before results are known, Registered Reports provide a powerful protection against publication bias (publication is results-independent by design) and remove one important incentive for authors to use QRPs.
+The remaining risk of QRPs is minimised by the two-stage review process, in which the Stage-1 protocol acts as a preregistration and reviewers' task during Stage-2 review is to flag any deviations from it.
+The format was first launched in 2013 at the journal *Cortex* [@Chambers2013] and is now offered by over 300 journals, predominantly in the social and life sciences (see [cos.io/rr](cos.io/rr)).
+By 2021, nearly 600 Registered Reports had been published [@Chambers2021].
+Initial evidence shows that published Registered Reports have a substantially lower rate of positive results than regular articles in psychology [$44\%$ versus $96\%$, @Scheel2021] and psychology, neuroscience, and the biomedical sciences [@Allen2019], and are judged to be of higher quality [@Soderberg2021].
 
 Being a powerful bias-prevention tool that is increasingly popular, it is important to develop a better understanding of when, where, and by whom Registered Reports are most likely to be used. 
 First, such knowledge can help identify research areas in which the format is unlikely to gain traction by itself and anticipate the need for further intervention (e.g., via policy) when there is a demand for unbiased results. 
-Second, understanding when researchers' choice between Registered Reports and the standard publication route is likely to be influenced by factors that also influence the eventual results (e.g., the prior probability of the studied hypotheses) is important for meta-scientific studies that compare published studies in both formats and must take such confounds into account [e.g., @Scheel2021].
-As a final, perhaps less urgent motivation for such research, ... RISK OF DEVALUATION LIKE JOURNALS OF NEGATIVE RESULTS
-The goal of this chapter is to shed light on these questions by studying the potential impact of a key feature of Registered Reports: results-independent publication guarantee as an incentive for authors.
+Second, understanding when researchers' choice between Registered Reports and the standard publication route is likely to be influenced by factors that also influence the eventual results (e.g., the prior probability of the tested hypotheses) is important for meta-scientific studies that compare published studies in both formats and must take such confounds into account [e.g., @Scheel2021].
+Such confounds could also lead to a situation in which Registered Reports become associated with certain types of results (e.g., negative results) and devalued if these results are deemed less interesting or important by the research community, making the format unsustainable in the long run. ``To do: add note that this is likely what happened to several "journals of negative results" that shut down due to lack of interest.``
+The goal of this chapter is to shed light on these questions by studying the potential impact of a key feature of Registered Reports: The results-independent publication guarantee as an incentive for authors.
 
 <!-- "a publishing option that neutralises bad incentives" [p. 609, @Chambers2013] -->
 <!-- "As we look into the next decade, we believe RRs are showing all the signs of becoming a powerful antidote to reporting and publication bias, realigning incentives to ensure that the practices that are best for science$\,$---$\,$transparent, reproducible, accurate reporting$\,$---$\,$also serve the interests of individual scientists." [p. 12, @Chambers2021] -->
 
 <!-- Other reforms aimed at reducing false positives and improving reproducibility, such as preregistration or open data and code, require an additional effort from authors (writing a preregistration document, preparing a shareable dataset), that will  -->
 ## Registered Reports as a low-risk publication option
-In addition to protecting against publication bias and QRPs, Registered Reports are designed to "serve the interests of individual scientists" [p. 12, @Chambers2021] by providing a publication guarantee irrespective of the study results.
-As such, Registered Reports make use of existing incentive structures in academia and do not rely on changes in norms or policy (in contrast to other reforms such as preregistration () or data sharing ()).
+Registered Reports serve the scientific community and other consumers of the scientific literature by protecting against publication bias and QRPs.
+But they are also designed to "serve the interests of individual scientists" [p. 12, @Chambers2021] by providing a publication guarantee irrespective of the study results.
+As such, Registered Reports make use of existing incentive structures in academia and do not rely on changes in norms or policy (in contrast to other reforms such as preregistration).
 
-Amount and impact of peer-reviewed publications is a central currency for academic researchers [add some evidence]. In the standard publication model, researchers face uncertainty about whether and where they will be able to publish the results of their study. Translated into currency terms, the payoff a researcher receives for conducting a study can vary extremely: from near zero when the resulting manuscript is rejected by all peer-reviewed journals the author submits to — or when the author file-drawers the study because the chances of successful publication appear too low to justify the costs of submission and peer review — to an extremely high, perhaps career-making amount when a manuscript is published in a high-impact journal like Nature or Science.
-
-The basic argument is that partly because of publication bias, publication success in the normal system is highly volatile and dependent on the one factor that is supposed to be outside of researchers' control$\,$---$\,$the results$\,$---$\,$, putting especially early-career researchers under excessive stress and tempting them to hype, spin, or even fabricate their data.
+Peer-reviewed publications are a central currency for academic researchers, both in terms of publication quantity and publication impact [@vanDalen2012;@Muller2014]. 
+In the standard publication model, researchers face uncertainty about whether and where they will be able to publish the results of their study. Translated into currency terms, the payoff a researcher receives for conducting a study can vary extremely: 
+from near zero when the resulting manuscript is rejected by all consulted journals (or when the author file-drawers the study because the chances of success seem too low to justify the costs of repeated submissions and revisions) to an extremely high, perhaps career-making amount when a manuscript is published in a very high-impact journal like *Nature* or *Science*. 
+In other words, success in the standard system is highly variable and highly volatile since it hinges on the one factor that is supposed to be outside of researchers' control --- the study results.
+This unfortunate combination can be excessively stressful for researchers (especially junior scientists without secure positions) and tempt them to hype, spin, or even fabricate their results.
 <!-- This key innovation is thought to "neutralise(s) bad incentives" [p. 609, @Chambers2013] that might otherwise tempt authors to hype, spin, p-hack, or even fabricate results in order to increase the publication value of their research. -->
-Because publication is results-independent in Registered Reports and authors receive an in-principle acceptance before investing in data collection or analysis, the format is a relatively safe, stress-free alternative.
-As Registered-Reports inventor Chris Chambers put it in a recent talk (September 2021):
+
+Compared to this, Registered Reports are a relatively safe, stress-free alternative because authors receive a results-independent publication guarantee before investing in data collection or analysis.
+As Registered-Reports inventor Chris Chambers put it in a recent talk ([September 2021](https://youtu.be/FiVI3cwVMZI?list=PLChfyH8TVDGmYENpXUDPaeeq2SLh8q9dt&t=1047)):
 
 > And the second main benefit, the one that really is the main big one, the big draw, is that as a researcher you can get your paper accepted before you even start your research and regardless of how the results turn out in the end. So no more playing the *p*-value lottery, gambling on certain results going a certain way, otherwise you won't have your PhD or you won't get your next fellowship or your next grant$\,$---$\,$takes all of that pointless, and I think quite foolish, gambling out of the equation completely. (from minute 17:27)
 
@@ -105,69 +126,47 @@ As Registered-Reports inventor Chris Chambers put it in a recent talk (September
 But would researchers ever choose the gamble over the safe publication?
 Unless the net benefit of a Registered Report is always at least as valuable as the best possible outcome that could be achieved through the standard publication route, the answer is "probably yes".
 Authors deciding between Registered Reports and the standard publication route face the choice between a payoff with low variability (a relatively safe publication in the journal the Stage-1 protocol was submitted to) and a payoff with high variability (anywhere between no publication and a high-impact publication, or even several publications if the project yields enough "fodder"). 
-Situations like these are commonly termed *decision-making under risk*, where "risk" is defined as "unpredictable variation in the outcome of a behavior, with consequences for an organism's fitness or utility" [@Winterhalder1999, p. 302].
-When organisms are sensitive not only to the mean outcomes of different options but also to their variance, they are called "risk sensitive".
+Situations like these are commonly termed *decision-making under risk*.
+"Risk" is defined as "unpredictable variation in the outcome of a behavior, with consequences for an organism's fitness or utility" [@Winterhalder1999, p. 302].
+Organisms are *risk sensitive* when they are not only sensitive to the mean outcomes of different behavioural options but also to their variance.
 
-* Humans are risk-sensitive, therefore researchers should be too
-Like virtually all other organisms, humans are sensitive to risk but do not universally try to minimise  (risk aversion) or maximise (risk proneness) it.
+Framing authors' choice between Registered Reports and standard publications as risk-averse versus risk-prone behaviour allows us to examine the problem with Risk-Sensitivity Theory, a normative theory developed in behavioural ecology to explain the foraging behaviour of animals.
+Risk-Sensitivity Theory was designed to determine the optimal food-acquisition strategy for an animal faced with a choice between a relatively safe (low-variance) food source and a risky (high-variance) source that sometimes yields large payoffs and sometimes small payoffs (or none at all). 
+Despite this initial narrow scope, Risk-Sensitivity Theory has proven itself as a powerful framework for explaining risk-sensitive behaviour in a wide range of situations and species, including humans  [@Kacelnik1996;@Kacelnik1997;@Mishra2014].
+
+``TO DO:``
+
+* Explain that RST is superior to utility theory and can incorporate prospect theory [@Mishra2014]
+* Better explain the evolutionary angle and why it matters
+
+<!-- * Humans are risk-sensitive, therefore researchers should be too -->
+<!-- Like virtually all other organisms, humans are sensitive to risk but do not universally try to minimise  (risk aversion) or maximise (risk proneness) it. -->
+
+<!-- * What does the argument entail? -->
+<!--   + RRs are "safer" than non-RRs (less variance, less risk) -->
+<!--   + (safer = better) -->
+<!--   + However, the argument that RRs are always more attractive for authors only holds if a) RRs are always worth at least as much as a normal publication or b) authors are always risk averse -->
+
+## Goals of the chapter
+
+In this chapter, a simulation model is used to explore how properties of academic careers and academic incentive structures that are relevant to risk sensitivity may affect the strategies of researchers choosing between Registered Reports and the standard publication format. 
+The research goal is to understand in which circumstances Registered Reports should be particularly attractive, particularly unattractive, or particularly prone to highly selective use.
+The results of this analysis may help anticipate where the format is unlikely to take foot without additional changes to norms, incentives, or policy, and flag situations in which the results of published Registered Reports may be particularly difficult to compare to the normal literature.
+The following sections outline central concepts of Risk-Sensitivity Theory, relate them to characteristics of academic careers, and describe an evolutionary simulation model in which their effects on researchers' risk-sensitive publication decisions are examined.
 
 
-A large body of literature shows that humans
+# Conceptual application of Risk-Sensitivity Theory to publication decisions
 
-
-* RST is an explanatory theory for these situations
-Risk-Sensitivity Theory, a normative theory developed in behavioural ecology to explain foraging behaviour of animals
-Risk-Sensitivity Theory was originally developed to determine the optimal food-acquisition strategy for animals faced with a choice between a relatively safe (low-variance) food source and a risky (high-variance) source that sometimes yields large payoffs and sometimes small payoffs (or none at all). 
-Despite this initial narrow scope, Risk-Sensitivity Theory has been successfully applied to humans as well as several non-human animal species (Kacelnik & Bateson, 1996, 1997; Mishra, 2014; [add more refs]).
-
-
-
-* What does the argument entail?
-  + RRs are "safer" than non-RRs --> less variance, less risk
-  + (safer = better)
-  + However, the argument that RRs are always more attractive for authors only holds if a) RRs are always worth at least as much as a normal publication or b) authors are always risk averse
-
-* Enter Risk Sensitivity Theory
-  + background
-  + basics
-  + comparison to utility theory and prospect theory
-  
-* RRs through an RST lens
-
-
-## Goals
-
-* Understand under which circumstances RRs are unlikely to be viable
-* Understand how authors' strategic risk-sensitive decision-making may affect what is studied in RRs/the differe
-
-This chapter explores how properties of academic careers and academic incentive structures that are relevant to risk sensitivity may affect the strategies of researchers choosing between Registered Reports and the standard publication format. 
-The research goal is to understand in which circumstances Registered Reports should be particularly attractive, particularly unattractive, or particularly prone to highly selective use, which would make their results difficult to compare to the normal literature.
-The following section outlines central concepts of Risk-Sensitivity Theory, relates them to characteristics of academic careers, and describes a simulation model in which their effects on researchers' risk-sensitive publication decisions are examined.
-
-# Conceptual application of Risk-Sensitivity Theory to researchers' publication decisions
-<!-- In order to conceptualise authors' publication choices as decision making under risk and examine it with the tools of Risk-Sensitivity Theory, we first need to take a look -->
-
-The following section describes general factors that affect the role of risk for individual's fitness and connects these factors to relevent elements of academic careers. **NEEDS REPHRASING B/C PREVIOUS PARAGRAPH WAS CHANGED**
-In this context, Risk-Sensitivity Theory's focus on reproductive fitness as the central outcome may be seen as problematic.
-But although researchers do not forage, grow, reproduce, and die in the *biological* sense (except in their role as human beings in general, of course), they undoubtedly are concerned with factors that influence their survival and the propagation of their traits in an *academic* sense.
+This section describes general factors that affect the role of risk for individual's fitness and connects these factors to relevent elements of academic careers. 
+In this context, Risk-Sensitivity Theory's focus on reproductive fitness as the central outcome may be seen as misguided.
+But although researchers do not forage, grow, reproduce, and die in the *biological* sense (except in their role as human beings in general, of course), they undoubtedly are concerned with factors that influence 1) their survival and 2) the propagation of their traits in an *academic* sense.
 In applying Risk-Sensitivity Theory to researchers' publishing behaviour, we will therefore use a general notion of career success as the central outcome variable in place of reproductive fitness.
-This decision does not imply that career success is the sole proximal motivation for researchers' behaviour in practice, just as evolutionary theory does not imply that reproductive success is the sole proximal motivation for every person's everyday decisions.
-**NEEDS WORK:**
-However, being a product of evolution, human decision making has been shown to be risk sensitive in many domains. 
-significant competition for tenured positions in many academic disciplines inevitably creates a selection pressure for behaviours that further researchers' career success [@Smaldino2016]. 
+This decision does not imply that career success is the only or the proximal motivation for researchers' behaviour in practice, just as evolutionary theory does not imply that reproductive success is the only or the proximal motivation for human behaviour in everyday life.
+``TO DO:``
 
+* Refer back to a (not yet existing) section above to say that human decision making is a product of evolution
+* In addition, narrow bottlenecks between early-career and tenured positions in many academic disciplines inevitably create a selection pressure for behaviours that further researchers' career success [@Smaldino2016]. 
 
-
-#### Non-linear fitness functions 
-
-The first and perhaps most important factor leading individuals to be risk sensitive are non-linear relationships between the outcomes of an individual's behaviour (e.g., harvested food items, publications) and its reproductive success (fitness).
-Consider two options, $O_{safe}$ and $O_{risky}$. 
-$O_{safe}$ always gives the same payoff $b_{safe}$, whereas $O_{risky}$ gives either a low payoff $b_-$ or a high payoff $b_+$, each with probability $\frac{1}{2}$.
-When $b_{safe} = \frac{(b_- + b_+)}{2}$, $O_{safe}$ and $O_{risky}$ have the same expected payoff.
-However, we would only expect an individual to be indifferent between the two options if the consequences of their payoffs for the individual's fitness are linear.
-When the function relating payoffs to utility is instead convex or concave (yielding increasing or diminishing returns, respectively), the expected utility of $O_{safe}$ and $O_{risky}$ will differ and shift the individual's preference towards risk proneness or risk aversion.
-An illustration of this example is shown in Figure\ \@ref(fig:fitnessplot):
-While the payoffs $b_-$, $b_{safe}$, and $b_+$ are equidistant on the x-axis, $b_{safe}$ is associated with greater fitness than the average of $b_-$ and $b_+$ when the fitness function is concave and with less fitness when the fitness function is convex.
 
 (ref:fitnessplot) Consequences of non-linear fitness functions. Payoffs $b_-$, $b_{safe}$, and $b_+$ are converted into fitness with a diminishing (blue), linear (grey), or increasing (red) returns function.
 
@@ -184,20 +183,22 @@ fitness_plot
 ```
 
 
+#### Non-linear fitness functions 
 
+The first and perhaps most ubiquitous factor leading individuals to be risk sensitive are non-linear relationships between the outcomes of an individual's behaviour (e.g., harvested food items, publications) and its reproductive success [@Kacelnik1997].
+Consider two options, $O_{safe}$ and $O_{risky}$. 
+$O_{safe}$ always gives the same payoff $b_{safe}$, whereas $O_{risky}$ gives either a low payoff $b_-$ or a high payoff $b_+$, each with probability $\frac{1}{2}$.
+When $b_{safe} = \frac{(b_- + b_+)}{2}$, $O_{safe}$ and $O_{risky}$ have the same expected payoff.
+However, we would only expect an individual to be indifferent between the two options if the consequences of their payoffs for the individual's fitness are linear.
+When the function relating payoffs to utility is instead convex or concave (yielding increasing or diminishing returns, respectively), the expected utility of $O_{safe}$ and $O_{risky}$ will differ and shift the individual's preference towards risk proneness or risk aversion.
+An illustration of this example is shown in Figure\ \@ref(fig:fitnessplot):
+While the payoffs $b_-$, $b_{safe}$, and $b_+$ are equidistant on the x-axis, $b_{safe}$ is associated with greater fitness than the average of $b_-$ and $b_+$ when the fitness function is concave, and with less fitness when the fitness function is convex.
+In other words, $O_{safe}$ has greater expected fitness than $O_{risky}$ when returns are diminishing, and $O_{risky}$ has greater expected fitness than $O_{safe}$ when returns are increasing.
 
 Non-linear relationships are arguably the norm in the natural world and linear relationships the exception. 
 This plausibly holds for academia as well, where the effect of publication success on researchers' career success might change over time:
 For early-career researchers, small increases in the number or impact of publications may have an accelerated effect on career success, whereas established professors may care little about any one additional publication on their record.
 
-
-#### Survival thresholds and competition
-
-A second important factor for risk-sensitive behaviour are thresholds for survival and reproduction.
-Survival and reproduction thresholds are cutoff points below which an individual's fitness drops to zero, for example due to starvation.
-Risk-Sensitivity Theory predicts that an individual will be risk averse when the resources provided by a low-variance option are sufficient to meet the threshold and risk averse when they are not.
-For example, a hummingbird that needs to acquire a certain amount of calories to survive the night will prefer a low-risk food source if the expected payoff is above the threshold, but avoid the low-risk source if only a higher-risk source provides a chance of survival.
-One such situation is depicted in Figure\ \@ref(fig:varianceplot).
 
 (ref:varianceplot) Survival thresholds. When fitness drops to zero below the low threshold (dashed line), individuals should be risk-averse because the outcomes of the low-risk option (narrow curve) are guaranteed to lie above the threshold and the outcomes of the high-risk option (wide cuve) have a non-negligible risk of falling below the threshold. When fitness drops to zero below the high threshold (dotted line), individuals should be risk-prone because only the high-risk option provides a chance of passing the threshold.
 
@@ -224,64 +225,82 @@ ggplot(data.frame(x=c(0,1)), aes(x)) +
                 args = list(mean = .5, sd = .04), geom="line")
 ```
 
+
+#### Survival thresholds and competition
+
+A second important factor for risk-sensitive behaviour are thresholds for survival and reproduction [@Winterhalder1999;@Hurly2003].
+Survival thresholds are cutoff points below which an individual's fitness drops to zero, for example due to starvation.
+Risk-Sensitivity Theory predicts that an individual will be risk averse when the resources provided by a low-variance option are sufficient to meet the threshold and risk averse when they are not [@Mishra2014].
+For example, a hummingbird that needs to acquire a certain amount of calories to survive the night will prefer a low-risk food source if this option's expected payoff is above the threshold, but avoid the low-risk source if only a higher-risk source provides a chance of survival.
+One such situation is depicted in Figure\ \@ref(fig:varianceplot).
+
 Although comparable cutoff points in academic careers may have somewhat less severe consequences, they certainly exist:
 Amount and impact of a researcher's publications are common and often explicit criteria in decisions that are central to the individual's career, such as whether they will be awarded a PhD, whether they will receive grant funding, whether they will be offered a tenure-track position, or whether they will be granted tenure. 
 In some of these situations, the cutoff points are absolute and thus resemble survival thresholds in the biological sense, for example PhD-programme regulations that determine a minimal amount of peer-reviewed publications for a candidate to be awarded with a PhD, or tenure contracts that specify minimal publication targets.
-In other situations, the cutoff points are relative and depend on the number of eligible candidates, for example when the 10 highest-ranked research proposals receive funding or the best candidate out of a pool of applicants is offered a job.
-In cases like these, one individual's success diminishes the chances of other individuals$\,$---$\,$in other words, they represent *competition*. 
+In other situations, the cutoff points are relative and depend on the number of eligible candidates, for example when grant funding is awarded to the 10 highest-ranked research proposals or a job is offered to the best candidate from a pool of applicants.
+In cases like these, one individual's success diminishes the chances of another --- they represent *competition*. 
 In the following, survival thresholds and competition will be treated as separate concepts to examine their differential effects on researchers' publication behaviour.
 
 #### Number of decision events before evaluation
 
-A final factor with relevance to risk-sensitive behaviour considered in this chapter is the number of decision events taking place before an individual's fitness is evaluated.
+A final risk-relevant factor considered here is the number of decision events taking place before an individual's fitness is evaluated.
 When a risky option is chosen repeatedly, the average of the accumulating payoffs gets closer and closer to the long-run expected payoff.
 This means that the danger of loosing out completely by only acquiring the lowest possible payoff of the risky option diminishes, making the risky option relatively more attractive. 
 However, this relationship only holds for repeated decision events *before* an individual's fitness is evaluated.
-When fitness is evaluated after each decision, choosing a risky option might yield an outcome that translates to zero fitness, meaning death or an ultimate failure to reproduce.
-When one risky decision might cost an individual's life or offspring, average fitness is best described by the geometric mean instead of the arithmetic mean.
+When fitness is evaluated after a single decision event, a risky option is more likely to yield an extreme outcome that translates to zero fitness (i.e., death or an ultimate failure to reproduce).
+
+In situations like this, when a single risky decision might cost an individual's life or offspring, average fitness is best described by the geometric mean instead of the arithmetic mean [@Haaland2019].
 The geometric mean is more sensitive to variance because it is multiplicative, capturing the fact that one failure to reproduce can end a genetic lineage.
 This circumstance has been shown to produce bet-hedging:
-Risk-averse strategies may be more adaptive across many generations even when more risk-prone strategies produce better outcomes in any one generation, simply because the latter are also more likely to lead to extinction by sheer bad luck.
+Risk-averse strategies may be more adaptive across many generations even when more risk-prone strategies produce better outcomes in any one generation, simply because the latter are also more likely to lead to extinction by sheer bad luck [@Haaland2019].
 While average fitness across generations is best represented with the geometric mean, average fitness *within* a generation is better captured by the arithmetic mean, reflecting the additive accumulation of payoffs from decision events before fitness is evaluated.
-Therefore, as the number of decision events per generation (before fitness is evaluated) increases, the variance-sensitive geometric mean of acquired payoffs becomes relatively less important and the less variance-sensitive arithmetic mean becomes more important.
-Consequently, individuals' behaviour should switch from relative risk aversion to relative risk-proneness.
+Therefore, as the number of decision events per generation (i.e., before fitness is evaluated) increases, the variance-sensitive geometric mean of acquired payoffs becomes relatively less important and the less variance-sensitive arithmetic mean becomes more important.
+Consequently, individuals' behaviour should switch from relative risk-aversion to relative risk-proneness.
 
-In the academic system, decision events before fitness is evaluated ("per generation") could seen as the time and resources a researcher has available for producing publications before a relevant decision like those mentioned in the previous section (award of a PhD or grant, job application, tenure decision) is made.
-Regarding time, the number of publications PhD student or early-career researcher may be limited by 
-**NEEDS WORK**
+In the academic world, decision events before fitness is evaluated ("per generation") could seen as the time and resources a researcher has available for producing publications before a relevant selection event like those mentioned in the previous section (award of a PhD or grant, job application, tenure decision) is made.
+This parameter likely varies with career stage:
+A PhD student usually has three to four years to achieve the required publication output, a postdoc may work on a short-term contract of two years or even one year (after which their CV must be strong enough for the next application), and an assistant professor may have around seven years for receiving tenure. 
+In addition, career progress often comes with greater research funds and, most importantly, the supervision of students and junior researchers whose efforts boost the supervisors' output [@Muller2014].
+As a second, orthogonal aspect, the amount of publishable research that can be achieved before a selection event may vary between research areas.
+In some fields, data collection is fast and cheap, for example when experiments consist of short online questionnaires that are disseminated to large participant pools such as Amazon MTurk.
+In other fields, data collection is very expensive and slow, for example in clinical fMRI studies on specific patient groups.
+Irrespective of career stage, researchers in fields with fast and cheap data may thus be able to complete many more research cycles per time unit than researchers who use more expensive data.
 
-Each of the factors described above$\,$---$\,$non-linear fitness functions, survival thresholds, competition, and the number of decision events prior to evaluation$\,$---$\,$likely impacts researchers' decison strategies, including their choices between low-risk and high-risk publication options.
-To better understand when a low-risk option like Registered Reports should be particularly attractive or unattractive, I examine the individual and interactive effects of these factors in a simulation model.
 
-## Model description
+Each of the risk-relevant factors described above$\,$---$\,$non-linear fitness functions, survival thresholds, competition, and number of decision events before evaluation$\,$---$\,$likely impacts researchers' decison strategies, including their choices between low-risk and high-risk publication options.
+To better understand when a low-risk option like Registered Reports should be particularly attractive or unattractive, the individual and interactive effects of these factors are examined in a simulation model.
+
+# Simulation model
 We develop an evolutionary agent-based model which simulates a population of researchers who test hypotheses, (attempt to) publish the results either as Registered Reports or as standard reports, accumulate the payoffs for successful publications, and pass their publication strategies on to the next generation of researchers.
 
 #### Research phase
-Consider a population of $n = 200$ researchers. 
-Each researcher has a fixed publication strategy $s$, called the submission  threshold. 
+Consider a population of $n = 500$ researchers. 
+Each researcher has a fixed publication strategy $s$, the so-called submission  threshold. 
 In each round of the research phase, researchers randomly pick a hypothesis to test in a study.
 Hypotheses are true with prior probability $p$, which is uniformly distributed between 0 and 1. 
 Before testing their chosen hypothesis, a researcher compares the prior $p$ of their hypothesis with their submission threshold $s$.
 When $p < s$, the researcher chooses to play it safe and test the hypothesis in a Registered Report.
 When $p \geq s$, the researcher chooses to gamble and test the hypothesis in a normal study which is then submitted as a stardard report.
+
 For simplicity, we assume that $p$ is an ideal objective prior and that researchers' hypothesis tests are free from additional sources of error.
-Thus, when a researcher proceeds to testing hypothesis $i$, they obtain a positive result with probability $p_i$ and a negative result with probability $1-p_i$.
-If the researcher chose to conduct a Registered Report, their study gets published regardless of the result and the researcher receives a payoff $b_{RR}$.
-However, if the researcher chose to publish their results as a standard report, they face rampant publication bias: 
+Thus, when a researcher tests hypothesis $i$, they obtain a positive result with probability $p_i$ and a negative result with probability $1-p_i$.
+If the researcher chose to submit a Registered Report, their study is published regardless of the result and the researcher receives a payoff $b_{RR}$.
+However, if the researcher chose to submit a standard report, they face rampant publication bias: 
 Only positive results are publishable as standard reports and yield a payoff $b_{SR+}$, whereas negative results are rejected or file-drawered and only yield a minimal payoff $b_{SR-}$.
 For all variations of the model tested here, we assume that $b_{SR-} < b_{RR} < b_{SR+}$. 
 This assumption reflects the following considerations:
 
-1. Due to publication bias, negative results are less valuable than positive results ($b_{SR-} < b_{SR+}$), for example because they do not lead to a publication at all, because only very low-impact journals are willing to publish them, or because getting them published requires a lot of extra effort (e.g., via frequent resubmissions following rejection or substantial revisions demanded by reviewers) that diminishes the net reward.
-2. These same reasons mean that Registered Reports are on average more valuable than standard reports with negative results ($b_{SR-} < b_{RR}$), for example because Registered Reports are offered by journals that may display publication bias and reject negative results in standard report submissions, or simply because Registered Reports do not need to be resubmitted or require more extensive revisions in case of a negative result.
-3. On average, standard reports with positive results are more valuable than Registered Reports ($b_{RR} < b_{SR+}$), for example because most extremely high-impact journals (e.g., *Science* and *Nature*) do not (yet) offer Registered Reports, because not registering one's study *a priori* makes it easier to spin the results into an attention-grabbing story, or because Registered Reports may require more effort due to their stricter quality criteria, lowering the net reward.
-While proponents of Registered Reports may argue that the format has such trememdous advantages that authors' resulting career benefits are superior to any alternative, this chapter is predicated on the fact that most researchers do not seem to share this view.
+1. Due to publication bias, negative results are less valuable than positive results in standard reports ($b_{SR-} < b_{SR+}$), for example because they do not lead to a publication at all, because only very low-impact journals are willing to publish them, or because getting them published requires a lot of extra effort (e.g., via frequent resubmissions following rejection or substantial revisions demanded by reviewers) that diminishes the net reward.
+2. For these same reasons, Registered Reports are on average more valuable than standard reports with negative results ($b_{SR-} < b_{RR}$), for example because Registered Reports are offered by journals that may display publication bias and reject negative results in standard report submissions, or simply because Registered Reports do not need to be resubmitted or require more extensive revisions in case of a negative result.
+3. On average, standard reports with positive results are more valuable than Registered Reports ($b_{RR} < b_{SR+}$), for example because most extremely high-impact journals do not (yet) offer Registered Reports, because not registering one's study *a priori* makes it easier to spin the results into an attention-grabbing story, or because Registered Reports may require more effort due to their stricter quality criteria, lowering the net reward.
+While proponents of Registered Reports may argue that the format has such trememdous advantages that authors' resulting career benefits are superior to any alternative, this chapter is predicated on the assumption that most researchers currently do not share this view.
 Once this changes, the present investigation may happily become redundant.
 
-This research cycle$\,$---$\,$choosing a hypothesis, choosing a publication route by comparing its prior $p$ to one's submission threshold $s$, testing the hypothesis, and receiving payoff $b_{RR}$ for a Registered Report or $b_{SR-}$ or $b_{SR+}$ for a positive and negative standard report, respectively$\,$---$\,$is repeated $m$ times.
+The whole research cycle$\,$---$\,$choosing a hypothesis, choosing a publication route by comparing its prior $p$ to one's submission threshold $s$, testing the hypothesis, and receiving payoff $b_{RR}$ for a Registered Report or $b_{SR-}$ or $b_{SR+}$ for a positive and negative standard report, respectively$\,$---$\,$is repeated $m$ times.
 
 #### Evaluation phase
-At the end of the research phase, researchers are evaluated by translating their accumulated publication payoffs $b_1 + b_2 + ... + b_m$ into fitness using exponent $\epsilon$, which reflects the shape of the fitness function ($\epsilon = 1$ yields a linear function, $0 < \epsilon < 1$ yields a concave function with diminishing returns, $\epsilon > 1$ yields a convex function with increasing returns, see Figure\ \@ref(fig:fitnessplot)):
+At the end of the research phase, researchers are evaluated by translating their accumulated publication payoffs $b_1 + b_2 + ... + b_m$ into fitness.
+Fitness is calculated with a function characterised by exponent $\epsilon$, which determines the shape of the function. $\epsilon = 1$ yields a linear function, $0 < \epsilon < 1$ yields a concave function with diminishing returns, and $\epsilon > 1$ yields a convex function with increasing returns (see Figure\ \@ref(fig:fitnessplot)):
 
 \begin{align}
 fitness = (\sum_{i=1}^{m} b_i)^\epsilon
@@ -313,7 +332,7 @@ The researcher is unwilling to risk a negative result in a standard report and s
 
 The evolved values of $s$ over many generations indicate the optimal strategy for a given set of parameter values.
 
-# Results
+# Simulation results
 
 When interpreting the results below, it is important to keep in mind that the analysed parameter values are inherently arbitrary.
 Although the model parameters are chosen to capture important characteristics of real-world concepts, the parameter values do not represent real-world units.
@@ -420,11 +439,23 @@ Consequently, the top rows ($m = 32$) of the top and bottom panels in Figure\ \@
 
 
 
+A reference to Figure\ \@ref(fig:deltaplot). 
+
+(ref:deltaplot) Figure note).
+
+```{r deltaplot, echo=FALSE, warning=FALSE, fig.cap = "(ref:deltaplot)", out.width="100%"}
+
+# Important additional chunk option when using journal mode: fig.env="figure*"
+
+knitr::include_graphics(here("plots", "plot_delta.png"))
+```
+
+
 ## Survival thresholds
 
 
 
-## Competition
+
 
 A reference to Figure\ \@ref(fig:competitionplot). 
 
@@ -436,6 +467,10 @@ A reference to Figure\ \@ref(fig:competitionplot).
 
 knitr::include_graphics(here("plots", "plot_comp.png"))
 ```
+
+## Competition
+
+
 
 
 
@@ -452,18 +487,44 @@ payoff_RR is $`r payoff_RR`$ and e_low is `r e_low`.
 
 
 
-# Results
 
 
 
 
 # Discussion
 
+* Brief recap of results
+* Implications of results
+  + cautious mapping of model factors to real-world situations
+  + potential implications for meta-science
+  + potential implications for policy
+
+
 ## Limitations
+* Narrow focus on one specific (and highly stylised) difference between Registered Reports and standard reports; there are many others. Model ignores a myriad other factors that influences who chooses Registered Reports for which studies when
+
+* Concept of publication bias as filtering positive results of hypothesis tests (and the respective connection to hypothesis priors such that high priors --> better) is cartoonish and not entirely accurate for the simple reason that positive results of trivial (or otherwise boring) hypotheses are usually not highly valued (also, this approach only focuses on hypothesis testing, which is widely used in psychology but by far not the only means of doing science).
+A more valid solution may be the concept of publication bias as favouring belief-shifting results presented by @Gross2021.
+Adapting the model presented here to capture this concept of bias could be an interesting future direction.
+However, the present version of the model also allows a conservative interpretation in which the prior probability of hypotheses simply reflects authors' predictions of the eventual publication value of different research questions. 
+This interpretation is still concordant with Registered Reports and standard reports differing in risk, because the publication value of standard reports certainly depends more strongly on the study results than the publication value of Registered Reports (even if not in the simplistic sense of positive hypothesis tests having higher value).
 
 ## Future directions
 
-* state-dependent risk taking (Barclay et al.): some researchers are more willing or able to tweak their results than others, making SRs more attractive(?)
+#### Ability-based risk taking 
+The model presented in this chapter only considers the effects of situational factors on individuals' risk sensitivity.
+However, risk sensitivity can also be influenced by individual differences, so that individuals with traits or abilities that increase their expected payoff from a risky option (e.g., traits that increase their winning chances or the payoff when winning, or that buffer losses) should be more risk-prone [@Barclay2018].
+Such factors may be important to consider in the context of research and publication practices.
+For example, researchers who are better at choosing research questions that are likely to result in high-impact publications (e.g., through talent or experience) may find Registered Reports less attractive.
+As a more nefarious version of this idea, Registered Reports may be relatively unpopular among researchers who are more willing or able to use questionable research practices (or even fraud) to obtain publishable or impactful results.
+
+#### Registered Reports and post-publication peer review 
+The post-publication peer review platform *Peer Community In* (PCI) recently launched a new model of Registered Reports (PCI Registered Reports) in which authors are no longer tied to a specific journal.
+PCI offers authors the regular process of stage-1 and stage-2 review, the end result of a successful submission is 'only' a preprint with a so-called 'recommendation' from PCI. 
+Authors can subsequently publish their manuscript in one of several journals who partnered with PCI and either rely on the PCI review process alone or offer a streamlined review process for PCI-recommended preprints, or they can submit to any other journal as if their manuscript were a standard report.
+This innovation gives Registered-Reports authors significantly more freedom to capitalise on the results of their study because a submission to PCI Registered Reports does not preclude the chance of a high-impact publication.
+PCI Registered Reports thus constitute a signficant change to the relative incentives and risk structure of Registered Reports compared to standard reports that merits a closer investigation in the future.
+
 
 ## Conclusion
 
@@ -475,20 +536,20 @@ my_citation <- cite_r(file = "rr-risk-sensitivity_software.bib")
 
 ## Disclosures
 ### Data, materials, and online resources
-[Data](https://osf.io/aqr2s/) and code necessary to reproduce all analyses reported here, as well as the [Appendix](https://osf.io/qw798/), the [preregistration](https://osf.io/sy927/), and additional supplementary files, are available at <https://osf.io/dbhgr>. 
-The manuscript, including figures and statistical analyses, the [Appendix](https://osf.io/qw798/), and the [codebook](https://osf.io/6jrkz/) available in the supplement were created using RStudio [1.2.5019, @RStudioTeam2019] and `r my_citation`.
+<!-- [Data](https://osf.io/aqr2s/) and code necessary to reproduce all analyses reported here, as well as the [Appendix](https://osf.io/qw798/), the [preregistration](https://osf.io/sy927/), and additional supplementary files, are available at <https://osf.io/dbhgr>.  -->
+This manuscript was created using RStudio [1.2.5019, @RStudioTeam2019] and `r my_citation`.
 
-### Reporting
-We report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study.
+<!-- ### Reporting -->
+<!-- We report how we determined our sample size, all data exclusions, all manipulations, and all measures in the study. -->
 
-### Author Contributions
-Conceptualisation: A.S. & D.L.; data curation, formal analysis, and software: A.S. & M.R.M.J.S.; investigation, methodology, and validation: A.S., M.R.M.J.S., & D.L; supervision: A.S & D.L.; visualisation and writing$\,$---$\,$original draft: A.S; writing$\,$---$\,$review and editing: A.S., M.R.M.J.S., & D.L.
+<!-- ### Author Contributions -->
+<!-- Conceptualisation: A.S. & D.L.; data curation, formal analysis, and software: A.S. & M.R.M.J.S.; investigation, methodology, and validation: A.S., M.R.M.J.S., & D.L; supervision: A.S & D.L.; visualisation and writing$\,$---$\,$original draft: A.S; writing$\,$---$\,$review and editing: A.S., M.R.M.J.S., & D.L. -->
 
-### Conflicts of Interest
-The authors declare that they have no conflicts of interest with respect to the authorship or the publication of this article.
+<!-- ### Conflicts of Interest -->
+<!-- The authors declare that they have no conflicts of interest with respect to the authorship or the publication of this article. -->
 
-### Acknowledgements
-This work was funded by VIDI grant 452-17-013. We thank Chris Chambers, Emma Henderson, Leo Tiokhin, Stuart Ritchie, and Simine Vazire for valuable comments that helped improve this manuscript.
+<!-- ### Acknowledgements -->
+<!-- This work was funded by VIDI grant 452-17-013. We thank Chris Chambers, Emma Henderson, Leo Tiokhin, Stuart Ritchie, and Simine Vazire for valuable comments that helped improve this manuscript. -->
 
 
 # References
