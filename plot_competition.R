@@ -1,4 +1,6 @@
 library(ggplot2)
+library(here)
+library(data.table)
 
 
 # load competition data
@@ -38,6 +40,8 @@ data_comp_tile$generation_duration <- factor(data_comp_tile$generation_duration,
 levels(data_comp_tile$generation_duration) <- c("m = 1", "m = 2", "m = 4",
                                                 "m = 8", "m = 16")
 
+# save this summary dataset for easier loading/reproduction later
+saveRDS(data_comp_tile, "data_comp_tile_forplotting.RData")
 
 #data_comp_tile <- readRDS(here::here("data", 
 #                                     "data_comp_tile_forplotting.RData"))
@@ -48,17 +52,19 @@ plot_comp <- ggplot(data_comp_tile, aes(x = relative_payoff_RR,
   scale_x_continuous(expand = c(0,0), name = expression(italic(b)[RR]),
                      breaks = seq(.1, .9, .1),
                      labels = c(".1", "", ".3", "", ".5", "", ".7", "", ".9"))+
-  scale_y_reverse(expand = c(0,0), name = "competition (gamma)",
+  scale_y_reverse(expand = c(0,0), name = 
+                    expression(paste("competition (", gamma, ")", "")),
                   breaks = seq(.1, 1, .1),
                   labels = c(".1", "", ".3", "", ".5", 
                              "", ".7", "", ".9", ""))+
   coord_fixed(ratio = 9/10) +
   theme_minimal() +
-  theme(panel.grid = element_blank()) +
+  theme(panel.grid = element_blank(),
+        plot.margin=grid::unit(c(1,0,1,1), "mm"),
+        legend.title.align=0.2) +
   geom_tile() +
   scale_fill_viridis_c(name = "s", limits = c(0,1), option = "magma")+ 
   facet_grid(e ~ generation_duration)
 
-
-saveRDS(data_comp_tile, "data_comp_tile_forplotting.RData")
-ggsave("plot_comp.png", plot_comp, scale = .9)
+ggsave("plot_comp.png", plot_comp, bg = "white",
+       width = 17.8, height = 10, units = "cm")

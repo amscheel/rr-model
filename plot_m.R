@@ -38,7 +38,7 @@ data_m_tile$generation_duration <- factor(data_m_tile$generation_duration,
                                           levels = c("1", "2", "4", 
                                                      "8", "16", "32"))
 
-saveRDS(data_m_tile, "data_m_tile_forplotting.RData")
+#saveRDS(data_m_tile, "data_m_tile_forplotting.RData")
 
 plot_m <- ggplot(data_m_tile, 
                  aes(x = relative_payoff_RR,
@@ -53,7 +53,8 @@ plot_m <- ggplot(data_m_tile,
   coord_fixed(ratio = 1/10) +
   theme_minimal() +
   theme(panel.grid = element_blank(),
-        plot.margin=grid::unit(c(1,0,1,0), "mm")) +
+        plot.margin=grid::unit(c(1,0,1,0), "mm"),
+        legend.title.align=0.2) +
   geom_tile() +
   scale_fill_viridis_c(name = "s", limits = c(0,1), option = "magma")+ 
   facet_grid(e ~ .)
