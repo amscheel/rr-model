@@ -1,5 +1,6 @@
 library(ggplot2)
 library(here)
+library(data.table)
 
 # load b/e data
 data_b_e <- readRDS(here("data", "data_b_e.RData"))
@@ -14,7 +15,7 @@ data_b_e_summary <- data_b_e[, median(submission_threshold),
 colnames(data_b_e_summary)[colnames(data_b_e_summary) == "V1"] <- "median"
 
 # save this summary dataset for easier loading/reproduction later
-saveRDS(data_b_e, "data_b_e_summary_forplotting.RData")
+saveRDS(data_b_e_summary, "data_b_e_summary_forplotting.RData")
 
 # define a colour scheme 
 colorbrewer5 <- c("#2166ac", "#67a9cf", "grey", "#ef8a62", "#b2182b")

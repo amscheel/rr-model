@@ -1,5 +1,8 @@
-# A script for intermediate data wrangling steps I did to clean up/create the
+### A script for intermediate data wrangling steps I did to clean up/create the
 # eventual data sets
+
+
+## DATA FOR COMPETITION
 
 data_competition_m1 <- readRDS(here("data", "simdata_settings3.RData"))
 data_competition_m23468 <- readRDS(here("data", "simdata_settings3_3.RData"))
@@ -23,3 +26,5 @@ saveRDS(data_competition, "data_competition.RData")
 data_comp <- readRDS(here("data", "data_competition.RData"))
 data_m <- data_comp[data_comp$relative_top_n==1,]
 saveRDS(data_m, "data_m.RData")
+
+
