@@ -53,6 +53,7 @@ figurelist        : no
 tablelist         : no
 footnotelist      : no
 lineno            : no
+numbersections    : false 
 
 lang              : "en-UK"
 class             : "man"
@@ -373,12 +374,8 @@ One explanation for such data (if robust) could be that the effect of concave ve
 However, as we will see below, the effects of different fitness functions are not always as straightforward as in the simple case illustrated in Figure\ \@ref(fig:epsilonplot) but produce different results in interaction with other risk-related factors.
 
 
-## Number of decision events before evaluation
 
-
-A reference to Figure\ \@ref(fig:mplot). 
-
-(ref:mplot) Figure note).
+(ref:mplot) Effect of research cycles per generation on evolved submission thresholds. Shown are median evolved submission thresholds ($s$) after 250 generations in 50 runs (tile colour represents the median of 50 run medians) for varying numbers of research cycles per generation ($m$, y-axis), different values of $b_{RR}$ (x-axis), and different fitness functions (characterised by exponent $\epsilon$).
 
 ```{r mplot, echo=FALSE, warning=FALSE, fig.cap = "(ref:mplot)", out.width="50%"}
 
@@ -386,6 +383,41 @@ A reference to Figure\ \@ref(fig:mplot).
 
 knitr::include_graphics(here("plots", "plot_m.png"))
 ```
+
+
+## Number of decision events before evaluation
+The analyses discussed so far focused on the simple case of one research cycle (or decision event) per generation, meaning that researchers' fitness was calculated based on only a single payoff from one single study.
+As discussed above, increasing numbers of decision events prior to evalution may make individuals more risk-prone because single negative outcomes are less catastrophic for reproduction [@Haaland2019].
+However, Figure\ \@ref(fig:mplot) shows that the effect of increasing numbers of research cycles per generation ($m$) interacts with the shape of the fitness function:
+Moving up on the y-axis of each panel, we see that submission thresholds are decreasing (indicating risk proneness) only in the top panel ($\epsilon = 0.2$) but stay constant in the middle panel ($\epsilon = 1$) and even *increase* in the bottom panel ($\epsilon = 5$).
+Why does $m$ appear to have opposite effects for diminishing and increasing fitness functions?
+To understand this pattern, it helps to first consider only the bottom row of each panel, where $m = 1$.
+These three rows contain the same data as the top, middle, and bottom curves in Figure\ \@ref(fig:epsilonplot) and show risk aversion when $\epsilon = 0.2$ (i.e., Registered Reports are attractive even when they yield a low payoff), risk proneness when $\epsilon = 5$ (Registered Reports are unattractive even when they yield a high payoff), and a linear strategy $s_{optimal} = b_{RR}$ when $\epsilon = 1$.
+From this starting point, the two panels with non-linear fitness functions start to approximate the linear case as $m$ increases.
+This dynamic reflects the idea that fitness is better captured by the geometric mean when $m$ is low, and better captured by the arithmetic mean when $m$ is high [@Haaland2019].
+
+To use an illustrating example, consider two researchers with extreme submission strategies:
+Emma conducts only Registered Reports ($s_{Emma} = 1$) and Gordon conducts only standard reports ($s_{Gordon} = 0$).
+The payoff for Registered Reports is fixed at $b_{RR} = 0.5$.
+After one research cycle, Emma receives a payoff of 0.5 and Gordon receives either 0 or 1.
+When fitness is calculated after this one round with $\epsilon = 0.2$, Emma's fitness is $b_{Emma}^{\epsilon} = \frac{1}{2}^{\frac{1}{5}} = `r round(0.5^0.2, 2)`$, and Gordon's fitness is either $b_{Gordon-}^{\epsilon} = 0^{\frac{1}{5}} = 0$ or $b_{Gordon+}^{\epsilon} = 1^{\frac{1}{5}} = 1$.
+In a population of Emmas and Gordons, lucky Gordons who got a positive result have a narrow fitness advantage over all Emmas (1 versus `r round(0.5^0.2, 2)`), while unlucky Gordons lose to all Emmas by a wide margin (0 versus `r round(0.5^0.2, 2)`).
+Since there are twice as many Emmas as lucky Gordons, the Emma strategy is quite successful.
+
+Now consider the same scenario with 4 research cycles before fitness is calculated.
+Emmas receive the same payoff in every round and accumulate $\frac{1}{2} * 4 = 2$.
+Lucky Gordons (who win every time) accumulate a total payoff of $1*4 = 4$, while unlucky Gordons (who lose every time) again receive 0 total payoff.
+Now, however, the probabilistic outcomes over 4 rounds lead to more versions of Gordon, including average Gordons (who win half of the time and lose half of the time) who accumulate the same total payoff as Emmas $(\frac{1}{2}*0 + \frac{1}{2}*1)*4 = 2$.
+This translates into fitness values of 0 for unlucky Gordons, $2^{\frac{1}{5}} = `r round(2^0.2, 2)`$ for Emmas and average Gordons, and  $4^{\frac{1}{5}} = `r round(4^0.2, 2)`$ for lucky Gordons.
+The Emma strategy still yields an enormous advantage compared to unlucky Gordons and only a small disadvantage compared to lucky Gordons.
+But this time, there are fewer Gordons who are less successful than Emmas because Emmas now share their place with average Gordons, meaning that the relative fitness advantage of the Emma strategy decreases.
+As the number of research cycles per generation grows, the law of large numbers dictates that more Gordons achieve average total payoffs and fewer Gordons achieve extreme total payoffs (winning 32 times in a row is much less probable than winning 4 times in a row), which reduces the width of the Gordon distribution until it approximates the Emma distribution. 
+
+When the fitness function is increasing ($\epsilon = 5$), the overall effect of increasing values of $m$ is identical, with the only difference that Emmas are initially disadvantaged (because their fitness distance to the lucky half of Gordons is much greater than than to the unlucky Gordons).
+With larger $m$, more and more Gordons receive average total payoffs and share Emma's disadvantaged position (decreasing Emma's relative disadvantage), until the Gordon distribution is again virtually equal to the Emma distribution.
+These results show that rather than causing absolute risk aversion, increasing values of $m$ simply swamp out the effect of $\epsilon$ and reduce the effects of all fitness functions to the linear case.
+Consequently, the top rows ($m = 32$) of the top and bottom panels in Figure\ \@ref(fig:mplot) resemble the stable pattern across all $m$ shown in the middle panel.
+
 
 
 ## Survival thresholds
