@@ -1,6 +1,6 @@
 ---
-title             : "Incentives for a safe publication option from a risk sensitivity perspective"
-shorttitle        : "Risk sensitivity in academic publishing"
+title             : "Incentives for Registered Reports from a risk sensitivity perspective"
+shorttitle        : "Risk-sensitive publication strategies"
 
 author: 
   - name          : "Anne M. Scheel"
@@ -17,7 +17,7 @@ affiliation:
   - id            : "1"
     institution   : "Eindhoven University of Technology"
     
-note: 
+note: "Thesis chapter 3"
 
 author_note: 
 
@@ -504,6 +504,7 @@ knitr::include_graphics(here("plots", "plot_comp.png"))
 
 # Discussion
 ``To do:``
+
 * Brief recap of results
 * Implications of results
   + cautious mapping of model factors to real-world situations
