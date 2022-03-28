@@ -59,7 +59,7 @@ mask              : true
 documentclass     : "apa6"
 lang              : "en-UK"
 class             : "man"
-output            : papaja::apa6_pdf
+output            : papaja::apa6_word
 ---
 
 ```{r include = FALSE}
@@ -333,7 +333,7 @@ Table: Parameter definitions and values
 #### Reproduction phase
 Finally, the researchers in the current population retire and a new (non-overlapping) generation of researchers is created.
 A researcher in the new generation inherits their publication strategy (submission threshold) $s$ from a researcher in the previous generation with the probability of the previous researcher's fitness (i.e., the new generation's submission thresholds are sampled with replacement from the previous generation, probability-weighted by fitness).
-The new generation's submission thresholds are inherited with a small amount of random noise, such that $s_{new} = s_{old} + w$ with $w \sim R(\mu = 0, \sigma = 0.01)$.
+The new generation's submission thresholds are inherited with a small amount of random noise, such that $s_{new} = s_{old} + w$ with $w \sim N(\mu = 0, \sigma = 0.01)$.
 This evolutionary dynamic of researchers passing on their traits to other researchers depending on their career success can be seen as reflecting mentorship and explicit teaching, such as when established professors advise their students to use the same strategies, or simply a generic social learning process in which successful researchers are more likely to be imitated by others.
 
 
