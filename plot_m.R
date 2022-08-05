@@ -11,7 +11,7 @@ data_m_summary <- data_m[, median(submission_threshold),
                          by = .(run, generation_duration, 
                                 payoff_SR_neg, relative_payoff_SR_pos, 
                                 relative_payoff_RR,
-                                e, relative_survival_threshold,
+                                epsilon, relative_survival_threshold,
                                 relative_top_n)]
 
 # calculate median of every run median per condition for the tile plot
@@ -20,14 +20,14 @@ data_m_tile <- data_m_summary[, median(V1),
                                      payoff_SR_neg, 
                                      relative_payoff_SR_pos, 
                                      relative_payoff_RR,
-                                     e, relative_survival_threshold,
+                                     epsilon, relative_survival_threshold,
                                      relative_top_n)]
 colnames(data_m_tile)[colnames(data_m_tile) == "V1"] <- "median"
 
-# turn variable e into a factor and rename the factor levels in order to
+# turn variable epsilon into a factor and rename the factor levels in order to
 # change the facet labels in the plot
-data_m_tile$e <- as.factor(as.character(data_m_tile$e))
-levels(data_m_tile$e) <- c("epsilon = 0.2", "epsilon = 1", "epsilon = 5")
+data_m_tile$epsilon <- as.factor(as.character(data_m_tile$epsilon))
+levels(data_m_tile$epsilon) <- c("epsilon = 0.2", "epsilon = 1", "epsilon = 5")
 
 # turn variable generation_duration into a factor to facilitate plotting
 # (on a numeric scale, the levels would have gaps between them) and  
@@ -57,7 +57,7 @@ plot_m <- ggplot(data_m_tile,
         legend.title.align=0.2) +
   geom_tile() +
   scale_fill_viridis_c(name = "s", limits = c(0,1), option = "magma")+ 
-  facet_grid(e ~ .)
+  facet_grid(epsilon ~ .)
 
 ggsave("plot_m.png", plot_m, bg = "white",
        width = 10, height = 13.5, units = "cm")
