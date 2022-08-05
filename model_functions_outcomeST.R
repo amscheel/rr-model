@@ -76,10 +76,10 @@ research.fun.unif <- function(n, submission.threshold,
 #     model, fitness equals fitness because it is the probability with which
 #     a researcher's submission threshold will be passed on to the next
 #     generation.
-#     ii.i  The value of exponent e determines the shape of the function:
-#             e = 1: linear returns
-#             0 < e < 1: diminishing returns 
-#             e > 1: increasing returns
+#     ii.i  The value of exponent epsilon determines the shape of the function:
+#             epsilon = 1: linear returns
+#             0 < epsilon < 1: diminishing returns 
+#             epsilon > 1: increasing returns
 #     ii.ii Threshold/budget rule:
 #           In addition, we can specify a "survival threshold". 
 #           Payoffs below the survival threshold give 0 fitness, which 
@@ -87,8 +87,8 @@ research.fun.unif <- function(n, submission.threshold,
 #           thresholds to the next generation (they "starve"). 
 #           Payoffs at or above the threshold are translated into fitness
 #           as usual (according to the chosen exponent).
-fitness.fun <- function(x, e, survival.threshold){
-  ifelse(x < survival.threshold, 0, x^e)
+fitness.fun <- function(x, epsilon, survival.threshold){
+  ifelse(x < survival.threshold, 0, x^epsilon)
 }
 ##----------------------------------------------------------------------------##
 
