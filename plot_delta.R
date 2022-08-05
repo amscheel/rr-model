@@ -10,7 +10,7 @@ data_delta_summary <- data_delta[, median(submission_threshold),
                            by = .(run, generation_duration, 
                                   payoff_SR_neg, relative_payoff_SR_pos, 
                                   relative_payoff_RR,
-                                  e, relative_survival_threshold,
+                                  epsilon, survival_threshold,
                                   relative_top_n)]
 colnames(data_delta_summary)[colnames(data_delta_summary) == "V1"] <- "median"
 
@@ -40,9 +40,9 @@ colorbrewer3 <- c("#2166ac", "grey", "#b2182b")
 
 # plot
 plot_delta <- ggplot(data_delta_subset,
-  aes(x = factor(relative_survival_threshold),
+  aes(x = factor(survival_threshold),
       y = median,
-      colour = factor(e),
+      colour = factor(epsilon),
       group = run)) +
   scale_x_discrete(name = expression(paste("survival threshold (", 
                                 delta, ") as proportion of ", 
@@ -58,15 +58,15 @@ plot_delta <- ggplot(data_delta_subset,
         legend.title.align=0.5)+
   coord_fixed(ratio = 3/1)+ 
   geom_hline(yintercept = .5, colour = "darkgrey") +
-  geom_point(aes(group = factor(e)), 
+  geom_point(aes(group = factor(epsilon)), 
              position = position_dodge(width = .3), size = .5, alpha = .2) +
-  stat_summary(aes(x = as.numeric(factor(relative_survival_threshold))-0.09, 
-                   group = factor(e)),
+  stat_summary(aes(x = as.numeric(factor(survival_threshold))-0.09, 
+                   group = factor(epsilon)),
                geom = "line",
                fun = "median", 
                position = position_dodge(width = .3), size = .2) +
-  stat_summary(aes(x = as.numeric(factor(relative_survival_threshold))-0.09, 
-                   group = factor(e)),
+  stat_summary(aes(x = as.numeric(factor(survival_threshold))-0.09, 
+                   group = factor(epsilon)),
                fun.data = "median_hilow", 
                position = position_dodge(width = .3), size = .2) + 
   facet_wrap(~ generation_duration, ncol = 3)
