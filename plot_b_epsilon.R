@@ -7,10 +7,10 @@ data_b_epsilon <- readRDS(here("data", "data_b_epsilon.RData"))
 
 # calculate median submission threshold of every run
 data_b_epsilon_summary <- data_b_epsilon[, median(submission_threshold), 
-                                 by = .(run, generation_duration, 
-                                        payoff_SR_neg, relative_payoff_SR_pos, 
-                                        relative_payoff_RR,
-                                        epsilon, relative_survival_threshold,
+                                 by = .(run_id, generation_duration, 
+                                        payoff_SR_neg, payoff_SR_pos, 
+                                        payoff_RR,
+                                        epsilon, survival_threshold,
                                         relative_top_n)]
 colnames(data_b_epsilon_summary)[colnames(data_b_epsilon_summary) == "V1"] <- "median"
 
@@ -22,10 +22,10 @@ colorbrewer5 <- c("#2166ac", "#67a9cf", "grey", "#ef8a62", "#b2182b")
 
 # plot
 plot_b_epsilon <- ggplot(data_b_epsilon_summary,
-  aes(x = factor(relative_payoff_RR),
+  aes(x = factor(payoff_RR),
       y = median,
       colour = factor(epsilon),
-      group = run)) +
+      group = run_id)) +
   scale_x_discrete(name = expression(italic(b)[RR])) +
   scale_y_continuous(lim = c(0, 1), expand = c(0,0),
                      breaks = seq(0, 1, .1),
@@ -43,12 +43,12 @@ plot_b_epsilon <- ggplot(data_b_epsilon_summary,
   #geom_vline(xintercept = 5, colour = "lightgrey") +
   geom_point(aes(group = factor(epsilon)), 
              position = position_dodge(width = .3), size = .4, alpha = .2) +
-  stat_summary(aes(x = as.numeric(factor(relative_payoff_RR))-0.1, 
+  stat_summary(aes(x = as.numeric(factor(payoff_RR))-0.1, 
                    group = factor(epsilon)),
                geom = "line",
                fun = "median", 
                position = position_dodge(width = .3), size = .2) +
-  stat_summary(aes(x = as.numeric(factor(relative_payoff_RR))-0.1, 
+  stat_summary(aes(x = as.numeric(factor(payoff_RR))-0.1, 
                    group = factor(epsilon)),
                fun.data = "median_hilow", 
                position = position_dodge(width = .3),  size = .2)

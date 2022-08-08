@@ -8,8 +8,8 @@ data_delta <- readRDS(here("data", "data_delta.RData"))
 # calculate median submission threshold of every run
 data_delta_summary <- data_delta[, median(submission_threshold), 
                            by = .(run, generation_duration, 
-                                  payoff_SR_neg, relative_payoff_SR_pos, 
-                                  relative_payoff_RR,
+                                  payoff_SR_neg, payoff_SR_pos, 
+                                  payoff_RR,
                                   epsilon, survival_threshold,
                                   relative_top_n)]
 colnames(data_delta_summary)[colnames(data_delta_summary) == "V1"] <- "median"

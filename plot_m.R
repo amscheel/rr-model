@@ -8,19 +8,19 @@ data_m <- readRDS(here("data", "data_m.RData"))
 
 # calculate median submission threshold of every run
 data_m_summary <- data_m[, median(submission_threshold), 
-                         by = .(run, generation_duration, 
-                                payoff_SR_neg, relative_payoff_SR_pos, 
-                                relative_payoff_RR,
-                                epsilon, relative_survival_threshold,
+                         by = .(run_id, generation_duration, 
+                                payoff_SR_neg, payoff_SR_pos, 
+                                payoff_RR,
+                                epsilon, survival_threshold,
                                 relative_top_n)]
 
 # calculate median of every run median per condition for the tile plot
 data_m_tile <- data_m_summary[, median(V1), 
                               by = .(generation_duration, 
                                      payoff_SR_neg, 
-                                     relative_payoff_SR_pos, 
-                                     relative_payoff_RR,
-                                     epsilon, relative_survival_threshold,
+                                     payoff_SR_pos, 
+                                     payoff_RR,
+                                     epsilon, survival_threshold,
                                      relative_top_n)]
 colnames(data_m_tile)[colnames(data_m_tile) == "V1"] <- "median"
 
@@ -41,7 +41,7 @@ data_m_tile$generation_duration <- factor(data_m_tile$generation_duration,
 #saveRDS(data_m_tile, "data_m_tile_forplotting.RData")
 
 plot_m <- ggplot(data_m_tile, 
-                 aes(x = relative_payoff_RR,
+                 aes(x = payoff_RR,
                      y = generation_duration,
                      fill = median)) +
   scale_x_continuous(expand = c(0,0), name = expression(italic(b)[RR]),

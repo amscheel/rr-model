@@ -8,26 +8,26 @@ data_comp <- readRDS(here("data", "data_competition.RData"))
 
 # calculate median submission threshold of every run
 data_comp_summary <- data_comp[, median(submission_threshold), 
-                               by = .(run, generation_duration, 
-                                      payoff_SR_neg, relative_payoff_SR_pos, 
-                                      relative_payoff_RR,
-                                      e, relative_survival_threshold,
+                               by = .(run_id, generation_duration, 
+                                      payoff_SR_neg, payoff_SR_pos, 
+                                      payoff_RR,
+                                      epsilon, survival_threshold,
                                       relative_top_n)]
-
+data_comp_summary <- z_summary
 # calculate median of every run median per condition for the tile plot
 data_comp_tile <- data_comp_summary[, median(V1), 
                                by = .(generation_duration, 
                                       payoff_SR_neg, 
-                                      relative_payoff_SR_pos, 
-                                      relative_payoff_RR,
-                                      e, relative_survival_threshold,
+                                      payoff_SR_pos, 
+                                      payoff_RR,
+                                      epsilon, survival_threshold,
                                       relative_top_n)]
 colnames(data_comp_tile)[colnames(data_comp_tile) == "V1"] <- "median"
 
-# turn variable e into a factor and rename the factor levels in order to
+# turn variable epsilon into a factor and rename the factor levels in order to
 # change the facet labels in the plot
-data_comp_tile$e <- as.factor(as.character(data_comp_tile$e))
-levels(data_comp_tile$e) <- c("epsilon = 0.2", "epsilon = 1", "epsilon = 5")
+data_comp_tile$epsilon <- as.factor(as.character(data_comp_tile$epsilon))
+levels(data_comp_tile$epsilon) <- c("epsilon = 0.2", "epsilon = 1", "epsilon = 5")
 
 # turn variable generation_duration into a factor, reorder the factor levels
 # (they get mixed up), and rename the levels to change the facet labels 
@@ -46,7 +46,7 @@ saveRDS(data_comp_tile, "data_comp_tile_forplotting.RData")
 #data_comp_tile <- readRDS(here::here("data", 
 #                                     "data_comp_tile_forplotting.RData"))
 
-plot_comp <- ggplot(data_comp_tile, aes(x = relative_payoff_RR,
+plot_comp <- ggplot(data_comp_tile, aes(x = payoff_RR,
                                    y = relative_top_n,
                                    fill = median)) +
   scale_x_continuous(expand = c(0,0), name = expression(italic(b)[RR]),
