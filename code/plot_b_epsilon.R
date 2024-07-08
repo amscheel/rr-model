@@ -4,6 +4,11 @@ library(data.table)
 
 # load b/e data
 data_b_epsilon <- readRDS(here("data", "data_b_epsilon.RData"))
+colnames(data_b_epsilon) <- c("generation_duration", "payoff_SR_neg",
+                              "payoff_SR_pos", "payoff_RR",
+                              "epsilon", "survival_threshold",
+                              "relative_top_n", "run_id",
+                              "submission_threshold")
 
 # calculate median submission threshold of every run
 data_b_epsilon_summary <- data_b_epsilon[, median(submission_threshold), 
@@ -14,8 +19,8 @@ data_b_epsilon_summary <- data_b_epsilon[, median(submission_threshold),
                                         relative_top_n)]
 colnames(data_b_epsilon_summary)[colnames(data_b_epsilon_summary) == "V1"] <- "median"
 
-# save this summary dataset for easier loading/reproduction later
-saveRDS(data_b_epsilon_summary, "data_b_epsilon_summary_forplotting.RData")
+# save this summary dataset for easier loading/reproduction later:
+# saveRDS(data_b_epsilon_summary, "data_b_epsilon_summary_forplotting.RData")
 
 # define a colour scheme 
 colorbrewer5 <- c("#2166ac", "#67a9cf", "grey", "#ef8a62", "#b2182b")
@@ -36,11 +41,10 @@ plot_b_epsilon <- ggplot(data_b_epsilon_summary,
         panel.grid.minor.y = element_blank(),
         #text = element_text(size = 12),
         plot.margin=grid::unit(c(4,0,1,0), "mm"),
-        legend.title.align=0.5)+
+        legend.title = element_text(hjust = 0.5))+
   guides(colour = guide_legend(override.aes = list(size = .5)))+
   coord_fixed(ratio = 9/1)+ 
   geom_hline(yintercept = .5, colour = "darkgrey") +
-  #geom_vline(xintercept = 5, colour = "lightgrey") +
   geom_point(aes(group = factor(epsilon)), 
              position = position_dodge(width = .3), size = .4, alpha = .2) +
   stat_summary(aes(x = as.numeric(factor(payoff_RR))-0.1, 

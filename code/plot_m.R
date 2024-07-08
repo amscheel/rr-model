@@ -2,7 +2,6 @@ library(ggplot2)
 library(here)
 library(data.table)
 
-
 # load m data
 data_m <- readRDS(here("data", "data_m.RData"))
 
@@ -24,22 +23,14 @@ data_m_tile <- data_m_summary[, median(V1),
                                      relative_top_n)]
 colnames(data_m_tile)[colnames(data_m_tile) == "V1"] <- "median"
 
-# turn variable epsilon into a factor and rename the factor levels in order to
-# change the facet labels in the plot
-data_m_tile$epsilon <- as.factor(as.character(data_m_tile$epsilon))
-levels(data_m_tile$epsilon) <- c("epsilon = 0.2", "epsilon = 1", "epsilon = 5")
-
 # turn variable generation_duration into a factor to facilitate plotting
-# (on a numeric scale, the levels would have gaps between them) and  
-# reorder the factor levels (they get mixed up)
-data_m_tile$generation_duration <- as.factor(as.character(
-  data_m_tile$generation_duration))
-data_m_tile$generation_duration <- factor(data_m_tile$generation_duration,
-                                          levels = c("1", "2", "4", 
-                                                     "8", "16", "32"))
+# (on a numeric scale, the levels would have gaps between them) 
+data_m_tile$generation_duration <- as.factor(data_m_tile$generation_duration)
 
+# save this summary dataset for easier loading/reproduction later:
 #saveRDS(data_m_tile, "data_m_tile_forplotting.RData")
 
+viridis_option <- "rocket"
 plot_m <- ggplot(data_m_tile, 
                  aes(x = payoff_RR,
                      y = generation_duration,
@@ -49,16 +40,21 @@ plot_m <- ggplot(data_m_tile,
                      labels = c(".1", ".2", ".3", ".4", ".5", 
                                 ".6", ".7", ".8", ".9"))+
   scale_y_discrete(expand = c(0,0), 
-                   name = "decision events before evaluation (m)")+
+                   name = "research cycles\nbefore evaluation (m)")+
   coord_fixed(ratio = 1/10) +
   theme_minimal() +
   theme(panel.grid = element_blank(),
         plot.margin=grid::unit(c(1,0,1,0), "mm"),
-        legend.title.align=0.2) +
+        legend.title = element_text(hjust = 0.2)) +
   geom_tile() +
-  scale_fill_viridis_c(name = "s", limits = c(0,1), option = "magma")+ 
-  facet_grid(epsilon ~ .)
+  scale_fill_viridis_c(name = "s", limits = c(0,1), option = viridis_option)+ 
+  facet_grid(. ~ epsilon,
+             labeller = labeller(epsilon = c(
+                 `0.2` = "decreasing returns\n(epsilon = 0.2)",
+                 `1` = "linear\n(epsilon = 1)",
+                 `5` = "increasing returns\n(epsilon = 5)")))
 
-ggsave("plot_m.png", plot_m, bg = "white",
-       width = 10, height = 13.5, units = "cm")
+ggsave(paste("plot_m_evo_", viridis_option, ".png", sep = ""), 
+       plot_m, bg = "white",
+       width = 18, height = 6, units = "cm")
 

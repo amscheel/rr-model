@@ -117,7 +117,7 @@ simulate.research <- function(pop_size = 500,
     
     # Set parameters of the fitness function:
     epsilon <- settings$epsilon[i]  # exponent of x to influence the shape
-    survival_threshold <- settings$survival_threshold[i] # threshold below which all payoffs have 0 fitness
+    survival_threshold <- settings$survival_threshold[i]*generation_duration # threshold below which all payoffs have 0 fitness
     
     # Set competition level:
     relative_top_n <- pop_size * settings$relative_top_n[i]
@@ -143,14 +143,14 @@ simulate.research <- function(pop_size = 500,
                                                submission_threshold,
                                              payoff.SR.neg = payoff_SR_neg,
                                              payoff.SR.pos = payoff_SR_pos,
-                                             payoff.RR = payoff_RR)
+                                             payoff.RR = payoff_RR,
+                                             epsilon = epsilon)
       }
       
       ## 2. Evolution phase:
       
       # 2.1 Use fitness.fun to calculate researchers' fitness from their payoffs
-      fitness <- fitness.fun(x = payoff, epsilon = epsilon,
-                             survival.threshold = survival_threshold)
+      fitness <- fitness.fun(x = payoff, survival.threshold = survival_threshold)
       
       # 2.2 Selection: 
       #     We use selection.fun to calculate whose traits are passed on to the
@@ -194,16 +194,46 @@ simulate.research <- function(pop_size = 500,
 ## Run the simulation:
 
 # load model functions
-source("model_functions_outcomeST.R") 
+source("model_functions_outcomeST_testepsilon.R") 
 
 # initialise settings data frame
-settings_df <- settings()
+settings_df <- settings(generation_duration = c(1, 2, 4, 8, 16),
+                        payoff_SR_neg = 0, 
+                        payoff_SR_pos = 1, 
+                        payoff_RR = seq(.1, .9, .1),
+                        #payoff_RR = .5,
+                        epsilon = c(.2, 1, 5), 
+                        survival_threshold = .5, 
+                        relative_top_n = c(1, .9, .5, .2, .1, .01), 
+                        #relative_top_n = 1,
+                        sim_runs = 50)
 
 time1 <- Sys.time() # create time stamp to calculate run time for model
 # Simulate!
-simdata <- simulate.research(settings = settings_df)
+simdata_m1to16 <- simulate.research(settings = settings_df)
 time2 <- Sys.time() # create time stamp to calculate run time for model
 time2-time1 # calculate model run time
+
+
+# initialise settings data frame
+settings_df <- settings(generation_duration = c(32),
+                        payoff_SR_neg = 0, 
+                        payoff_SR_pos = 1, 
+                        payoff_RR = seq(.1, .9, .1),
+                        #payoff_RR = .5,
+                        epsilon = c(.2, 1, 5), 
+                        survival_threshold = .5, 
+                        relative_top_n = c(1, .9, .5, .2, .1, .01), 
+                        #relative_top_n = 1,
+                        sim_runs = 50)
+
+time1 <- Sys.time() # create time stamp to calculate run time for model
+# Simulate!
+simdata_m32 <- simulate.research(settings = settings_df)
+time2 <- Sys.time() # create time stamp to calculate run time for model
+time2-time1 # calculate model run time
+
+
 
 # Run delta = 8
 settings_df_delta8 <- settings(generation_duration = c(8, 16, 32), 

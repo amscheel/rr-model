@@ -155,9 +155,10 @@ evo_summary <- readRDS(here::here("data",
                                   "data_evo_summary_forplotting.RData"))
 
 # make a custom colour palette
-evocolours3 <- wesanderson::wes_palette("GrandBudapest1", 7, 
+evocolours3 <- wesanderson::wes_palette("GrandBudapest1", 7,
                                      type = "continuous")[c(1,2,4)]
 evocolours3[1] <- "#EFC16A"
+#evocolours3 <- viridisLite::rocket(3, begin = 0.6, end = 0.85, direction = -1)
 
 # plot
 plot_evo <- ggplot(evo_summary,
@@ -177,13 +178,13 @@ plot_evo <- ggplot(evo_summary,
   coord_fixed(ratio = 200/1) +
   geom_line(aes(group = interaction(run, payoff_RR), 
                 colour = factor(payoff_RR)),
-            size = .5, alpha = .5)+
+            linewidth = .5, alpha = .5)+
   geom_ribbon(aes(ymin = IQR_lower, ymax = IQR_upper, 
                   group = interaction(run, payoff_RR), 
                   fill = factor(payoff_RR)), alpha = 0.11) +
   stat_summary(aes(group = payoff_RR, colour = factor(payoff_RR)), 
-               geom = "line", fun = median, size = 1.5) 
+               geom = "line", fun = median, linewidth = 1.5) 
 
-ggsave("plot_evo.png", plot_evo, width = 12.8, height = 9, units = "cm")
-ggsave("plot_evo.7.png", plot_evo, scale = .7)
+ggsave(here::here("plots", "plot_evo.png"), plot_evo, width = 12.8, height = 9, units = "cm")
+#ggsave("plot_evo.7.png", plot_evo, scale = .7)
 
