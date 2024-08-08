@@ -56,6 +56,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage[normalem]{ulem}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -218,9 +219,9 @@ New Intro:
 \begin{itemize}
 \tightlist
 \item
-  What are RRs
+  \sout{What are RRs}
 \item
-  Why: pub bias \& QRPs
+  \sout{Why: pub bias \& QRPs}
 \item
   Chapter 2: RRs indeed associated with lower rate of positive results
 \item
@@ -255,123 +256,75 @@ New Intro:
   Goals of the chapter: apply RST to find out when \& where RRs are expected to be particularly popular vs unpopular \(\rightarrow\) implications for policy and meta-science
 \end{itemize}
 
-In the storybook version of science, researchers are driven by pure curiosity, conduct empirical studies to learn about the natural world, and impartially record the results.
-In reality, researchers are motivated and constrained by a wide range of psychological, social, political, and structural factors\(\,\)---\(\,\)and not all results are equally informative, interesting, newsworthy, or beneficial to their authors' career.
-Some combination of these factors likely explains the observation that results do not seem to be recorded impartially in many scientific disciplines.
-Specifically, negative results of statistical hypothesis tests are published less frequently than positive results (Fanelli, 2010)
-
-Registered Reports are an article format designed to combat publication bias by moving the peer-review process to the planning stage of a study, thus separating the publication decision from the study results (Chambers, 2013).
-In these \emph{Registered Reports}, the review process is split in two stages:
+Registered Reports are an article format designed to
+make publication decisions independent from the reported research results
+(Chambers, 2013).
+In this format, the review process is split into two stages.
 At Stage 1, reviewers evaluate a pre-study protocol containing the research questions, hypotheses, methods, and planned analyses of a proposed study.
-In case of a positive decision, the journal issues an `in-principle acceptance' and commits to publishing the eventual report regardless of the direction of the results.
-Once authors have collected and analysed the data and written up the results, the final report is submitted to a second stage of peer review, but this time only to ensure that the study was carried out as planned, that the data pass any pre-specified quality checks, and that authors' conclusions are justified by the evidence.
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  RRs: what they are (brief)
-\item
-  In contrast to other reforms, RRs try to align selfish incentives for authors with what's good for science
-\item
-  RRs to the rescue
-  2.1 RRs don't select based on results
-  2.2 Brief description of how they work
-  2.3 RRs reduce publication bias \& QRPs
-  --\textgreater{} explain pub bias \& QRPs in more detail, cite evidence
-\item
-  RRs have become more popular
-\item
-  In the standard system, studies are evaluated for publication after they're completed
-\item
-  This introduces a risk of selecting based on results
-\item
-  Result-based selection bias is bad
-\item
-  RRs select before results are known to avoid this problem
-\item
-  Explain how RRs work
-\item
-\end{enumerate}
-
-Publishing a scientific article typically means writing up a report of a completed research project and submitting it to a
-
-In the standard model of scientific publication, the peer review process
-
-peer reviewers and journal editors evaluate reports of completed research projects and decide whether to publish them.
-
-Peer-reviewed journal articles continue to be the standard model of scientific publishing.
-
-In the standard model of scientific publishing, a researcher writes up a report of scientific work they have completed and submits it to a journal, where peer reviewers provide criticism, suggest improvements, evaluate the quality of the research, and help the journal editor decide whether or not to publish the manuscript.
-
-Under-reporting of negative results skews the available evidence for scientific claims and can lead to overconfidence and an increased rate of false-positive inferences.
-Evidence for such publication bias\(\,\)---\(\,\)negative results getting published at a lower rate than positive results\(\,\)---\(\,\)has been been found in several disciplines Annie Franco, Malhotra, \& Simonovits (2016) and is seen as an important contributor to poor replicability of published studies in biomedical and psychological research Chalmers \& Glasziou (2009).
-In 2013, the journal \emph{Cortex} pioneered a new article format designed to combat publication bias by moving the peer-review process to the planning stage of a study, thus separating the publication decision from the study results (Chambers, 2013).
-In these \emph{Registered Reports}, the review process is split in two stages:
-At Stage 1, reviewers evaluate a pre-study protocol containing the research questions, hypotheses, methods, and planned analyses of a proposed study.
-In case of a positive decision, the journal issues an `in-principle acceptance' and commits to publishing the eventual report regardless of the direction of the results.
-Once authors have collected and analysed the data and written up the results, the final report is submitted to a second stage of peer review, but this time only to ensure that the study was carried out as planned, that the data pass any pre-specified quality checks, and that authors' conclusions are justified by the evidence.
+In case of a positive decision, the journal issues an `in-principle acceptance' and commits to publishing the eventual report, regardless of the direction of the results.
+Only after in-principle acceptance has been issued do authors move on to data collection and analysis and eventually complete the manuscript.
+At Stage 2, the final report (now including the results) is subjected to a second round of peer review, but this time only to ensure that the study was carried out as planned, that the data pass any pre-specified quality checks, and that authors' conclusions are justified by the evidence.
 
 Through this process, Registered Reports
-address publication bias as well as so-called `questionable research practices' (QRPs), two problems that are considered important contributors to psychology's replication crisis Wagenmakers, Wetzels, Borsboom, van der Maas, \& Kievit (2012) and to research waste in the biomedical sciences (Chalmers \& Glasziou, 2009).
-Publication bias can result from editors and reviewers disproportionately rejecting submissions with negative results {[}reviewer bias; Greenwald (1975),Mahoney (1977),Atkinson, Furlong, \& Wampold (1982){]} or researchers failing to submit negative results for publication{[}file-drawering; Rosenthal (1979),A. Franco, Malhotra, \& Simonovits (2014){]}.
-In Registered Reports, the virtual publication guarantee issued at Stage-1 reduces both of these issues by ensuring that editors and reviewers cannot reject the Stage-2 report based on the results{[}\^{}{]} and thus reducing the incentive for authors to file-drawer the study in case of negative results.
+address publication bias as well as so-called `questionable research practices' (QRPs).
+These two problems are considered important contributors to psychology's replication crisis (Ferguson \& Heene, 2012; Wagenmakers, Wetzels, Borsboom, van der Maas, \& Kievit, 2012) and to research waste in the biomedical sciences (Chalmers \& Glasziou, 2009) because they skew the available evidence for scientific claims, causing overconfidence and higher rates of false-positive inferences.
+Publication bias can result from editors and reviewers disproportionately rejecting submissions with negative results (`reviewer bias,' Atkinson, Furlong, \& Wampold, 1982; Greenwald, 1975; Mahoney, 1977) or from researchers failing to submit negative results for publication (`file-drawering,' Franco, Malhotra, \& Simonovits, 2014; Rosenthal, 1979).
+In Registered Reports, the
+in-principle acceptance issued at Stage 1 reduces both of these issues: Editors and reviewers cannot reject the Stage-2 report based on the direction of the results, which also reduces the incentives for authors to file-drawer the study in case of negative results.
+QRPs are practices that exploit undisclosed flexibility in data collection and analysis, for example when analysing different justifiable combinations of variables, subsamples, and decision criteria, and only reporting the ones with favourable results, or by presenting \emph{post hoc} inferences as having been predicted \emph{a priori} (Agnoli, Wicherts, Veldkamp, Albiero, \& Cubelli, 2017; Fiedler \& Schwarz, 2016; Fraser, Parker, Nakagawa, Barnett, \& Fidler, 2018; John, Loewenstein, \& Prelec, 2012; Simmons, Nelson, \& Simonsohn, 2011).
+Registered Reports minimise the risk of QRPs via the two-stage review process, in which the Stage-1 protocol acts as a preregistration and reviewers' task during Stage-2 review is to flag any undisclosed deviations from it.
 
-QRPs denote practices which exploit undisclosed flexibility in data collection and analysis, for example by running the analyses on different justifiable combinations of variables, exclusion and decision criteria, and only reporting the ones with favourable results, or by presenting post-hoc inferences as having been predicted a priori John, Loewenstein, \& Prelec (2012).
-Registered Reports minimise the risk of QRPs
+Registered Reports were first launched in 2013 at the journal \emph{Cortex} (Chambers, 2013) and are now offered by over 300 journals, predominantly in the behavioural sciences and life sciences (see \url{cos.io/rr}).
+Nearly 600 Registered Reports had been published by 2021, with uptake growing exponentially (Chambers \& Tzavella, 2021).
+In Chapter 2, we presented initial evidence that published Registered Reports have a substantially lower rate of positive results than regular articles in psychology (\(44\%\) vs \(96\%\), Scheel, Schijen, \& Lakens, 2021).
+A study comparing Registered Reports with matched controls additionally found that Registered Reports have higher median sample sizes and, in blind reviews, are judged to be more rigorous in methodology and analysis and of higher overall quality (Soderberg et al., 2021), which suggests that the increased amount of negative results is not an artifact of lower power.\footnote{We cannot rule out that the effect sizes studied in Registered Reports are smaller than in standard reports, in which case the larger samples may not translate into higher statistical power. However, it seems highly unlikely that such a difference would be large enough to explain the entire difference in the positive result rate (52 percentage points) reported in Chapter 2 (see Fig. 3 in Chapter 2).}
 
-Publication bias and QRPs skew the available evidence for scientific claims and can lead to overconfidence and an increased rate of false-positive inferences.
-Second, the risk of QRPs is minimised by the two-stage review process, in which the Stage-1 protocol acts as a preregistration and reviewers' task during Stage-2 review is to flag any undisclosed deviations from it.
+These findings seem to support the effectiveness of Registered Reports in reducing publication bias and QRPs.
+However, one remaining alternative explanation for the lower rate of positive results is that
+the hypotheses tested in the Registered Reports literature
+are less often true (have a lower prior probability)
+than those in the standard literature.
+This idea is not implausible:
+If researchers expect that negative results are difficult to publish in standard reports but pose no problem in Registered Reports, they might selectively choose the Registered Report route when studying hypotheses that they think
+will yield negative results.
+If researchers additionally perceive the standard route as less costly (e.g., more habitual, more flexible, faster, requiring lower sample sizes, etc.), standard reports would plausibly remain the preferred option for hypotheses that researchers are more certain are true and will yield publishable results.
 
-The format was first launched in 2013 at the journal \emph{Cortex} (Chambers, 2013) and is now offered by over 300 journals, predominantly in the social and life sciences (see \url{cos.io/rr}).
-By 2021, nearly 600 Registered Reports had been published (Chambers \& Tzavella, 2021).
-Initial evidence shows that published Registered Reports have a substantially lower rate of positive results than regular articles in psychology (\(44\%\) versus \(96\%\), Scheel, Schijen, \& Lakens, 2021) and psychology, neuroscience, and the biomedical sciences (Allen \& Mehler, 2019), and are judged to be of higher quality (Soderberg et al., 2021).
+Could such an effect alone explain why Registered Reports have fewer positive results?
+In Chapter 2, we showed that this is highly unlikely:
+Assuming that Registered Reports and standard reports have the same statistical power, the hypotheses tested in Registered Reports would need to be roughly half as likely to be true (see Fig. 3 in Scheel et al., 2021).
+The same analysis provides indirect evidence for bias in the standard literature, as the extremely high rate of positive results in standard reports (96\%) is simply incompatible with plausible estimates of prior probability and power (see also Ingre \& Nilsonne, 2018).
+Combined with more direct evidence of publication bias and QRPs in the standard literature (Agnoli et al., 2017; Franco et al., 2014; Franco, Malhotra, \& Simonovits, 2016; John et al., 2012)
+as well as the face-valid mechanisms of Registered Reports to reduce the influence of these factors, our previous findings (Scheel et al., 2021) thus support the effectiveness of Registered Reports.
+However, we cannot rule out that the prior probability of tested hypotheses plays an additional role, which means that the 52 percentage points difference in positive results cannot be interpreted as a direct measure of the amount of bias in the standard literature.
 
-Assuming that researcher practices s' publication practices are at least in part strategic responses to incentives, changing the incentives should
+\hypertarget{author-incentives-for-registered-reports}{%
+\subsection{Author incentives for Registered Reports}\label{author-incentives-for-registered-reports}}
 
-\texttt{To\ do:}
+The above highlights the importance of understanding of when, where, and by whom Registered Reports are most likely to be used.
+First, knowing which factors influence researchers' choice between Registered Reports and the standard publication route is crucial for interpreting meta-scientific studies that compare the two formats, especially if these factors also affect study results (such as the prior probability of tested hypotheses).
+Second, such knowledge can help identify research areas in which Registered Reports are unlikely to gain traction by themselves
+and anticipate the need for further intervention (e.g., via policy) when there is a demand for unbiased results.
+In this chapter, we present a simulation model to examine in which situations Registered Reports can be expected to be particularly popular or unpopular.
+We focus on
+a key feature of Registered Reports:
+the results-independent publication guarantee as an incentive for authors.
 
-\begin{itemize}
-\tightlist
-\item
-  General introduction describing the problem of publication bias and questionable research practices (QRPs)
+Registered Reports are designed to serve the research community and other consumers of the scientific literature by protecting against publication bias and QRPs.
+A key selling point, however,
+is that they are thought to `serve the interests of individual scientists' (p.~12, Chambers \& Tzavella, 2021) at the same time.
+The underlying argument is that because scientists a) need to amass journal publications (which still are a central currency for hiring and promotion decisions) and b) face shortfalls in publication output when their studies yield negative results (which are more difficult to publish in the standard literature due to publication bias), a publication guarantee before data collection
+should be highly valuable.
+As Registered-Reports advocate Chris Chambers once put it (\href{https://youtu.be/FiVI3cwVMZI?list=PLChfyH8TVDGmYENpXUDPaeeq2SLh8q9dt\&t=1047}{September 2021}):
 
-  \begin{itemize}
-  \tightlist
-  \item
-    Publication bias: positive results are more likely to get published than negative results; can happen due to reviewer bias (Greenwald, 1975; Atkinson et al., 1982; evidence: Mahoney, 1977) or file-drawering (Rosenthal, 1979; evidence: A. Franco et al., 2014; Annie Franco et al., 2016)
-  \item
-    QRPs: exploiting undisclosed flexibility in data collection and analysis to obtain more desirable results (Simmons et al., 2011; Agnoli et al., 2017; Fiedler \& Schwarz, 2016; Fraser et al., 2018; evidence: John et al., 2012). QRPs inflate the error rates of statistical tests, typically the false-positive rate
-  \item
-    consequence of publication bias and QRPs: the literature in psychology is excessively (\(>90\%\)) positive (Fanelli, 2010; Scheel et al., 2021; Theodore D. Sterling, 1959; Theodor D. Sterling, Rosenbaum, \& Weinkam, 1995) and unreliable (Wacholder, Chanock, Garcia-Closas, El ghormli, \& Rothman, 2004; evidence: Nosek et al., 2022)
-  \end{itemize}
-\item
-  Reform efforts to address the problem:
+\begin{quote}
+And the second main benefit, the one that really is the main big one, the big draw, is that as a researcher you can get your paper accepted before you even start your research and regardless of how the results turn out in the end. So no more playing the \emph{p}-value lottery, gambling on certain results going a certain way, otherwise you won't have your PhD or you won't get your next fellowship or your next grant\(\,\)---\(\,\)takes all of that pointless, and I think quite foolish, gambling out of the equation (\ldots)\footnote{\url{https://youtu.be/FiVI3cwVMZI?list=PLChfyH8TVDGmYENpXUDPaeeq2SLh8q9dt\&t=1047}, from minute 17:27}
+\end{quote}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    preregistration to reduce QRPs (Lakens, 2019; Nosek, Ebersole, DeHaven, \& Mellor, 2018; Wagenmakers et al., 2012)
-  \item
-    various journals of negative results to reduce publication bias (these never seem to be successful though and always shut down after a while; add examples/references)
-  \item
-    \textbf{Registered Reports} to reduce QRPs and publication bias at the same time (most powerful reform proposal to date)
-  \end{itemize}
-\end{itemize}
+However, although it is objectively true that Registered Reports provide more certainty about eventual publication success early in a project, this certainty may not always be preferred over the `gamble'
 
-By moving the publication decision to a time point before results are known, Registered Reports provide a powerful protection against publication bias (publication is results-independent by design) and remove one important incentive for authors to use QRPs.
+being a `safe' alternative to the `gamble' of the standard publication route
 
-Being a powerful bias-prevention tool that is increasingly popular, it is important to develop a better understanding of when, where, and by whom Registered Reports are most likely to be used.
-First, such knowledge can help identify research areas in which the format is unlikely to gain traction by itself and anticipate the need for further intervention (e.g., via policy) when there is a demand for unbiased results.
-Second, understanding when researchers' choice between Registered Reports and the standard publication route is likely to be influenced by factors that also influence the eventual results (e.g., the prior probability of the tested hypotheses) is important for meta-scientific studies that compare published studies in both formats and must take such confounds into account (e.g., Scheel et al., 2021).
-Such confounds could also lead to a situation in which Registered Reports become associated with certain types of results (e.g., negative results) and devalued if these results are deemed less interesting or important by the research community, making the format unsustainable in the long run. \texttt{To\ do:\ add\ note\ that\ this\ is\ likely\ what\ happened\ to\ several\ \textquotesingle{}journals\ of\ negative\ results\textquotesingle{}\ that\ shut\ down\ due\ to\ lack\ of\ interest.}
-The goal of this chapter is to shed light on these questions by studying the potential impact of a key feature of Registered Reports: The results-independent publication guarantee as an incentive for authors.
-
-\hypertarget{registered-reports-as-a-low-risk-publication-option}{%
-\subsection{Registered Reports as a low-risk publication option}\label{registered-reports-as-a-low-risk-publication-option}}
-
-Registered Reports serve the scientific community and other consumers of the scientific literature by protecting against publication bias and QRPs.
-But they are also designed to `serve the interests of individual scientists' (p.~12, Chambers \& Tzavella, 2021) by providing a publication guarantee irrespective of the study results.
-As such, Registered Reports make use of existing incentive structures in academia and do not rely on changes in norms or policy (in contrast to other reforms such as preregistration).
+But if the standard publications are indeed a gamble and Registered Reports a safe alternative, does it follow that Registered Reports
 
 Peer-reviewed publications are a central currency for the careers of academic researchers, both in terms of publication quantity and publication impact (R. Müller, 2014; van Dalen \& Henkens, 2012).
 In the standard publication model, researchers face uncertainty about whether and where they will be able to publish the results of their study. Translated into currency terms, the career benefit a researcher receives for conducting a study can vary extremely\(\,\)---\(\,\)from near zero when the resulting manuscript is rejected by all consulted journals (or when the author file-drawers the study because the chances of success do not justify the cost of repeated submissions and revisions) to an extremely high, perhaps career-making amount when a manuscript is published in a very high-impact journal like \emph{Nature} or \emph{Science}.
@@ -394,7 +347,7 @@ Organisms are \emph{risk sensitive} when they are not only sensitive to the mean
 
 Framing authors' choice between Registered Reports and standard publications as risk-averse versus risk-prone behaviour allows us to examine the problem with Risk-Sensitivity Theory, a normative theory developed in behavioural ecology to explain the foraging behaviour of animals.
 Risk-Sensitivity Theory was designed to determine the optimal food-acquisition strategy for an animal faced with a choice between a relatively safe (low-variance) food source and a risky (high-variance) source that sometimes yields large payoffs and sometimes small payoffs (or none at all).
-Despite this initial narrow scope, Risk-Sensitivity Theory has proven itself as a powerful framework for explaining risk-sensitive behaviour in a wide range of situations and species, including humans (Alex Kacelnik \& Bateson, 1996; A. Kacelnik \& Bateson, 1997; Mishra, 2014).
+Despite this initial narrow scope, Risk-Sensitivity Theory has proven itself as a powerful framework for explaining risk-sensitive behaviour in a wide range of situations and species, including humans (Kacelnik \& Bateson, 1996; Kacelnik \& Bateson, 1997; Mishra, 2014).
 
 \texttt{To\ do:}
 
@@ -409,7 +362,7 @@ Despite this initial narrow scope, Risk-Sensitivity Theory has proven itself as 
 \hypertarget{goals-of-the-chapter}{%
 \subsection{Goals of the chapter}\label{goals-of-the-chapter}}
 
-In this chapter, a simulation model is used to explore how properties of academic careers and academic incentive structures that are relevant to risk sensitivity may affect the strategies of researchers choosing between Registered Reports and the standard publication format.
+In this chapter, we use a simulation model to explore how properties of academic careers and academic incentive structures that are relevant to risk sensitivity may affect the strategies of researchers choosing between Registered Reports and the standard publication format.
 The research goal is to understand in which circumstances Registered Reports should be particularly attractive, particularly unattractive, or particularly prone to highly selective use.
 The results of this analysis may help anticipate where the format is unlikely to take foot without additional changes to norms, incentives, or policy, and flag situations in which the results of published Registered Reports may be particularly difficult to compare to the normal literature.
 The following sections outline central concepts of Risk-Sensitivity Theory, relate them to characteristics of academic careers, and describe an evolutionary simulation model in which their effects on researchers' risk-sensitive publication decisions are examined.
@@ -420,21 +373,16 @@ The following sections outline central concepts of Risk-Sensitivity Theory, rela
 This section describes general factors that affect the role of risk for individual's fitness and connects these factors to relevant elements of academic careers.
 In this context, Risk-Sensitivity Theory's focus on reproductive fitness as the central outcome may be seen as misguided.
 But although researchers do not forage, grow, reproduce, and die in the \emph{biological} sense (except in their role as human beings in general, of course), they undoubtedly are concerned with factors that influence 1) their survival and 2) the propagation of their traits in an \emph{academic} sense.
-Even if we were to assume that researchers are not consciously trying to maximise their `academic fitness', a competitive job market will by definition select for individuals whose behaviour increases their fitness.
+Even if we were to assume that researchers are not consciously trying to maximise their `academic fitness', a competitive job market will by definition select for individuals whose past behaviour increased their prospects.
+Such competition can create bottlenecks between early-career and tenured positions in many academic disciplines, which inevitably induce a selection pressure for career-promoting behaviours (Smaldino \& McElreath, 2016).
+
 In applying Risk-Sensitivity Theory to researchers' publishing behaviour, we will therefore use a general notion of career success as the central outcome variable in place of reproductive fitness.
 This decision does not imply that career success is the only or the proximal motivation for researchers' behaviour in practice, just as evolutionary theory does not imply that reproductive success is the only or the proximal motivation for human behaviour in everyday life.
-\texttt{To\ do:}
-
-\begin{itemize}
-\tightlist
-\item
-  Refer back to a (not yet existing) section above to say that human decision making is a product of evolution
-\item
-  In addition, narrow bottlenecks between early-career and tenured positions in many academic disciplines inevitably create a selection pressure for behaviours that further researchers' career success (Smaldino \& McElreath, 2016).
-\end{itemize}
+However, we do assume that selection for career-promoting behaviours has a noticeable impact on research practice.
 
 
 
+\par\vspace{.8\baselineskip}
 \begin{figure}
 
 {\centering \includegraphics[width=0.5\linewidth]{rr-risk-sensitivity_files/figure-latex/fitnessplot-1} 
@@ -443,23 +391,24 @@ This decision does not imply that career success is the only or the proximal mot
 
 \caption{Consequences of non-linear fitness functions. Payoffs \(b_-\), \(b_{safe}\), and \(b_+\) are converted into fitness with a diminishing (blue), linear (grey), or increasing (red) returns function.}\label{fig:fitnessplot}
 \end{figure}
+\par\vspace{.5\baselineskip}
 
 \hypertarget{non-linear-fitness-functions}{%
 \paragraph{Non-linear fitness functions}\label{non-linear-fitness-functions}}
 
-The first and perhaps most ubiquitous factor leading individuals to be risk sensitive are non-linear relationships between the outcomes of an individual's behaviour (e.g., harvested food items, publications) and its reproductive success (A. Kacelnik \& Bateson, 1997).
+The first and perhaps most ubiquitous factor leading individuals to be risk sensitive are non-linear relationships between the outcomes of an individual's behaviour (e.g., harvested food items, publications) and its reproductive success (Kacelnik \& Bateson, 1997).
 Consider two options, \(O_{safe}\) and \(O_{risky}\).
 \(O_{safe}\) always gives the same payoff \(b_{safe}\), whereas \(O_{risky}\) gives either a low payoff \(b_-\) or a high payoff \(b_+\), each with probability \(\frac{1}{2}\).
 When \(b_{safe} = \frac{(b_- + b_+)}{2}\), \(O_{safe}\) and \(O_{risky}\) have the same expected payoff.
 However, we would only expect an individual to be indifferent between the two options if the consequences of their payoffs for the individual's fitness are linear.
-When the function relating payoffs to utility is instead convex or concave (yielding increasing or diminishing returns, respectively), the expected utility of \(O_{safe}\) and \(O_{risky}\) will differ and shift the individual's preference towards risk proneness or risk aversion.
+When the function relating payoffs to fitness is instead convex or concave (yielding increasing or diminishing returns, respectively), the expected fitness of \(O_{safe}\) and \(O_{risky}\) will differ and shift the individual's preference towards risk proneness or risk aversion.
 An illustration of this example is shown in Figure~\ref{fig:fitnessplot}:
-While the payoffs \(b_-\), \(b_{safe}\), and \(b_+\) are equidistant on the x-axis, \(b_{safe}\) is associated with greater fitness than the average of \(b_-\) and \(b_+\) when the fitness function is concave, and with less fitness when the fitness function is convex.
+While the payoffs \(b_-\), \(b_{safe}\), and \(b_+\) are equidistant on the x-axis, \(b_{safe}\) is associated with greater fitness than the average of \(b_-\) and \(b_+\) when the function is concave, and with lower fitness when the function is convex.
 In other words, \(O_{safe}\) has greater expected fitness than \(O_{risky}\) when returns are diminishing, and \(O_{risky}\) has greater expected fitness than \(O_{safe}\) when returns are increasing.
 
 Non-linear relationships are arguably the norm in the natural world and linear relationships the exception.
 This plausibly holds for academia as well, where the effect of publication success on researchers' career success might change over time:
-For early-career researchers, small increases in the number or impact of publications may have an accelerated effect on career success, whereas established professors may care little about any one additional publication on their record.
+For early-career researchers, small increases in the number or impact of publications may have an accelerated effect on career success, whereas established professors may care little about any one additional publication to their record.
 
 
 
@@ -469,7 +418,7 @@ For early-career researchers, small increases in the number or impact of publica
 
 }
 
-\caption{Survival thresholds. When fitness drops to zero below the low threshold (dashed line), individuals should be risk-averse because the outcomes of the low-risk option (narrow curve) are guaranteed to lie above the threshold and the outcomes of the high-risk option (wide curve) have a non-negligible risk of falling below the threshold. When fitness drops to zero below the high threshold (dotted line), individuals should be risk-prone because only the high-risk option provides a chance of passing the threshold.}\label{fig:varianceplot}
+\caption{Survival thresholds. When fitness drops to zero below the low threshold (dashed line), individuals should be risk-averse because the outcomes of the low-risk option (narrow distribution) are guaranteed to lie above the threshold and the outcomes of the high-risk option (wide distribution) have a non-negligible risk of falling below the threshold. When fitness drops to zero below the high threshold (dotted line), individuals should be risk-prone because only the high-risk option provides a chance of passing the threshold.}\label{fig:varianceplot}
 \end{figure}
 
 \hypertarget{survival-thresholds-and-competition}{%
@@ -483,7 +432,7 @@ One such situation is depicted in Figure~\ref{fig:varianceplot}.
 
 Although comparable cutoff points in academic careers may have somewhat less severe consequences, they certainly exist:
 Amount and impact of a researcher's publications are common and often explicit criteria in decisions that are central to the individual's career, such as whether they will be awarded a PhD, whether they will receive grant funding, whether they will be offered a tenure-track position, or whether they will be granted tenure.
-In some of these situations, the cutoff points are absolute and thus resemble survival thresholds in the biological sense, for example PhD-programme regulations that determine a minimal amount of peer-reviewed publications for a candidate to be awarded with a PhD, or tenure contracts that specify minimal publication targets.
+In some of these situations, the cutoff points are absolute and thus resemble survival thresholds in the biological sense, for example PhD-programme regulations that determine a minimal number of peer-reviewed publications for a candidate to be awarded with a PhD, or tenure contracts that specify minimal publication targets.
 In other situations, the cutoff points are relative and depend on the number of eligible candidates, for example when grant funding is awarded to the 10 highest-ranked research proposals or a job is offered to the best candidate from a pool of applicants.
 In cases like these, one individual's success diminishes the chances of another --- they represent \emph{competition}.
 In the following, survival thresholds and competition will be treated as separate concepts to examine their differential effects on researchers' publication behaviour.
@@ -503,13 +452,20 @@ This circumstance has been shown to produce bet-hedging:
 Risk-averse strategies may be more adaptive across many generations even when more risk-prone strategies produce better outcomes in any one generation, simply because the latter are also more likely to lead to extinction by sheer bad luck (Haaland et al., 2019).
 While average fitness across generations is best represented with the geometric mean, average fitness \emph{within} a generation is better captured by the arithmetic mean, reflecting the additive accumulation of payoffs from decision events before fitness is evaluated.
 Therefore, as the number of decision events per generation (i.e., before fitness is evaluated) increases, the variance-sensitive geometric mean of acquired payoffs becomes relatively less important and the less variance-sensitive arithmetic mean becomes more important.
-Consequently, individuals' behaviour should switch from relative risk-aversion to relative risk-proneness.
+Consequently, an individual's behaviour should switch from relative risk-aversion to relative risk-proneness.
 
-In the academic world, decision events before fitness is evaluated (`per generation') could seen as the time and resources a researcher has available for producing publications before a relevant selection event like those mentioned in the previous section (award of a PhD or grant, job application, tenure decision) is made.
+For the purpose of our investigation, `decision events' refer to researchers' decisions of whether to conduct a Registered Report or pursue the standard publication route.
+Because Registered Reports must be submitted before data collection, such decisions occur whenever researchers start a new empirical project that they later may want to publish.\footnote{At the current moment, most researchers likely never consciously consider Registered Reports as a publication option. However, the fact that they \emph{could} nonetheless renders their pursuit of standard publications a choice, albeit an implicit one.}
+The number of decision events before evaluation thus reflects the number of empirical projects that a researcher can complete before their publication record is considered for hiring, promotion, or grant funding decisions.
+Across the academic landscape, this number may vary for several reasons.
+First, the number of studies one can conduct before being evaluated naturally depends on how much time one has available
+before a relevant selection event (award of a PhD or grant, job application, tenure decision) takes place.
 This parameter likely varies with career stage:
-A PhD student usually has three to four years to achieve the required publication output, a postdoc may work on a short-term contract of two years or even one year (after which their CV must be strong enough for the next application), and an assistant professor may have around seven years for receiving tenure.
-In addition, career progress often comes with greater research funds and, most importantly, the supervision of students and junior researchers whose efforts boost the supervisors' output (R. Müller, 2014).
-As a second, orthogonal aspect, the amount of publishable research that can be achieved before a selection event may vary between research areas.
+A PhD student usually has three to four years to achieve a certain required publication output, a postdoc may work on a short-term contract of two years or even one year (after which their CV must be strong enough for the next application), and an assistant professor may have around seven years for receiving tenure.
+Second, empirical productivity depends on available resources, such that researchers in labs with more manpower and better funding can complete more projects per time.
+This factor may also be associated with academic seniority because career progress often comes with greater research funds and the supervision of students and junior researchers whose efforts boost the supervisors' output (R. Müller, 2014).
+Third and finally, productivity likely varies across research areas as a function of speed and cost of data collection and analysis.
+While data collection for entire studies may take less than a day and/or be very cheap to conduct in some fields (e.g., research based on online questionnaires),
 In some fields, data collection is fast and cheap, for example when experiments consist of short online questionnaires that are disseminated to large participant pools such as Amazon MTurk.
 In other fields, data collection is very expensive and slow, for example in clinical fMRI studies on specific patient groups.
 Irrespective of career stage, researchers in fields with fast and cheap data may thus be able to complete many more research cycles per time unit than researchers who use more expensive data.
@@ -529,7 +485,7 @@ Consider a population of \(n = 500\) researchers.
 Each researcher has a fixed publication strategy \(s\), the so-called submission threshold.
 In each round of the research phase, researchers randomly choose a hypothesis to test in a study.
 Hypotheses are true with prior probability \(p\), which is uniformly distributed between 0 and 1 and known to the researcher.
-Before testing their chosen hypothesis, a researcher compares the prior \(p\) of their hypothesis with their submission threshold \(s\).
+Before testing their chosen hypothesis, a researcher compares the prior \(p\) of their hypothesis with their publication strategy \(s\).
 When \(p < s\), the researcher chooses to play it safe and conduct a Registered Report to test the hypothesis.
 When \(p \geq s\), the researcher chooses to gamble and test the hypothesis in a regular study which is then submitted as a standard report.
 
@@ -538,14 +494,14 @@ Thus, when a researcher tests hypothesis \(i\), they obtain a positive result wi
 If the researcher chose to submit a Registered Report, their study is published regardless of the result and the researcher receives a payoff \(b_{RR}\).
 However, if the researcher chose to submit a standard report, they face rampant publication bias:
 Only positive results are publishable as standard reports and yield a payoff \(b_{SR+} = 1\), whereas negative results are rejected or file-drawered and yield no payoff, \(b_{SR-} = 0\).
-For all variations of the model tested here, we assume that \(b_{SR-} < b_{RR} < b_{SR+}\).
+For all variations of the model tested here, we assume that the payoff for a Registered Report falls between these bounds, such that \(b_{SR-} < b_{RR} < b_{SR+}\).
 This assumption reflects the following considerations:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Due to publication bias in the standard-report literature, negative results are less valuable than positive results (\(b_{SR-} < b_{SR+}\)), for example because they do not lead to a publication at all, because only very low-impact journals are willing to publish them, or because getting them published requires a lot of extra effort (e.g., via frequent resubmissions following rejection or substantial revisions demanded by reviewers) which diminishes the net reward.
+  Due to publication bias in the standard literature, negative results are less valuable than positive results (\(b_{SR-} < b_{SR+}\)), for example because they do not lead to a publication at all, because only very low-impact journals are willing to publish them, or because getting them published requires a lot of extra effort (e.g., via frequent resubmissions following rejection or substantial revisions demanded by reviewers), which diminishes the net reward.
 \item
   For these same reasons, Registered Reports are on average more valuable than standard reports with negative results (\(b_{SR-} < b_{RR}\)), for example because Registered Reports are offered by journals that may display publication bias for standard reports (rejecting standard report submissions with negative results), or simply because Registered Reports need to be resubmitted less often or require less extensive revisions.
 \item
@@ -554,21 +510,21 @@ This assumption reflects the following considerations:
   Once this changes, the present investigation may happily become redundant.
 \end{enumerate}
 
-This entire research cycle\(\,\)---\(\,\)choosing a hypothesis, choosing a publication route by comparing its prior \(p\) to one's submission threshold \(s\), testing the hypothesis, and receiving payoff \(b_{RR}\) for a Registered Report or \(b_{SR-}\) or \(b_{SR+}\) for a positive and negative standard report, respectively\(\,\)---\(\,\)is repeated \(m\) times.
+This entire research cycle\(\,\)---\(\,\)choosing a hypothesis, choosing a publication route by comparing its prior \(p\) to one's publication strategy \(s\), testing the hypothesis, and receiving payoff \(b_{RR}\) for a Registered Report or \(b_{SR-}\) or \(b_{SR+}\) for a positive and negative standard report, respectively\(\,\)---\(\,\)is repeated \(m\) times.
 
 \hypertarget{evaluation-phase}{%
 \paragraph{Evaluation phase}\label{evaluation-phase}}
 
-At the end of the research phase, researchers' accumulated publication payoffs \(b_1 + b_2 + ... + b_m\) are translated into fitness.
+At the end of the research phase, researchers' accumulated publication payoffs \(b_1 + b_2 + ... + b_m\) are translated into fitness \(f\).
 Fitness is calculated with a function characterised by exponent \(\epsilon\), which determines the shape of the function. \(\epsilon = 1\) yields a linear function, \(0 < \epsilon < 1\) yields a concave function with diminishing returns, and \(\epsilon > 1\) yields a convex function with increasing returns (see Figure~\ref{fig:fitnessplot}):
 
 \begin{align}
-fitness = (\sum_{i=1}^{m} b_i)^\epsilon
+f = (\sum_{i=1}^{m} b_i)^\epsilon
 \end{align}
 
 However, two situations may cause a researcher's fitness to fall to zero even when their accumulated payoffs are non-zero.
 First, the sum of their payoffs may fall below an absolute survival threshold \(\delta\), for example when a researcher fails to meet an agreed publication target by the time their `tenure clock' runs out.
-Thus, when \(\sum_{i=1}^{m} b_i < \delta\), \(fitness = 0\).
+Thus, when \(\sum_{i=1}^{m} b_i < \delta\), \(f = 0\).
 Second, the sum of their payoffs may fall below a relative threshold \(\gamma\), which reflects the intensity of competition (e.g., for scarce research grants or positions).
 \(\gamma\) is the proportion of researchers who are considered for reproduction.
 When \(\gamma = 1\), all researchers in the population are considered for reproduction and their fitness is calculated according to Eq. 1.
@@ -607,7 +563,7 @@ Value {[}range{]}
 \(b_{SR+}\) & payoff for positive standard report & 1 \\
 \(b_{RR}\) & payoff for Registered Report & {[}.1, .2, \ldots, .9{]} \\
 \(\epsilon\) & fitness function exponent & {[}0.2, 1, 5{]} \\
-\(m\) & research cycles per generation & {[}1, 2, 4, 8, 16, 32{]} \\
+\(m\) & research cycles per generation (`empirical pace') & {[}1, 2, 4, 8, 16, 32{]} \\
 \(\delta\) & survival threshold below which fitness = 0, expressed as proportion of m & {[}0, .25, .5, .75{]} \\
 \(\gamma\) & proportion of most successful researchers selected for reproduction (competition) & {[}1, .9, .5, .1, .05, .01{]} \\
 \bottomrule()
@@ -617,16 +573,18 @@ Value {[}range{]}
 \paragraph{Reproduction phase}\label{reproduction-phase}}
 
 Finally, the researchers in the current population retire and a new (non-overlapping) generation of researchers is created.
-A researcher in the new generation inherits their publication strategy (submission threshold) \(s\) from a researcher in the previous generation with the probability of the previous researcher's fitness (i.e., the new generation's submission thresholds are sampled with replacement from the previous generation, probability-weighted by fitness).
-The new generation's submission thresholds are inherited with a small amount of random noise, such that \(s_{new} = s_{old} + w\), with \(w \sim N(\mu = 0, \sigma = 0.01)\).
-Authors of similar evolutionary agent-based models have described such heredity transmission as reflecting mentorship and teaching (e.g., when established professors advise mentees to copy their strategies) or simply a generic social learning process in which successful researchers are more likely to be imitated by others (Smaldino \& McElreath, 2016).
+A researcher in the new generation inherits their publication strategy \(s\) from a researcher in the previous generation with the probability of the previous researcher's fitness (i.e., the new generation's publication strategies are sampled with replacement from the previous generation, probability-weighted by fitness).
+The new generation's publication strategies are inherited with a small amount of random noise, such that \(s_{new} = s_{old} + w\), with \(w \sim N(\mu = 0, \sigma = 0.01)\).
+Authors of similar evolutionary agent-based models have described such hereditary transmission as reflecting mentorship and teaching (e.g., when established professors advise mentees to copy their strategies) or simply a generic social learning process in which successful researchers are more likely to be imitated by others (Smaldino \& McElreath, 2016).
 Although this interpretation may be useful, the main purpose of this aspect of the model is purely technical and not specifically intended to reflect reality\(\,\)---\(\,\)it simply provides the machinery for determining which publication strategies are optimal in the various situations we are investigating.
 
 \hypertarget{outcome-variable-s}{%
 \subsubsection{\texorpdfstring{Outcome variable \(s\)}{Outcome variable s}}\label{outcome-variable-s}}
 
-We study how the evolution of researchers' submission thresholds \(s\) is affected by the payoff for Registered Reports \(b_{RR}\) (relative to the payoffs for standard reports, which are fixed at \(b_{SR-} = 0\) and \(b_{SR+} = 1\)), by the shape of the fitness function determined by exponent \(\epsilon\), by the number of research cycles per generation \(m\), by survival threshold \(\delta\), and by competition \(\gamma\) (see Table 1 for an overview of the model parameters and their values considered in the simulation).
-A researcher's submission threshold \(s\) is a \emph{strategy}, not an absolute decision\(\,\)---\(\,\)it determines \emph{how} the choice between Registered Reports and standard reports is made, not which format is chosen.
+We study how the evolution of researchers' publication strategies \(s\) is affected by the payoff for Registered Reports \(b_{RR}\) (relative to the payoffs for standard reports, which are fixed at \(b_{SR-} = 0\) and \(b_{SR+} = 1\)), by the shape of the fitness function determined by exponent \(\epsilon\), by the number of research cycles per generation \(m\), by survival threshold \(\delta\), and by competition \(\gamma\) (see Table 1 for an overview of the model parameters and their values considered in the simulation).
+It is important to keep in mind that a researcher's publication strategy \(s\) is
+not an absolute decision:
+It determines \emph{how} the choice between Registered Reports and standard reports is made, not which format is chosen.
 As such, \(s\) indicates the amount of risk a researcher is willing to take.
 Very low values of \(s\) reflect risk proneness:
 The researcher prefers to gamble and chooses the standard publication route for almost all hypotheses they encounter, using the Registered Report route only for hypotheses that are virtually guaranteed to be false (and yield negative results).
@@ -638,10 +596,10 @@ The researcher is unwilling to risk a negative result in a standard report and s
 
 We use the evolutionary mechanism of this agent-based model as a means for identifying optimal behaviour under different conditions.
 But this goal can also be achieved in other ways.
-One non-evolutionary alternative is to calculate expected fitness (i.e., the long-run average) for a wide range of \(s\) and determine which strategy maximises expected fitness in each condition.
+One non-evolutionary alternative is to calculate expected fitness (i.e., the long-run average) for a wide range of \(s\) and determine which strategy maximises it in each condition.
 A drawback of this approach is that it does not account for population dynamics and therefore cannot easily simulate the effects of competition.
 Because of this limitation, our study is based on the evolutionary model.
-However, we use the expected-fitness model to validate all analyses except those involving competition and show that both models produce virtually identical results (see Appendix).
+However, we validate all analyses except those involving competition on the expected-fitness model and show that both models produce virtually identical results (see Appendix).
 
 
 
@@ -651,7 +609,7 @@ However, we use the expected-fitness model to validate all analyses except those
 
 }
 
-\caption{Evolution of submission threshold \(s\) with 3 different payoffs for Registered Reports (\(b_{RR}\)). Simulations are based on a population of \(n = 500\) researchers over 250 generations, with payoffs for standard reports fixed at 0 for negative results (\(b_{SR-} = 0\)) and 1 for positive results (\(b_{SR+} = 1\)), a linear fitness function \(\epsilon = 1\), one research cycle per generation (\(m = 1\)), no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)). Each condition was run 10 times. Thin lines represent the median submission threshold of the population in each run, shaded areas represent the inter-quartile range of submission thresholds in the population in each run, thick lines represent the median of run medians per condition.}\label{fig:evoplot}
+\caption{Evolution of publication strategy \(s\) with 3 different payoffs for Registered Reports (\(b_{RR}\)). Simulations are based on a population of \(n = 500\) researchers over 250 generations, with payoffs for standard reports fixed at 0 for negative results (\(b_{SR-} = 0\)) and 1 for positive results (\(b_{SR+} = 1\)), a linear fitness function \(\epsilon = 1\), one research cycle per generation (\(m = 1\)), no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)). Each condition was run 10 times. Thin lines represent the median publication strategy of the population in each run, shaded areas represent the inter-quartile range of publication strategies in the population in each run, and thick lines represent the median of run medians per condition.}\label{fig:evoplot}
 \end{figure}
 
 \hypertarget{simulation-results}{%
@@ -659,19 +617,19 @@ However, we use the expected-fitness model to validate all analyses except those
 
 The results of the simulation models will be presented in order of increasing model complexity.
 We start by explaining the very simple scenarios shown in Figure \ref{fig:evoplot} and Figure \ref{fig:epsilonplot}.
-These conditions are identical to situations discussed above and the results should thus be unsurprising.
-However, while they may seem trivial to some, we hope that these explanations will help unfamiliar readers understand the functioning of our model and the less intuitive results presented later.
+These scenarios are identical to situations discussed above and the results should thus be unsurprising.
+However, while they may seem trivial to some, we hope that these explanations will help unfamiliar readers understand the basic functioning of our model as well as the less intuitive results presented later.
 
-When interpreting the results below, it is important to keep in mind that the analysed parameter values are inherently arbitrary.
-Although the model parameters are chosen to capture important characteristics of real-world concepts, their values do not represent real-world units.
+When interpreting the results below, one should bear in mind that the analysed parameter values are inherently arbitrary.
+Although the model parameters are intended to capture important characteristics of real-world concepts, their values do not represent real-world units.
 The goal of this analysis is to understand the relative effects of the model parameters in a simplified, artificial system, which means that the results are only meaningful in relation to each other.
 
 \hypertarget{single-research-cycle-per-generation-linear-fitness-function}{%
 \subsection{Single research cycle per generation, linear fitness function}\label{single-research-cycle-per-generation-linear-fitness-function}}
 
-The first generation of researchers in each simulation run is initialised with randomly distributed submission thresholds \(s\) (drawn from a uniform distribution {[}0--1{]}), which are then allowed to evolve over the subsequent generations.
+The first generation of researchers in each simulation run is initialised with randomly distributed publication strategies \(s\) (drawn from a uniform distribution {[}0--1{]}), which are then allowed to evolve over the subsequent generations.
 Figure \ref{fig:evoplot} shows the effect of varying the payoffs for Registered Reports when the fitness function is linear (\(\epsilon = 1\)), with no survival threshold (\(\delta = 0\)), no competition (\(\gamma = 1\)), and one research cycle per generation (\(m = 1\)).
-In this very simple scenario, evolved submission thresholds (\(s\)) approximate the payoff for Registered Reports in each condition, indicating that the optimal submission threshold is always equal to \(b_{RR}\) (\(s_{optimal} = 0.2\) when \(b_{RR} = 0.2\), \(s_{optimal} = 0.5\) when \(b_{RR} = 0.5\), \(s_{optimal} = 0.8\) when \(b_{RR} = 0.8\)).
+In this very simple scenario, evolved publication strategies (\(s\)) approximate the payoff for Registered Reports in each condition, indicating that the optimal publication strategy is always equal to \(b_{RR}\) (\(s_{optimal} = 0.2\) when \(b_{RR} = 0.2\), \(s_{optimal} = 0.5\) when \(b_{RR} = 0.5\), \(s_{optimal} = 0.8\) when \(b_{RR} = 0.8\)).
 The reason behind this is the uniform distribution {[}0--1{]} of hypothesis priors, the payoff structure \(b_{SR-} = 0\) and \(b_{SR+} = 1\), and the linear fitness function (\(\epsilon = 1\) means that fitness equals payoff).
 In this constellation, the expected fitness obtained from a standard report is always equal to the prior of the tested hypothesis:
 
@@ -694,13 +652,13 @@ Every alternative is inferior in the long run because researchers with \(s > b_{
 
 }
 
-\caption{Effect of fitness functions on evolved submission thresholds. Shown are median submission thresholds in the final (\(250^{th}\)) generations of 50 runs for different values of \(b_{RR}\) (x-axis) and different fitness functions (characterised by exponent \(\epsilon\)), with one research cycle per generation (\(m = 1\)), no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)). Fitness functions with \(\epsilon = 0.2\) and \(\epsilon = 0.5\) (blue lines) are concave with diminishing returns, functions with \(\epsilon = 2\) and \(\epsilon = 5\) (red lines) are convex with increasing returns, and the function with \(\epsilon = 1\) (grey line) is linear. Small dots represent median \(s\) of the final generation in each run, large dots represent the median of these 50 run medians per condition. Error bars represent the \(95\%\) capture probability around the median of medians.}\label{fig:epsilonplot}
+\caption{Effect of fitness functions on evolved publication strategies. Shown are median publication strategies in the final (\(250^{th}\)) generations of 50 runs for different values of \(b_{RR}\) (x-axis) and different fitness functions (characterised by exponent \(\epsilon\)), with one research cycle per generation (\(m = 1\)), no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)). Fitness functions with \(\epsilon = 0.2\) and \(\epsilon = 0.5\) (blue lines) are concave with diminishing returns, functions with \(\epsilon = 2\) and \(\epsilon = 5\) (red lines) are convex with increasing returns, and the function with \(\epsilon = 1\) (grey line) is linear. Small dots represent median \(s\) of the final generation in each run, large dots represent the median of these 50 run medians per condition. Error bars represent the \(95\%\) capture probability around the median of medians.}\label{fig:epsilonplot}
 \end{figure}
 
 \hypertarget{allowing-for-non-linear-fitness-functions}{%
 \subsection{Allowing for non-linear fitness functions}\label{allowing-for-non-linear-fitness-functions}}
 
-In the real world, the career benefits researchers receive from publications are rarely, if ever, linear.
+Arguably, the career benefits researchers receive from publications in the real world are rarely, if ever, linear.
 In early career, we may assume a convex fitness function, with each addition to the short publication record of a young researcher yielding increasing returns for their prospects on the job market and their ability to obtain grant funding.
 A notable exception may be PhD students who plan to leave academia after obtaining their degree, and for whom the career returns of publications exceeding the PhD requirements are thus strongly decreasing (concave fitness function).
 Researchers who stay in academia may experience that the career returns for each additional publication begin to decrease as their publication record grows, meaning that advanced career stages may also be characterised by a concave fitness function.
@@ -718,7 +676,7 @@ this pattern suggests that Registered Reports should be more attractive for seni
 Interestingly, preliminary empirical evidence suggests the opposite:
 Registered Reports appear to be more likely to have early-career researchers as first authors than standard reports (77\% vs 67\% in the journal \emph{Cortex}, Chambers \& Tzavella, 2021).
 One explanation for this counterintuitive result could be that Registered Reports are disproportionally used by early-career researchers who intend to leave academia and thus have a concave fitness function.
-Alternatively, it is possible that factors or dynamics not considered in this simulation swamp out the effects of concave vs convex fitness functions, such as younger researchers being more likely to adopt new methods.
+Alternatively, factors or dynamics not considered in this simulation may swamp out the effects of concave \emph{vs} convex fitness functions, such as younger researchers being more likely to adopt new methods.
 However, as we will see below, the effects of different fitness functions are not always as straightforward as in the simple case illustrated in Figure \ref{fig:epsilonplot} but produce different results in interaction with other risk-related factors.
 
 
@@ -729,19 +687,19 @@ However, as we will see below, the effects of different fitness functions are no
 
 }
 
-\caption{Effect of research cycles per generation on evolved submission thresholds. Shown are median evolved submission thresholds (\(s\)) after 250 generations in 50 runs (tile colour represents the median of 50 run medians) depending on the number of research cycles per generation (\(m\), y-axis), different values of \(b_{RR}\) (x-axis), and different fitness functions (characterised by exponent \(\epsilon\)) with no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)).}\label{fig:mplot}
+\caption{Effect of research cycles per generation on evolved publication strategies. Shown are median evolved publication strategies (\(s\)) after 250 generations in 50 runs (tile colour represents the median of 50 run medians) depending on the number of research cycles per generation (\(m\), y-axis), different values of \(b_{RR}\) (x-axis), and different fitness functions (characterised by exponent \(\epsilon\)) with no survival threshold (\(\delta = 0\)) and no competition (\(\gamma = 1\)).}\label{fig:mplot}
 \end{figure}
 
 \hypertarget{varying-the-number-of-research-cycles-per-generation}{%
 \subsection{Varying the number of research cycles per generation}\label{varying-the-number-of-research-cycles-per-generation}}
 
-The analyses discussed so far focused on the simple case of one research cycle (or decision event) per generation, meaning that researchers' fitness was calculated based on the payoff from one single study.
+The analyses presented so far focused on the simple case of one research cycle (or decision event) per generation, meaning that researchers' fitness was calculated based on the payoff from one single study.
 As discussed above, increasing numbers of decision events prior to evaluation may make individuals more risk-prone because single negative outcomes are less catastrophic for reproduction (Haaland et al., 2019).
 However, Figure \ref{fig:mplot} shows that this is not universally true\(\,\)---\(\,\)rather, the effect of increasing numbers of research cycles per generation (\(m\)) depends on the shape of the fitness function.
-Moving up on the y-axis of each panel, we see that submission thresholds are decreasing (indicating greater risk proneness) only when the fitness function is concave (\(\epsilon = 0.2\), left panel) but stay constant when it is linear (\(\epsilon = 1\), middle panel) and even \emph{increase} when it is convex (\(\epsilon = 5\), right panel).
+Moving up on the y-axis of each panel, we see that \(s\) decreases (indicating greater risk proneness) only when the fitness function is concave (\(\epsilon = 0.2\), left panel) but stay constant when it is linear (\(\epsilon = 1\), middle panel) and even \emph{increases} when it is convex (\(\epsilon = 5\), right panel).
 
 Why does \(m\) appear to have opposite effects for concave and convex fitness functions?
-To understand this pattern, it helps to first consider only the bottom row of each panel, where \(m = 1\).
+As a starting point, it helps to first consider only the bottom row of each panel, where \(m = 1\).
 These three rows contain the same results as the top, middle, and bottom curves in Figure \ref{fig:epsilonplot} and show risk aversion when \(\epsilon = 0.2\) (i.e., Registered Reports are attractive even when they yield a low payoff), risk proneness when \(\epsilon = 5\) (Registered Reports are unattractive even when they yield a high payoff), and a linear strategy \(s_{optimal} = b_{RR}\) when \(\epsilon = 1\).
 From this starting point, the two panels with non-linear fitness functions start to approximate the linear case as \(m\) increases.
 This pattern reflects the idea that fitness is better captured by the geometric mean when \(m\) is low, and better captured by the arithmetic mean when \(m\) is high (Haaland et al., 2019).
@@ -760,13 +718,14 @@ Reginas receive the same payoff in every round and accumulate \(b_{total} = \fra
 Lucky Darrens (who win every time) accumulate \(b_{total} = 1*4 = 4\), while unlucky Darrens (who lose every time) again receive 0 total payoff.
 Now, however, the probabilistic outcomes over 4 rounds lead to three additional versions of Darren: moderately lucky (winning 3/4 times), average (2/4, receiving the same total payoff as Reginas), and moderately unlucky (1/4).
 Translating payoffs into fitness, the Regina strategy (\(f_{Regina} = 2^\frac{1}{5} = 1.15\)) still yields an enormous advantage compared to unlucky Darrens (\(f_{Darren_{unlucky}} = 0\)) and only a small disadvantage compared to lucky Darrens (\(f_{Darren_{lucky}} = 4^\frac{1}{5} = 1.32\)).
-But this time, there are fewer Darrens who are less successful than Reginas because Reginas now share their place with average Darrens\(\,\)---\(\,\)the relative fitness advantage of the Regina strategy decreases.
-
+But this time, there are fewer Darrens who are less successful than Reginas because Reginas now share their place with average Darrens.
+The relative fitness advantage of the Regina strategy thus decreases.
 As the rate of research cycles per generation grows, the law of large numbers dictates that more and more Darrens achieve average total payoffs, while fewer and fewer Darrens achieve extreme total payoffs (winning 32 times in a row is much less probable than winning 4 times in a row).
-This reduces the width of the Darren distribution until it approximates the Regina distribution.
+This reduces the width of the Darren distribution until it approximates the Regina distribution\(\,\)---\(\,\)meaning that optimal publication strategies become identical to those optimal for a linear fitness function.
+
 When the fitness function is convex (\(\epsilon = 5\), yielding increasing returns), the overall effect of increasing values of \(m\) is the same, with the only difference that Reginas are initially disadvantaged (because their fitness distance to the lucky half of Darrens is much greater than than to the unlucky Darrens).
 With larger \(m\), more and more Darrens receive average total payoffs and share Regina's disadvantaged position (decreasing Regina's relative disadvantage), until the Darren distribution is again virtually equal to the Regina distribution.
-Rather than causing absolute risk aversion, increasing values of \(m\) thus counter the effect of \(\epsilon\) and reduce the effects of all fitness functions to the linear case.
+Rather than causing absolute risk aversion, increasing values of \(m\) thus counter the effect of \(\epsilon\) and reduce the effects of concave and convex fitness functions to the linear case.
 Consequently, the top rows (\(m = 32\)) of the top and bottom panels in Figure \ref{fig:mplot} resemble the stable pattern across all \(m\) shown in the middle panel.
 
 Translated into terms of academic careers, this less intuitive pattern indicates that
@@ -774,22 +733,22 @@ being able to complete empirical studies at a higher rate\(\,\)---\(\,\)e.g., wh
 This could partly explain why Registered Reports appear to be less popular among senior researchers (Chambers \& Tzavella, 2021) than we would expect based on the effects of different fitness functions alone:
 Although additional publications likely yield diminishing returns in later career stages (concave fitness function), academic seniority often comes with resources that boost research output per time (e.g., more lab members).
 As a consequence, established professors may be relatively indifferent to Registered Reports.
-Junior researchers, for whom additional publications have increasing returns on career success, may be especially reluctant to use Registered Reports when they have very limited time or resources to produce publications before an important selection event, such as on short-term postdoc contracts (R. Müller \& de Rijcke, 2017).
+Regarding junior researchers (for whom additional publications have increasing returns on career success), the results suggest that they may be especially reluctant to use Registered Reports when they have very limited time or resources to produce publications before an important selection event, such as on short-term postdoc contracts (R. Müller \& de Rijcke, 2017).
 
 
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{plots/plot_delta_tile_evo_epsilon_mako} \caption{Effect of survival thresholds on evolved submission thresholds. Shown are median submission thresholds (\(s\)) after 250 generations in 50 runs (tile colour represents the median of 50 run medians) depending on survival thresholds (\(\delta\), shown as vertical yellow line), fitness functions (characterised by exponent \(\epsilon\)), numbers of research cycles per generation (\(m\)), and values of \(b_{RR}\), in the absence of competition (\(\gamma = 1\)). Survival thresholds are set as proportions of \(m\), i.e., as a percentage of the maximum possible payoff in each condition. To reproduce, researchers must accumulate a total payoff exceeding \(\delta * m\).}\label{fig:deltaplot}
+\includegraphics[width=1\linewidth]{plots/plot_delta_tile_evo_epsilon_mako} \caption{Effect of survival thresholds on evolved publication strategies. Shown are median publication strategies (\(s\)) after 250 generations in 50 runs (tile colour represents the median of 50 run medians) depending on survival thresholds (\(\delta\), shown as vertical yellow line), fitness functions (characterised by exponent \(\epsilon\)), numbers of research cycles per generation (\(m\)), and values of \(b_{RR}\), in the absence of competition (\(\gamma = 1\)). Survival thresholds are set as proportions of \(m\), i.e., as a percentage of the maximum possible payoff in each condition. To reproduce, researchers must accumulate a total payoff exceeding \(\delta * m\).}\label{fig:deltaplot}
 \end{figure}
 
 \hypertarget{absolute-survival-thresholds}{%
 \subsection{Absolute survival thresholds}\label{absolute-survival-thresholds}}
 
-The survival thresholds in our model represent absolute publication targets that researchers must meet in order to progress in their career.
+The survival thresholds (\(\delta\)) in our model represent absolute publication targets that researchers must meet in order to progress in their career.
 The clearest examples for such thresholds are PhD regulations and tenure agreements.
 To be awarded with a PhD, many institutions and faculties require candidates to have a certain number of their thesis chapters published in peer-reviewed journals.
 Similarly, tenure agreements may include publication targets in the form of a minimum number of peer-reviewed publications within a certain time, sometimes also specifying minimal journal ranks (Liner \& Sewell, 2009).
-How demanding such requirements are (e.g., what proportion of thesis chapters must be published) then determines whether they represent low, medium, or high survival thresholds.
+Such requirements may represent low, medium, or high survival thresholds depending on how demanding they are (e.g., the proportion of thesis chapters that must be published).
 
 We investigate the effects of survival thresholds representing 25\%, 50\%, and 75\% of the maximum possible payoff researchers can achieve in one generation.
 When \(\delta > b_{RR}\), Registered Reports alone are not sufficient to reach the survival threshold (\(b_{RR}\) values to the left of the yellow line in Figure \ref{fig:deltaplot}).
@@ -805,18 +764,18 @@ Second, survival thresholds have a stronger effect when the fitness function is 
 In these two conditions, they produce very similar patterns:
 The Registered Report route is almost never chosen when \(b_{RR}\) is too low to meet the survival threshold (particularly at \(\delta = .25\) and \(\delta = .5\); less so at \(\delta = .75\)), and this effect tapers off as the number of research cycles increases.
 Compared to baseline, the change is particularly striking for the concave fitness function (\(\epsilon = 0.2\), left column in Fig. \ref{fig:deltaplot}), where RRs are normally preferred at low \(m\).
-When the survival threshold is high (\(\delta = .75\)) or the fitness function is concave, we can also see that Registered Reports become \emph{more} popular when they are worth just enough to pass the survival threshold.
+When the survival threshold is high (\(\delta = .75\)) or the fitness function is concave, we can also see that Registered Reports become \emph{more} popular than baseline when they are worth just enough to pass the survival threshold.
 For the convex fitness function (\(\epsilon = 5\)) on the other hand, survival thresholds of 25\% and 50\% seem to have no effect at all.
 Only a high threshold of 75\% makes RRs even less popular when they have low value (\(b_{RR}\leq 0.4\)), especially when the number of research cycles is low.
 
 What does this mean in practice?
 In our model, fitness (according to the three different fitness functions) is calculated after the survival threshold has been met.
-This is meant to mimic publication requirements that are expressed in raw numbers rather than some form of value.
+This is meant to mimic publication requirements that are expressed in raw numbers.
 Importantly, it also means that our simulation shows which strategies during a PhD or on the tenure track lead to maximal fitness \emph{after} researchers have successfully obtained their PhD or have been granted tenure.
 With this in mind, it becomes easier to understand the meaning of the different fitness functions.
 As discussed above, PhD candidates plausibly receive increasing returns for additional publications (convex fitness function), unless they intend not to stay in academia, in which case returns are strongly decreasing (concave fitness function).
-For researchers on the tenure track, the fitness function after achieving tenure is also likely concave, assuming a) that achieving tenure is one of the most important career goals for many (making further progress less important) and b) that such individuals have already built up substantial publication records, to which any single addition makes less and less of a difference.
-However, exceptions from this scenario may well exist, for example in situations where even tenured researchers are under great pressure to obtain grant funding.
+For researchers on the tenure track, the fitness function after achieving tenure is also likely concave, assuming a) that achieving tenure is one of the most important career goals for many (making further progress relatively less important) and b) that such individuals have already built up substantial publication records, to which any single addition makes less and less of a difference.
+However, exceptions from this scenario may well exist, for example in situations where tenured researchers are under great pressure to obtain grant funding.
 
 Translated to real-world scenarios, our results thus suggest the following implications:
 First, survival thresholds are almost irrelevant when
@@ -828,7 +787,7 @@ They virtually never conduct Registered Reports when their value is too low for 
 
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{plots/plot_gamma_evo_epsilon_inferno} \caption{Effect of competition on evolved submission thresholds. Shown are median evolved submission thresholds (\(s\)) after 250 generations in 50 runs (tile colour represents the median of 50 run medians) depending on the intensity of competition (\(\gamma\), y-axis), numbers of research cycles per generation (\(m\)), different values of \(b_{RR}\) (x-axis), and different fitness functions (characterised by exponent \(\epsilon\)) with no survival threshold (\(\delta = 0\)). To reproduce, researchers must accumulate a total payoff in the top \(\gamma\) proportion of the population.}\label{fig:competitionplot}
+\includegraphics[width=1\linewidth]{plots/plot_gamma_evo_epsilon_inferno} \caption{Effect of competition on evolved publication strategies. Shown are median evolved publication strategies (\(s\)) after 250 generations in 50 runs (tile colour represents the median of 50 run medians) depending on the intensity of competition (\(\gamma\), y-axis), numbers of research cycles per generation (\(m\)), different values of \(b_{RR}\) (x-axis), and different fitness functions (characterised by exponent \(\epsilon\)) with no survival threshold (\(\delta = 0\)). To reproduce, researchers must accumulate a total payoff in the top \(\gamma\) proportion of the population.}\label{fig:competitionplot}
 \end{figure}
 
 \hypertarget{competition}{%
@@ -842,7 +801,7 @@ This effect is strongest for the concave fitness function (\(\epsilon = 0.2\)), 
 When the fitness function is linear or convex, Registered Reports are chosen more often only when both \(b_{RR}\) and \(m\) are high.
 At higher levels of competition (\(\gamma > .5\)), the differences between the fitness functions disappear.
 In all three cases, Registered Reports are essentially wiped out for low numbers of research cycles (\(m\)), and this effect increases with competition (the higher the competition, the higher \(m\) must be for Registered Reports to still be viable).
-Intense competition also negatively affects Registered Reports at high numbers of \(m\), but here the baseline pattern (a linear increase of RR popularity with \(b_{RR}\)) remains intact.
+Intense competition also negatively affects Registered Reports at high numbers of \(m\), but here the general pattern of the baseline condition (a linear increase of Registered Reports popularity with \(b_{RR}\)) remains intact.
 
 Looking at the first three rows of panels in Figure \ref{fig:competitionplot} (1\%, 5\%, and 10\% competition), the extreme effect of competition at low \(m\) appears to decrease slightly when competition is highest (\(\gamma = .01\)), indicated by the dark bar at the bottom of each panel becoming slightly lighter.
 This paradoxial result is not due to Registered Reports being more lucrative in those conditions.
@@ -851,39 +810,41 @@ Essentially, only individuals with the maximum possible payoff (publishing only 
 Most likely to receive this maximum payoff are individuals who investigate hypotheses with high prior probabilities.
 In our model, this is not a trait that can be passed on, but determined by random chance.
 Among individuals who experience this kind of luck, the variance of publication strategy \(s\) should be high:
-A hypothesis with prior \(p = .95\) will be submitted as a standard report and likely yield a positive result (and thus the maximum payoff) regardless of whether the researcher's submission threshold is as low as \(s = .1\) or has high as \(s = .9\).
+A hypothesis with prior \(p = .95\) will be submitted as a standard report and likely yield a positive result (and thus the maximum payoff) regardless of whether the researcher's publication strategy is as low as \(s = .1\) or has high as \(s = .9\).
 The higher average \(s\) at low \(m\) under extreme competition thus reflects relaxed selection pressure on \(s\).
-This is also evident by the shades of the dark bar at the bottom of the panels for \(\gamma = .01\) Figure \ref{fig:competitionplot} fluctuating randomly for each level of \(m\) rather than showing a specific pattern.
-A clearer illustration of the effect can be found in Figure XXX in the appendix, which shows large increases in the variance of evolved submission thresholds in these conditions.
-At higher \(m\), selection on \(s\) stays intact simply because much fewer individuals will be very lucky 4, 8, 16, or 32 times in a row than once or twice in a row, and the submission strategy thus remains an important factor.
+This is also evident by the shades of the dark bar at the bottom of the panels for \(\gamma = .01\) (Fig. \ref{fig:competitionplot}), which fluctuate randomly for each level of \(m\) rather than showing a specific pattern.
+A clearer illustration of the effect can be found in Figure XXX in the appendix, which shows large increases in the variance of evolved publication strategies in these conditions.
+At higher \(m\), selection on \(s\) stays intact simply because much fewer individuals will be very lucky 4, 8, 16, or 32 times in a row than once or twice in a row, and publication strategy thus remains an important factor.
 
 This effect of relaxed selection is not an arbitrary feature of our model, but commonly encountered in natural populations (Snyder, Ellner, \& Hooker, 2021).
 In many species, luck can have an outsized impact on survival and reproduction, rendering the effects of individual traits relatively less important.
-Luck does not eliminate natural selection\footnote{This is also apparent in Figure XXX: Although the variance of evolved \(s\) increases dramatically with high competition, it never spans the entire range of \(s\).}, but it can significantly slow it.
+Luck does not eliminate natural selection\footnote{This is also apparent in Figure XXX (Appendix): Although the variance of evolved \(s\) increases dramatically with high competition, it never spans the entire range of \(s\).}, but it can significantly slow it.
 XXX TRY LONGER SIM RUNS \& REPORT HERE XXX
 The phenomenon is related to one form of survivorship bias:
-Looking at `survivors' of a highly selective process, one may erroneously infer that specific observable traits or behaviours of such individuals were the cause of their success when they were actually merely coincidental.
+Looking at `survivors' of a highly selective process, one may erroneously infer that specific observable traits or behaviours of such individuals were the cause of their success when those were actually merely coincidental.
 
 In the academic world, researchers compete for tenured positions and grants.
 The level of competition may vary between research areas, countries, institutions, grant programmes, and so on.
 Our findings suggest that intense competition may be a significant threat for the viability of Registered Reports, regardless of career stage.
-This effect is particularly extreme in fields with low empirical pace, where submission strategies that involve any amount of Registered Reports are only viable when competition is so high that success requires extraordinary luck.
-In contrast, very low but non-zero levels of competition increase the popularity of Registered Reports, especially when their value is high, when the fitness function is concave (e.g., in later career stages), and when researchers can complete studies at a fast rate (high empirical pace).
+This effect is particularly extreme when very few research cycles can be completed before an evaluation event (e.g., in fields with low empirical pace, in labs with few resources, or on short-term contracts):
+In such situations, publication strategies that involve any amount of Registered Reports are only viable when competition is so high that success requires extraordinary luck.
+In contrast, very low but non-zero levels of competition increase the popularity of Registered Reports, especially when their value is high, when the fitness function is concave (e.g., in later career stages), and when researchers can complete many studies before being evaluated.
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-In the artificial world of the model presented here, the standard publication route is a coin toss\(\,\)---\(\,\)the probability of obtaining a publishable result is 50\%\footnote{This is the case because we modelled the prior probability of tested hypotheses as being uniformly distributed from 0 to 1 and as being identical to the probability of obtaining a positive (i.e., publishable) result.}, which translates to an expected payoff of 0.5 points per study.
-If Registered Reports are a safe alternative to this gamble and guarantee publication in every case, one might think that payoff-maximising researchers would prefer them whenever they are worth more than 0.5 points and avoid them whenever they are worth less.
+In the artificial world of the model presented here, the standard publication route is a coin toss\(\,\)---\(\,\)the probability of obtaining a publishable result is 50\% on average\footnote{This is the case because we modelled the prior probability of tested hypotheses as being uniformly distributed between 0 and 1 and as being identical to the probability of obtaining a positive (i.e., publishable) result.}, translating to an expected payoff of 0.5 points per study.
+If Registered Reports are a safe alternative to this gamble and guarantee publication in every case, one might think that payoff-maximising researchers would prefer them whenever they are worth more than
+the expected payoff from standard reports and avoid them whenever they are worth less.
 This intuition, however, rests on the assumption
-that the career benefits researchers receive from publications are linear.\footnote{Linearity is violated when the fitness function is concave or convex (\(\epsilon \neq |1|\)), but also in the presence of survival thresholds or competition, because these effectively introduce a step-change in the fitness function (low but non-zero payoffs yield zero career benefits).}
+that the career benefits researchers receive from publications are linear and involve no step changes.\footnote{Linearity is violated when the fitness function is concave or convex (\(\epsilon \neq |1|\)), but also in the presence of survival thresholds or competition, because these effectively introduce a step-change in the fitness function (low but non-zero payoffs yield zero career benefits).}
 We argue that this assumption is violated in many, if not all, real-world situations.
 Here, we investigated the impact of four factors that likely shape real-world situations:
-convex vs concave fitness functions (additional publications yielding either increasing or decreasing career benefits, reflecting early vs later career stages), empirical pace (reflecting differences in speed and cost of data collection), survival thresholds (reflecting absolute publication targets researchers must meet in a given time), and competition for jobs or grants.
+convex vs concave fitness functions (additional publications yielding either increasing or decreasing returns, reflecting early vs later career stages), empirical pace (reflecting differences in speed and cost of data collection, available resources, or available time), survival thresholds (reflecting absolute publication targets researchers must meet in a given time), and competition for jobs or grants.
 Our results show that in isolation or combined, many of these factors
 would lead researchers with career-maximising strategies to avoid Registered Reports\(\,\)---\(\,\)even when Registered Reports are worth more than the expected payoff from standard reports.
 
-To understand the results, it is useful to take
+To summarise the results, it is useful to take
 the middle panel of Figure \ref{fig:mplot} (\(\epsilon = 1\)) as a baseline.
 In this panel, publication payoffs translate into linear career benefits (the fitness curve is linear and there is no survival threshold and no competition), and the outcome is highly intuitive:
 Researchers prefer Registered Reports whenever they are worth more than 0.5 points, their preference is exactly proportional to \(b_{RR}\), and it is not affected by empirical pace.
@@ -994,9 +955,6 @@ This manuscript was created using RStudio (1.2.5019, RStudio Team, 2019) and R (
 \leavevmode\vadjust pre{\hypertarget{ref-Agnoli2017}{}}%
 Agnoli, F., Wicherts, J. M., Veldkamp, C. L. S., Albiero, P., \& Cubelli, R. (2017). Questionable research practices among italian research psychologists. \emph{PLOS ONE}, \emph{12}(3), e0172792. \url{https://doi.org/10.1371/journal.pone.0172792}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Allen2019}{}}%
-Allen, C., \& Mehler, D. M. A. (2019). Open science challenges, benefits and tips in early career and beyond. \emph{PLOS Biology}, \emph{17}(5), e3000246. \url{https://doi.org/10.1371/journal.pbio.3000246}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Atkinson1982}{}}%
 Atkinson, D. R., Furlong, M. J., \& Wampold, B. E. (1982). Statistical significance, reviewer evaluations, and the scientific process: {Is} there a (statistically) significant relationship? \emph{Journal of Counseling Psychology}, \emph{29}(2), 189--194. \url{https://doi.org/10.1037/0022-0167.29.2.189}
 
@@ -1018,18 +976,6 @@ Chambers, C. D. (2013). Registered reports: {A} new publishing initiative at {Co
 \leavevmode\vadjust pre{\hypertarget{ref-Chambers2021}{}}%
 Chambers, C. D., \& Tzavella, L. (2021). The past, present and future of {Registered Reports}. \emph{Nature Human Behaviour}, 1--14. \url{https://doi.org/10.1038/s41562-021-01193-7}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Csada1996}{}}%
-Csada, R. D., James, P. C., \& Espie, R. H. M. (1996). The "{File Drawer Problem}" of {Non-Significant Results}: {Does It Apply} to {Biological Research}? \emph{Oikos}, \emph{76}(3), 591--593. \url{https://doi.org/10.2307/3546355}
-
-\leavevmode\vadjust pre{\hypertarget{ref-deVries2018}{}}%
-de Vries, Y. A., Roest, A. M., Jonge, P. de, Cuijpers, P., Munafò, M. R., \& Bastiaansen, J. A. (2018). The cumulative effect of reporting and citation biases on the apparent efficacy of treatments: The case of depression. \emph{Psychological Medicine}, \emph{48}(15), 2453--2455. \url{https://doi.org/10.1017/S0033291718001873}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Dickersin1993}{}}%
-Dickersin, K., \& Min, Y. I. (1993). Publication bias: The problem that won't go away. \emph{Annals of the New York Academy of Sciences}, \emph{703}, 135-146; discussion 146-148. \url{https://doi.org/10.1111/j.1749-6632.1993.tb26343.x}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Fanelli2010}{}}%
-Fanelli, D. (2010). "{Positive}" results increase down the hierarchy of the sciences. \emph{PLoS ONE}, \emph{5}(4), e10068. \url{https://doi.org/10.1371/journal.pone.0010068}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Ferguson2012}{}}%
 Ferguson, C. J., \& Heene, M. (2012). A {Vast Graveyard} of {Undead Theories}: {Publication Bias} and {Psychological Science}'s {Aversion} to the {Null}. \emph{Perspectives on Psychological Science}, \emph{7}(6), 555--561. \url{https://doi.org/10.1177/1745691612459059}
 
@@ -1040,7 +986,7 @@ Fiedler, K., \& Schwarz, N. (2016). Questionable {Research Practices Revisited}.
 Franco, A., Malhotra, N., \& Simonovits, G. (2014). Publication bias in the social sciences: {Unlocking} the file drawer. \emph{Science}, \emph{345}(6203), 1502--1505. \url{https://doi.org/10.1126/science.1255484}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Franco2016}{}}%
-Franco, Annie, Malhotra, N., \& Simonovits, G. (2016). Underreporting in {Psychology Experiments}: {Evidence From} a {Study Registry}. \emph{Social Psychological and Personality Science}, \emph{7}(1), 8--12. \url{https://doi.org/10.1177/1948550615598377}
+Franco, A., Malhotra, N., \& Simonovits, G. (2016). Underreporting in {Psychology Experiments}: {Evidence From} a {Study Registry}. \emph{Social Psychological and Personality Science}, \emph{7}(1), 8--12. \url{https://doi.org/10.1177/1948550615598377}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Fraser2018}{}}%
 Fraser, H., Parker, T., Nakagawa, S., Barnett, A., \& Fidler, F. (2018). Questionable research practices in ecology and evolution. \emph{PLOS ONE}, \emph{13}(7), e0200303. \url{https://doi.org/10.1371/journal.pone.0200303}
@@ -1057,17 +1003,17 @@ Haaland, T. R., Wright, J., \& Ratikainen, I. I. (2019). Bet-hedging across gene
 \leavevmode\vadjust pre{\hypertarget{ref-Hurly2003}{}}%
 Hurly, A. T. (2003). The twin threshold model: Risk-intermediate foraging by rufous hummingbirds, {Selasphorus} rufus. \emph{Animal Behaviour}, \emph{66}(4), 751--761. \url{https://doi.org/10.1006/anbe.2003.2278}
 
+\leavevmode\vadjust pre{\hypertarget{ref-Ingre2018}{}}%
+Ingre, M., \& Nilsonne, G. (2018). Estimating statistical power, posterior probability and publication bias of psychological research using the observed replication rate. \emph{Royal Society Open Science}, \emph{5}(9), 181190. \url{https://doi.org/10.1098/rsos.181190}
+
 \leavevmode\vadjust pre{\hypertarget{ref-John2012}{}}%
 John, L. K., Loewenstein, G., \& Prelec, D. (2012). Measuring the {Prevalence} of {Questionable Research Practices With Incentives} for {Truth Telling}. \emph{Psychological Science}, \emph{23}(5), 524--532. \url{https://doi.org/10.1177/0956797611430953}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kacelnik1996}{}}%
-Kacelnik, Alex, \& Bateson, M. (1996). Risky {Theories}---{The Effects} of {Variance} on {Foraging Decisions}. \emph{Integrative and Comparative Biology}, \emph{36}(4), 402--434. \url{https://doi.org/10.1093/icb/36.4.402}
+Kacelnik, A., \& Bateson, M. (1996). Risky {Theories}---{The Effects} of {Variance} on {Foraging Decisions}. \emph{Integrative and Comparative Biology}, \emph{36}(4), 402--434. \url{https://doi.org/10.1093/icb/36.4.402}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Kacelnik1997}{}}%
 Kacelnik, A., \& Bateson, M. (1997). Risk-sensitivity: Crossroads for theories of decision-making. \emph{Trends in Cognitive Sciences}, \emph{1}(8), 304--309. \url{https://doi.org/10.1016/s1364-6613(97)01093-0}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Lakens2019b}{}}%
-Lakens, D. (2019). {The value of preregistration for psychological science: A conceptual analysis}. \emph{Japanese Psychological Review}, \emph{62}(3), 221--230. \url{https://doi.org/10.24602/sjpr.62.3_221}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Liner2009}{}}%
 Liner, G. H., \& Sewell, E. (2009). Research requirements for promotion and tenure at {PhD} granting departments of economics. \emph{Applied Economics Letters}. \url{https://doi.org/10.1080/13504850701221998}
@@ -1086,12 +1032,6 @@ Müller, R. (2014). Postdoctoral {Life Scientists} and {Supervision Work} in the
 
 \leavevmode\vadjust pre{\hypertarget{ref-Muller2017}{}}%
 Müller, R., \& de Rijcke, S. (2017). Thinking with indicators. {Exploring} the epistemic impacts of academic performance indicators in the life sciences. \emph{Research Evaluation}, \emph{26}(3), 157--168. \url{https://doi.org/10.1093/reseval/rvx023}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Nosek2018}{}}%
-Nosek, B. A., Ebersole, C. R., DeHaven, A. C., \& Mellor, D. T. (2018). The preregistration revolution. \emph{Proceedings of the National Academy of Sciences}, \emph{115}(11), 2600--2606. \url{https://doi.org/10.1073/pnas.1708274114}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Nosek2022}{}}%
-Nosek, B. A., Hardwicke, T. E., Moshontz, H., Allard, A., Corker, K. S., Dreber, A., \ldots{} Vazire, S. (2022). Replicability, {Robustness}, and {Reproducibility} in {Psychological Science}. \emph{Annual Review of Psychology}, \emph{73}(1), annurev-psych-020821-114157. \url{https://doi.org/10.1146/annurev-psych-020821-114157}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-base}{}}%
 R Core Team. (2019). \emph{R: {A} language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing.
@@ -1117,17 +1057,8 @@ Snyder, R. E., Ellner, S. P., \& Hooker, G. (2021). Time and {Chance}: {Using Ag
 \leavevmode\vadjust pre{\hypertarget{ref-Soderberg2021}{}}%
 Soderberg, C. K., Errington, T. M., Schiavone, S. R., Bottesini, J., Thorn, F. S., Vazire, S., \ldots{} Nosek, B. A. (2021). Initial evidence of research quality of registered reports compared with the standard publishing model. \emph{Nature Human Behaviour}, \emph{5}(8), 990--997. \url{https://doi.org/10.1038/s41562-021-01142-4}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Sterling1959}{}}%
-Sterling, Theodore D. (1959). Publication {Decisions} and their {Possible Effects} on {Inferences Drawn} from {Tests} of {Significance}---or {Vice Versa}. \emph{Journal of the American Statistical Association}, \emph{54}(285), 30--34. \url{https://doi.org/10.1080/01621459.1959.10501497}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Sterling1995}{}}%
-Sterling, Theodor D., Rosenbaum, W. L., \& Weinkam, J. J. (1995). Publication {Decisions Revisited}: {The Effect} of the {Outcome} of {Statistical Tests} on the {Decision} to {Publish} and {Vice Versa}. \emph{The American Statistician}, \emph{49}(1), 108. \url{https://doi.org/10.2307/2684823}
-
 \leavevmode\vadjust pre{\hypertarget{ref-vanDalen2012}{}}%
 van Dalen, H. P., \& Henkens, K. (2012). Intended and unintended consequences of a publish-or-perish culture: {A} worldwide survey. \emph{Journal of the American Society for Information Science and Technology}, \emph{63}(7), 1282--1293. \url{https://doi.org/10.1002/asi.22636}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Wacholder2004}{}}%
-Wacholder, S., Chanock, S., Garcia-Closas, M., El ghormli, L., \& Rothman, N. (2004). Assessing the {Probability That} a {Positive Report} is {False}: {An Approach} for {Molecular Epidemiology Studies}. \emph{JNCI Journal of the National Cancer Institute}, \emph{96}(6), 434--442. \url{https://doi.org/10.1093/jnci/djh075}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Wagenmakers2012}{}}%
 Wagenmakers, E.-J., Wetzels, R., Borsboom, D., van der Maas, H. L. J., \& Kievit, R. A. (2012). An {Agenda} for {Purely Confirmatory Research}. \emph{Perspectives on Psychological Science}, \emph{7}(6), 632--638. \url{https://doi.org/10.1177/1745691612463078}

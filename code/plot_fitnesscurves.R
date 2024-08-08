@@ -20,7 +20,7 @@ colour_high <- "#b2182b"
 
 text_size <- 14 # use 26 for presentation slides and 14 otherwise (paper)
 plot_size <- 12 # use 15 for presentation slides and 12 otherwise (paper)
-line_thickness <- 1 # use 1.2 for presentation slides, 1 otherwise (paper)
+line_thickness <- 0.5 # use 1.2 for presentation slides, 0.5 otherwise (paper)
 
 basic_plot <- ggplot(data.frame(x=c(0,1)), aes(x)) + 
   scale_x_continuous(name="payoff", limits = c(0, 1),
@@ -41,8 +41,9 @@ basic_plot <- ggplot(data.frame(x=c(0,1)), aes(x)) +
                      breaks = NULL,
                      labels = c(), expand = c(0, 0)) +
   theme_bw() +
-  theme(panel.grid = element_blank(),
-        text = element_text(size = text_size) 
+  theme(panel.grid = element_blank()
+       #, text = element_text(size = text_size)
+       , plot.margin = unit(c(0,0,0,0), "cm")
         ) +
   coord_fixed(ratio = 1/1)
 
