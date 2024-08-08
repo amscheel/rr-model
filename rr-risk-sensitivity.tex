@@ -454,24 +454,16 @@ While average fitness across generations is best represented with the geometric 
 Therefore, as the number of decision events per generation (i.e., before fitness is evaluated) increases, the variance-sensitive geometric mean of acquired payoffs becomes relatively less important and the less variance-sensitive arithmetic mean becomes more important.
 Consequently, an individual's behaviour should switch from relative risk-aversion to relative risk-proneness.
 
-For the purpose of our investigation, `decision events' refer to researchers' decisions of whether to conduct a Registered Report or pursue the standard publication route.
+For the purpose of the present study, `decision events' refer to researchers' decisions of whether to conduct a Registered Report or pursue the standard publication route.
 Because Registered Reports must be submitted before data collection, such decisions occur whenever researchers start a new empirical project that they later may want to publish.\footnote{At the current moment, most researchers likely never consciously consider Registered Reports as a publication option. However, the fact that they \emph{could} nonetheless renders their pursuit of standard publications a choice, albeit an implicit one.}
-The number of decision events before evaluation thus reflects the number of empirical projects that a researcher can complete before their publication record is considered for hiring, promotion, or grant funding decisions.
-Across the academic landscape, this number may vary for several reasons.
-First, the number of studies one can conduct before being evaluated naturally depends on how much time one has available
-before a relevant selection event (award of a PhD or grant, job application, tenure decision) takes place.
-This parameter likely varies with career stage:
-A PhD student usually has three to four years to achieve a certain required publication output, a postdoc may work on a short-term contract of two years or even one year (after which their CV must be strong enough for the next application), and an assistant professor may have around seven years for receiving tenure.
-Second, empirical productivity depends on available resources, such that researchers in labs with more manpower and better funding can complete more projects per time.
-This factor may also be associated with academic seniority because career progress often comes with greater research funds and the supervision of students and junior researchers whose efforts boost the supervisors' output (R. Müller, 2014).
-Third and finally, productivity likely varies across research areas as a function of speed and cost of data collection and analysis.
-While data collection for entire studies may take less than a day and/or be very cheap to conduct in some fields (e.g., research based on online questionnaires),
-In some fields, data collection is fast and cheap, for example when experiments consist of short online questionnaires that are disseminated to large participant pools such as Amazon MTurk.
-In other fields, data collection is very expensive and slow, for example in clinical fMRI studies on specific patient groups.
-Irrespective of career stage, researchers in fields with fast and cheap data may thus be able to complete many more research cycles per time unit than researchers who use more expensive data.
+The number of decision events before evaluation thus reflects the number of empirical projects that a researcher can conduct before their publication record is considered for hiring, promotion, or grant funding decisions.
+We will call this parameter `empirical pace'.
 
-Each of the risk-relevant factors described above\(\,\)---\(\,\)non-linear fitness functions, survival thresholds, competition, and number of decision events before evaluation\(\,\)---\(\,\)likely impacts researchers' decision strategies, including their choices between low-risk and high-risk publication options.
-To better understand when a low-risk option like Registered Reports should be particularly attractive or unattractive, the individual and interactive effects of these factors are examined in a simulation model.
+Key factors influencing empirical pace are the time and resources required to conduct a study and the time and resources researchers have available.
+Empirical pace may thus differ between 1) research areas that vary in speed and/or cost of data collection (e.g., a field relying on online questionnaires \emph{vs} a field relying on fMRI studies), 2) research labs that vary in funding and manpower, and 3) career stages, for example because career progress often comes with increased funding and the supervision of junior researchers whose efforts boost the supervisors' output (R. Müller, 2014), or because junior researchers often have short-term contracts that limit the available time for producing research output before their CVs are evaluated for the next application.
+
+Each of the risk-relevant factors described above\(\,\)---\(\,\)non-linear fitness functions, survival thresholds, competition, and empirical pace\(\,\)---\(\,\)likely impacts researchers' decision strategies, including their choices between low-risk and high-risk publication options.
+To better understand when a low-risk option like Registered Reports should be particularly attractive or unattractive, we examine the individual and interactive effects of these factors in a simulation model.
 
 \hypertarget{simulation-model}{%
 \section{Simulation model}\label{simulation-model}}
