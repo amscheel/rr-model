@@ -596,7 +596,7 @@ For example, testing a hypothesis with $p = 0.2$ in a standard report would yiel
 The optimal strategy is to submit a Registered Report whenever the expected fitness provided by a standard report is lower than the fitness provided by a Registered Report, $E[f_{SR}] < b_{RR}$, and thus whenever $p < b_{RR}$.
 <!-- The strategy is optimal because it  -->
 This ensures that researchers always get the best of both worlds, minimising shortfalls when priors are (too) low and maximising winning chances when priors are (sufficiently) high.
-For example, $b_{RR} = 0.5$ is larger than $E[f_{SR}]$ for all hypotheses with $p < 0.5$ but lower than $E[f_{SR}]$ for all hypotheses with $p > 0.5$.
+For example, $b_{RR} = 0.5$ is larger than $E[f_{SR}]$ for all hypotheses with $p < 0.5$ but smaller than $E[f_{SR}]$ for all hypotheses with $p > 0.5$.
 In this situation, researchers who submit Registered Reports whenever $p<0.5$ and standard reports whenever $p>0.5$ protect themselves against losing a bad bet by instead taking the fixed payoff $b_{RR} = 0.5$, but always play a good bet and thus maximise their chances of winning $b_{SR+} = 1$.
 Every alternative is inferior in the long run because researchers with $s > b_{RR}$ lose out on increased chances of publishing a standard report and researchers with $s < b_{RR}$ take unnecessary risks and go empty-handed too often.
 
@@ -873,98 +873,158 @@ DRAFT COMPLETE UP UNTIL HERE
 
 ## Implications
 
-* Short transition paragraph: when are RRs least attractive, this time in terms of real-world academia?
-* How could RR popularity be increased?
-  + change situations – less competition, revise tenure requirements… 
-    + pretty big and not going to happen
-  + other approach: what does the model pick up here? Pay-off variance, pay-off means
-    + make RRs more valuable (mean) – high impact journals, don’t prevent them from happening
-      + pay-off anheben
-      + pay-off = benefit minus costs; Kosten verringern --> Gefahr Verringerung Qualität? Needs to be balanced
-    + increase variance of pay-offs
-      + PCI RR: increases potential maximum pay-offs -->get even better journals on board
-* Implications for risk taking more generally
-  + apply findings to different situations
-  + for example, implications for funding lotteries?
+<!-- ~~* Short transition paragraph: when are RRs least attractive, this time in terms of real-world academia?~~ -->
+<!-- ~~* How could RR popularity be increased? -->
+<!--   + change situations – less competition, revise tenure requirements…  -->
+<!--     + pretty big and not going to happen -->
+<!--   + other approach: what does the model pick up here? Pay-off variance, pay-off means -->
+<!--     + make RRs more valuable (mean) – high impact journals, don’t prevent them from happening -->
+<!--       + pay-off anheben -->
+<!--       + pay-off = benefit minus costs; Kosten verringern ->Gefahr Verringerung Qualität? Needs to be balanced~~ -->
 
 Our model predicts Registered Reports to be least popular when low empirical pace is combined with intense competition or with publication targets that cannot be met with Registered Reports alone.
 Translated to real-world academia, this suggests that fields or labs in which productivity is limited by lacking resources or the cost or speed of data collection (e.g., research relying on expensive or rare equipment, research on populations that are difficult to access) deserve special attention.
 Researchers in such situations may avoid the format when they must achieve publication targets that ask for a minimum number of publications in high-impact journals (e.g., as part of a tenure agreement), or when facing substantial competition for job positions or pressure to obtain competitive grants (e.g., if salary or research time depend on bringing in grants).
 When competition is high, such researchers may favour standard reports even if Registered Reports are almost as valuable as the best possible outcome from a standard report.
+Given that the last decades have seen vast increases in PhD students but relatively stable numbers of tenured positions in many countries [@Cyranoski2011], substantial competition may in fact be the default in many research fields, which could be one explanation for the currently low market share of Registered Reports.
+
+<!-- High levels competition may in fact be the default in many scientific disciplines and countries, as the last decades have seen vast increases in PhD graduates but relatively stable numbers of tenured positions [@Cyranoski2011]. -->
 
 ### Possible interventions to increase the popularity of Registered Reports
 How can Registered Reports be made more attractive?
 <!-- Obviously, changing the situational factors just mentioned should increase the popularity of Registered Reports. -->
-The most obvious answer is to change the just-mentioned situational factors that make Registered Reports unpopular.
+One answer, of course, is to change the just-mentioned situational factors that make Registered Reports unpopular.
 However, 
 <!-- of the three factors just mentioned, publication targets are the only one that may lend themselves to intervention -->
-perhaps with the exception of tenure agreements and PhD regulations, these 
+with the exception of tenure agreements and PhD regulations, these 
 <!-- are not useful targets for intervention -->
 factors are difficult to intervene on$\,$---$\,$competition and empirical pace cannot be changed easily, or at all.
 A more feasible approach may be to change the payoff structure of Registered Reports relative to standard reports.
-This could be achieved by increasing either the mean or the variance of the career-relevant benefits that authors receive from publishing a Registered Report.
+In the terms of our model, this could be achieved by increasing either the mean or the variance of the career-relevant payoffs that authors receive from a publication.
+For simplicity, we treated payoffs as _net_ payoffs, meaning the difference between the benefits and costs of each publication route.
+In reality,
+<!-- This means that in reality,  -->
+the payoffs associated with Registered Reports can thus be raised by either increasing their benefits or lowering their costs (or both) relative to those of standard reports.
+<!-- publishing a Registered Report. -->
+This implies three potential targets for intervention in total: 
+the benefits of Registered Reports, the costs of Registered Reports, and the variance of the net payoff of Registered Reports, each relative to standard reports.
+<!-- #### Increasing mean payoff -->
+<!-- In the simulation, we varied only the mean payoff of Registered Reports and kept payoff variance fixed at 0. -->
+<!-- Figures \@ref(fig:epsilonplot)--\@ref(fig:competitionplot) show that higher payoffs ($b_{RR}$) increase the popularity of Registered Reports unless empirical pace is low and researchers face either intense competition or publication targets that are even higher than the value of Registered Reports. -->
+<!-- Our study was designed to investigate the consequences of the fact that whether and where a study is published is partly influenced by the study's results in standard reports, but not in Registered Reports. -->
+<!-- We therefore focus on 1) the benefits associated with the prestige and impact of the publishing journal [assuming that these parameters are both directly relevant for authors and causally influence another relevant parameter, the citation rate, @Traag2021] and 2) the costs associated with producing a published manuscript, such as data collection and analysis, writing, preparing a journal submission, revisions, responding to reviewers, and so on. -->
 
-#### Increasing mean payoff
-Figures \@ref(fig:epsilonplot)--\@ref(fig:competitionplot) show that higher payoffs for Registered Reports increase their popularity unless empirical pace is low and researchers face either intense competition or publication targets that are even higher than the value of Registered Reports.
-If Registered Reports were worth as much or more than the maximum payoff that authors can expect from a standard report, they should always be favoured$\,$---$\,$in such a situation, the higher variance of standard reports would only increase the danger of a worse outcome.
-In our model, the payoff stands for the _net_ value for authors' careers, meaning the difference between benefits and costs.
-In reality, this net value could thus be improved by either raising the benefits or lowering the costs associated with Registered Reports (or both).
+<!-- If Registered Reports were worth as much or more than the maximum payoff that authors can expect from a standard report, they should always be favoured$\,$---$\,$in such a situation, the higher variance of standard reports would only increase the danger of a worse outcome. -->
+<!-- In our model, the payoff stands for the _net_ value for authors' careers, meaning the difference between benefits and costs. -->
+<!-- In reality, this net value could thus be improved by either raising the benefits or lowering the costs associated with Registered Reports (or both) relative to those of standard reports. -->
 
-We conceptualise the value of a publication as determined by the prestige and impact of the publishing journal, assuming that these parameters are both directly relevant for authors and causally influence another relevant parameter, namely citations [@Traag2021].
-Increasing the benefits of Registered Reports could thus be achieved if more prestigious, high-impact journals offered the format.
-In practice, one concern is that even when such journals offer Registered Reports in principle, their Stage-1 review process may be prohibitively selective, rejecting nearly all proposals.
-This could happen if the aim of selecting high-impact studies to publish made editors too risk-averse to accept the inherent uncertainty about the eventual study results in Registered Reports.
-Perhaps as the result of such a dynamic, the journal _Nature_ launched a Registered-Reports submission track in February 2023, but appears to have published at most one Registered Report by August 2024 [@Nature2023].^[We used the search function on _Nature_'s website to search for the string 'Registered Report' (entered without quotes) in research articles published since 22^nd^ February 2023 and then searched the full texts of the 72 search hits for the string 'registered'. None of the articles was unambiguously marked as a Registered Report. Only one article [@Aslett2024] contained the term 'registered report' and was phrased in a way that may be consistent with the Registered Reports format.]
+#### Increasing the benefits of Registered Reports
+Our study was designed to investigate the consequences of the fact that whether and where a study is published is partly influenced by the study's results in standard reports, but not in Registered Reports.
+We thus focus on the author benefits associated with the prestige and impact of the publishing journal [assuming that these parameters are both directly relevant for authors and causally influence citations, another relevant parameter, @Traag2021].
+In this regard, raising the benefits of Registered Reports could be achieved if more prestigious, high-impact journals offered the format.
+<!-- In practice, one concern is that high-impact journals -->
+High-impact journals may currently be particularly reluctant to offer
+Registered Reports for fear of being forced to publish studies with uninteresting results, which might be cited less often.
+<!-- in-principle acceptance for studies before knowing the results for fear that articles with 'bad' results may be cited less often. -->
+Even when offering the format in principle, the same concern may lead such journals to be prohibitively selective during Stage-1 review and reject nearly all proposals.
+<!-- even when such journals offer Registered Reports in principle, their Stage-1 review process may be prohibitively selective, rejecting nearly all proposals. -->
+<!-- This could happen if the aim of selecting high-impact studies to publish made editors too risk-averse to accept the inherent uncertainty about the eventual study results in Registered Reports. -->
+Perhaps as the result of such a dynamic, the journal _Nature_ launched a Registered-Reports submission track in February 2023 [@Nature2023], but appears to have published at most one Registered Report by August 2024.^[We used the search function on _Nature_'s website to search for the string 'Registered Report' (entered without quotes) in research articles published since 22^nd^ February 2023 and then searched the full texts of the 72 search hits for the string 'registered'. None of the articles was unambiguously marked as a Registered Report. Only one article [@Aslett2024] contained the term 'registered report' and was phrased in a way that may be consistent with the Registered Reports format.]
+In practice, journals who are willing to participate in raising the value of Registered Reports should thus strive for designing an editorial process that, if ambitious, does not set unrealistic standards.
 
-Alternatively, the value of Registered Reports could be raised by those who ultimately provide the 'career-relevant benefits' associated with a publication, namely faculty committees responsible for hiring and promotion decisions.
+<!-- Alternatively,  -->
+The value of Registered Reports can also be raised by those who ultimately provide the 'career-relevant benefits' associated with a publication, namely faculty committees responsible for hiring and promotion decisions.
 Placing a premium on Registered Reports in tenure agreements, promotion criteria, and hiring processes could increase the attractiveness of the format substantially.
 This is in line with recent calls for greater emphasis on rigorous and transparent research methods in hiring, promotion, and tenure decisions [e.g., @Moher2018], for example by including so-called 'open-science statements' in job ads [@Schonbrodt2016;@Schonbrodt2018].
 However, most such statements currently either do not define specific practices or mention only preregistration and not Registered Reports [@Schonbrodt2018].
-To the extent that Registered Reports are valued more highly than other practices (e.g., because they are designed to reduce publication bias), saying so explicitly would be worthwhile,  
-<!-- explicitly that (and how) Registered Reports are appreciated would be worthwhile,  -->
-especially given that Registered Reports are likely more costly for authors.
+Explicitly highlighting Registered Reports in job ads and weighting them more heavily than standard reports in hiring, promotion, and tenure decisions could therefore be a promising strategy for increasing their popularity.
+<!-- To the extent that Registered Reports are valued more highly than other practices (e.g., because they are designed to reduce publication bias), saying so explicitly would be worthwhile, especially given that Registered Reports are likely more costly for authors. -->
 <!-- To the extent that the scientific community _does_ value Registered Reports more than preregistration (e.g., because Registered Reports are designed to reduce publication bias), an explicit distinction would be worthwhile, especially given that Registered Reports are likely more costly for authors. -->
 
+#### Decreasing the costs of Registered Reports
 Compared to standard reports, Registered Reports may be more costly for authors due to the additional stage of peer review 
 <!-- (potentially requiring authors to prepare and revise manuscripts, write cover letters, and respond to reviewers more often)  -->
-as well as stricter requirements for methodological rigour and sample size.
-As one example, _Nature Human Behaviour_ currently requires analysis and sampling plans in Registered Reports (but not regular articles) to aim for at least $95\%$ statistical power or a Bayes factor of 10 [@NatureHumanBehaviour].
-Although changing such requirements would be easier than the solutions discussed above, doing so would threaten the core virtues of Registered Reports.
+and stricter requirements for methodological rigour and sample size.
+For example, Registered Reports (but not standard reports) in _Nature Human Behaviour_ currently must provide sampling plans aiming for at least $95\%$ statistical power or a Bayes factor of 10 [@NatureHumanBehaviour].
+However, although it may be relatively easy to lower such standards,
+<!-- requirements may be relatively easy to change, -->
+<!-- Changing such requirements might be easier than the solutions discussed above. -->
+<!-- However,  -->
+doing so would also lower the value of Registered Reports to the scientific community (providing high-quality evidence) and thus partly defeat their purpose.
+<!-- partly defeat the purpose of Registered Reports and  -->
+<!-- run counter to the main objective of Registered Reports, which is to publish studies based on their high-quality methods. -->
+This problem illustrates that many of the additional costs associated with Registered Reports may be 'good costs' that increase the quality of the resulting publications [see also @Tiokhin2021a].
+To preserve this quality, cost cutting may need to be confined to removing unnecessary inefficiencies, such as certain bureaucratic aspects of the submission or review process.
 
 
-not only that Registered Reports are among such journals' submission formats, but also that the Stage-1 review process is not prohibitively selective.
+<!-- Even without explicit submission requirements, though, the Stage-1 review process may plausibly select for Registered Reports with higher average methodological rigour than standard reports published in the same journal$\,$---$\,$simply because methodological shortcomings can be compensated by impressive results in standard reports but not in Registered Reports. -->
+<!-- These concerns notwithstanding, it may be possible to at least somewhat reduce the cost difference between Registered Reports and standard reports. -->
+An alternative route to decreasing the relative costs of Registered Reports is to _increase_ the costs of standard reports.
+<!-- A less obvious, but perhaps more effective way of achieving this could be to  -->
+<!-- shift the focus away from Registered Reports and instead  -->
+<!-- increase the costs of standard reports. -->
+Going back to the example above, a high-impact journal like _Nature Human Behaviour_ could reasonably demand the same level of methodological rigour 
+<!-- and standard of evidence  -->
+from standard reports as from Registered Reports.
+This 
+<!-- should work in principle because it  -->
+would reduce the marginal advantage of standard reports over Registered Reports in terms of the investment required from authors (making Registered Reports relatively more attractive), while at the same time raising the quality of all studies published by the journal.
 
-This does not only mean that more such journals should offer Registered Reports in principle, but 
-
-
-This fact alone suggests that the net value of a Registered Report for authors is currently not as high.
-
-
-Figures \@ref(fig:mplot)--\@ref(fig:competitionplot) show that increasing the payoff from Registered Reports increases their popularity in all but a few situation
-Our simulation varies the payoff from Registered Reports ($b_{RR}$) to a maximum of $90\%$ of the payoff from a published standard report. 
-
+<!-- authors need to choose between the two formats. -->
+<!-- Therefore, what matters is not their absolute costs or benefits, but the relative difference between Registered Reports and standard reports. -->
 
 
 
 #### Increasing payoff variance
 
+* increase variance of pay-offs
+  + PCI RR: increases potential maximum pay-offs -->get even better journals on board
 
 
-Translated to the real-world academic landscape, our model thus predicts Registered Reports to be least popular 
-when researchers' productivity (empirical pace) is reduced by lacking resources or the speed of data collection (e.g., research relying on expensive or rare equipment, research on populations that are difficult to access) while researchers either face intense competition or publication targets that cannot be met with Registered Reports alone (e.g., on the tenure track).
-might thus expect the following patterns.
-In research areas where empirical pace is low because studies are excessively costly or slow to conduct (e.g., research relying on expensive or rare equipment, research on populations that are difficult to access), or in labs or institutions where empirical pace is low because of lacking resources, publication strategies are particularly susceptible to the influence of other factors.
-Our model predicts that researchers in such fields or labs will be much less likely to use Registered Reports when they are early career, when they must achieve publication targets that cannot be met with Registered Reports alone (e.g., tenure agreements that ask for a minimal number of publications in high-ranking journals), or when they face substantial competition.
+In Registered Reports, 
+
+<!-- #### Registered Reports and post-publication peer review  -->
+The post-publication peer review platform *Peer Community In* (PCI) recently launched a new model of Registered Reports (_PCI Registered Reports_) in which authors are no longer tied to a specific journal.
+_PCI Registered Reports_ offers authors the regular process of Stage-1 and Stage-2 review, but the end result of a successful submission is 'only' a preprint with a so-called 'recommendation' from _PCI_. 
+Authors can subsequently publish their manuscript in one of several journals who partnered with _PCI_ and either rely on the _PCI_ review process alone or offer a streamlined review process for _PCI_-recommended preprints.
+Alternatively, authors are free to submit to any other journal as if their manuscript were a standard report.
+This innovation gives Registered-Reports authors significantly more freedom to capitalise on the results of their study because a submission to PCI Registered Reports does not preclude the chance of a high-impact publication.
+PCI Registered Reports thus constitute a significant change to the relative incentives and risk structure of Registered Reports compared to standard reports that merits a closer investigation in the future.
+
+### General implications for risk-taking in academic research
+
+* Implications for risk taking more generally
+  + apply findings to different situations
+  + for example, implications for funding lotteries?
+  
+The core of our model is the choice between a high-risk option and a low-risk option, with 'risk' meaning unpredictable variability in outcomes.
+We assume that the standard publication route always has greater risk than conducting a Registered Report.
+
+Our model also predicts that low but non-zero competition _increases_ the popularity of Registered Reports relative to baseline.
+<!-- This is because low competition sifts out only the worst-performing individuals, which in our model are those who preferred the risky option (standard reports) and were unlucky (obtained unpublishable results). -->
+This result is interesting in light of proposals for replacing traditional grant funding competitions with modified lotteries, in which grants are raffled between applicants whose proposals clear a certain quality threshold [@Fang2016;@Smaldino2019b;@Heyard2022].
+<!-- Rather than trying to identify the best proposals via peer review, funding lotteries raffle the available grants between all applicants. -->
+<!-- In modified lotteries, proposals must clear a certain quality threshold (evaluated via peer review) to enter the raffle. -->
+Modified lotteries would represent low but non-zero competition if the quality threshold was set very low (e.g., excluding only the bottom 10% of proposals).
+Whether such low-threshold lotteries would have a measurable effect on the popularity of Registered Reports is questionable because applicants' publication records are usually not a primary criterion for funding decisions [although they may have a sizeable influence on reviews, @Simsek2024].
+However, a more general interpretation of our results is 
+
+
+<!-- Translated to the real-world academic landscape, our model thus predicts Registered Reports to be least popular  -->
+<!-- when researchers' productivity (empirical pace) is reduced by lacking resources or the speed of data collection (e.g., research relying on expensive or rare equipment, research on populations that are difficult to access) while researchers either face intense competition or publication targets that cannot be met with Registered Reports alone (e.g., on the tenure track). -->
+<!-- might thus expect the following patterns. -->
+<!-- In research areas where empirical pace is low because studies are excessively costly or slow to conduct (e.g., research relying on expensive or rare equipment, research on populations that are difficult to access), or in labs or institutions where empirical pace is low because of lacking resources, publication strategies are particularly susceptible to the influence of other factors. -->
+<!-- Our model predicts that researchers in such fields or labs will be much less likely to use Registered Reports when they are early career, when they must achieve publication targets that cannot be met with Registered Reports alone (e.g., tenure agreements that ask for a minimal number of publications in high-ranking journals), or when they face substantial competition. -->
 In contrast, researchers in fields or labs with very high empirical pace (e.g., research areas relying on online surveys) should remain relatively indifferent to Registered Reports, preferring them when they are worth more than the expected payoff from the standard publication route and avoiding them when they are worth less than that.
 The only exception to this are situations with intense competition, which drives such researchers to avoid Registered Reports unless they are very valuable (e.g., when Registered Reports can be conducted at the best journal that researchers think would publish their study as a standard report).
 
 High levels competition may in fact be the default in many disciplines and countries, as the last decades have seen vast increases in PhD graduates but relatively stable numbers of tenured positions [@Cyranoski2011].
-
-
-When researchers must meet a specific publication target, individuals for whom additional publications beyond the target have decreasing returns (e.g., assistant professors on the tenure track or PhD candidates who intend to leave academia after obtaining their degree) are predicted to be especially sensitive to the value of Registered Reports: 
-They should strongly prefer Registered Reports when those are worth enough to meet the target, and strongly prefer the standard publication route otherwise.
-Finally, intense competition$\,$---$\,$e.g., when researchers' publication records must be in the top $10\%$ of their cohort for them to get a job$\,$---$\,$is predicted to have a strong negative effect on the popularity of Registered Reports, regardless of career stage.
 Given that the last decades have seen vast increases in PhD students but relatively stable numbers of tenured positions in many countries [@Cyranoski2011], substantial competition may in fact be the default in many research fields.
+
+<!-- When researchers must meet a specific publication target, individuals for whom additional publications beyond the target have decreasing returns (e.g., assistant professors on the tenure track or PhD candidates who intend to leave academia after obtaining their degree) are predicted to be especially sensitive to the value of Registered Reports:  -->
+<!-- They should strongly prefer Registered Reports when those are worth enough to meet the target, and strongly prefer the standard publication route otherwise. -->
+<!-- Finally, intense competition$\,$---$\,$e.g., when researchers' publication records must be in the top $10\%$ of their cohort for them to get a job$\,$---$\,$is predicted to have a strong negative effect on the popularity of Registered Reports, regardless of career stage. -->
+
 
 
 
@@ -984,39 +1044,7 @@ This is based on the assumption that additional publications provide increasing 
 
 
 
-Our model also predicts that low but non-zero competition _increases_ the popularity of Registered Reports relative to baseline.
-<!-- This is because low competition sifts out only the worst-performing individuals, which in our model are those who preferred the risky option (standard reports) and were unlucky (obtained unpublishable results). -->
-This result is interesting in light of proposals for replacing traditional grant funding competitions with modified lotteries, in which grants are raffled between applicants whose proposals clear a certain quality threshold [@Fang2016;@Smaldino2019b;@Heyard2022].
-<!-- Rather than trying to identify the best proposals via peer review, funding lotteries raffle the available grants between all applicants. -->
-<!-- In modified lotteries, proposals must clear a certain quality threshold (evaluated via peer review) to enter the raffle. -->
-Modified lotteries would represent low but non-zero competition if the quality threshold was set very low (e.g., excluding only the bottom 10% of proposals).
-Whether such low-threshold lotteries would have a measurable effect on the popularity of Registered Reports is questionable because applicants' publication records are usually not a primary criterion for funding decisions [although they may have a sizeable influence on reviews, @Simsek2024].
-However, a more general interpretation of our results is 
 
-
-
-The purpose of this simulation study was to understand the effects of a small set of factors on author incentives for Registered Reports.
-Although this narrow focus ignores many other factors that play a role in real-world academia, the simulation results can be used to identify targets for further investigation.
-Specifically, our model predicts several situations in which researchers might avoid Registered Reports entirely.
-
-be used as a starting point for further investigation.
-provide a general expectation about the 
-we can use the results 
-the simulation results can help develop general expectations about the studied variables (making 'all else being equal' predictions)
-it allows us to infer general patterns 
-likely influence the adoption of Registered Reports in real-world academia, 
-
-By design, our model ignores many other factors that likely influence the adoption of Registered Reports in real-world academia.
-
-Our model isolates a small set of factors 
-The purpose of this narrow focus 
-This narrow focus allowed us to isolate the 
-The simulation results thus cannot and should not be mapped directly onto specific real-world situations.
-However, the results can be used to identify 
-The purpose of this study was instead to help form an intuition and develop general expectations about the effects of specific factors in isolation (i.e., all else being equal).
-In addition, situations 
-In addition to suggesting general trends, our results point to a number of situations in which these factors appear to drastically reduce the attractiveness of Registered Reports.
-For meta-scientists and for advocates of the format, these situations are targets for further investigation.
 
 Although Registered Reports have existed for over ten years at this point, surprisingly little is known about who uses the format and for what 
 
@@ -1032,31 +1060,17 @@ The goal of this study was to achieve a better understanding of the consequences
 
 
 
-#### Researchers with low productivity are most susceptible to other factors
-As discussed above, high empirical pace$\,$---$\,$being able to complete many research cycles before evaluation$\,$---$\,$appears to buffer the effects of other factors.
-<!-- Conversely, _low_ empirical pace thus makes researchers more susceptible to other risk-related influences. -->
-Conversely, our model thus predicts that researchers whose productivity is _low_, for example due to lacking resources or slow or costly data collection (e.g., when relying on expensive equipment or difficult-to-access populations), are most susceptible to other risk-related influences.
-In particular, 
+<!-- #### Researchers with low productivity are most susceptible to other factors -->
+<!-- As discussed above, high empirical pace$\,$---$\,$being able to complete many research cycles before evaluation$\,$---$\,$appears to buffer the effects of other factors. -->
+<!-- Conversely, our model thus predicts that researchers whose productivity is _low_, for example due to lacking resources or slow or costly data collection (e.g., when relying on expensive equipment or difficult-to-access populations), are most susceptible to other risk-related influences. -->
 
-
-First, 
-
-### Outcome variance
-The core of our model is the choice between a high-risk option and a low-risk option, with 'risk' meaning unpredictable variability in outcomes.
-We assume that the standard publication route always has greater risk than conducting a Registered Report.
-
-Experienced scientists may have research lines
-
-Of course real-world academia is much more complex than the simple model presented here.
-
-
-* Fields with low pace/labs with low resources are most susceptible to other factors
-* Tenure track: value of RRs extremely important
-* Grants: strategy to only sift out the worst application and raffle among the rest would favour RR-heavy strategy
-  + More generally: our model shows that such an approach produces risk aversion, which in general might be not so good for science
-* competition: relate to competition for priority & potential interaction with up-front cost of RRs
-* Increase mean payoff from RRs: increase value, decrease cost OR decrease value, increase costs of SRs 
-* Increase outcome variance from RRs in the upper direction: PCI RRs
+<!-- * Fields with low pace/labs with low resources are most susceptible to other factors -->
+<!-- * Tenure track: value of RRs extremely important -->
+<!-- * Grants: strategy to only sift out the worst application and raffle among the rest would favour RR-heavy strategy -->
+<!--   + More generally: our model shows that such an approach produces risk aversion, which in general might be not so good for science -->
+<!-- * competition: relate to competition for priority & potential interaction with up-front cost of RRs -->
+<!-- * Increase mean payoff from RRs: increase value, decrease cost OR decrease value, increase costs of SRs  -->
+<!-- * Increase outcome variance from RRs in the upper direction: PCI RRs -->
 
 
 ``To do:``
@@ -1076,27 +1090,12 @@ Of course real-world academia is much more complex than the simple model present
 
 * General “limitation” of formal modeling
   + Narrow focus, ignores many important factors (by design)
-* specific aspects of the model
-  + cartoonish concept of publication bias
-    + simplest fix: make it noisier/probabilistic --> likely result: more noisy in the outcome
-    + more realistic: model additional dimensions of papers
-    + simplification probably fine for the purposes
-  + assignment of prior probability
-    + prior probably not uniform across 0 and 1
-      + many more wrong? but many also trivially true?
-      + can try different distributions
-    + in all cycles randomly drawn hypothesis – not realistic, researchers pick hypotheses
-      + ability-based risk taking
-    + (Optional/low priority: perfect knowledge about prior; how accurate is knowledge in practice? Interindividual difference in knowledge about prior?)
-  + ignores time as a factor
-    + mean and/or variance of time to publication may differ between RRs and SRs, and people may discount delays
-      + different variance in time to publication interacts with delay discounting (?)
-  + model assumes researchers working alone
-    + senior researchers also have to take needs of ECRs into account etc.
-    + empirical pace compensated for by increased number of co-authors? --> future bibliometric analyses
 
+By design, our model is based on assumptions that simplify and exaggerate some aspects of real-world academia and ignore many others.
+<!-- This allowed us to examine the basic functioning of the included factors,  -->
+First, we use an extreme, cartoonish concept of publication bias and its relation to the prior probability of tested hypotheses:
+All positive results are published, all negative results remain unpublished, and results are determined only by the prior probability of hypotheses.
 
-* Narrow focus on one specific (and highly stylised) difference between Registered Reports and standard reports; there are many others. Model ignores a myriad other factors that influences who chooses Registered Reports for which studies when
 
 * Concept of publication bias as filtering positive results of hypothesis tests (and the respective connection to hypothesis priors such that high priors --> better) is cartoonish and not entirely accurate for the simple reason that positive results of trivial (or otherwise boring) hypotheses are usually not highly valued (also, this approach only focuses on hypothesis testing, which is widely used in psychology but by far not the only means of doing science).
 A more valid solution may be the concept of publication bias as favouring belief-shifting results presented by @Gross2021.
@@ -1104,29 +1103,75 @@ Adapting the model presented here to capture this concept of bias could be an in
 However, the present version of the model also allows a conservative interpretation in which the prior probability of hypotheses simply reflects authors' predictions of the eventual publication value of different research questions. 
 This interpretation is still concordant with Registered Reports and standard reports differing in risk, because the publication value of standard reports certainly depends more strongly on the study results than the publication value of Registered Reports (even if not in the simplistic sense of positive hypothesis tests having higher value).
 
-* Fitness concept: one caveat is that 
+<!-- By design, our model ignores many aspects of real-world academia that likely influence the adoption of Registered Reports. -->
+<!-- By design, our model is an unrealistic simplification that ignores many factors that likely influence the adoption of Registered Reports and exaggerates the ones it includes. -->
+<!-- This allowed us toisolate a small set of variables and understand their individual effects and interactions under specific assumptions. -->
 
-* RRs may actually _slow_ the empirical pace, introducing an interaction that our model doesn't take into account
+<!-- Although these assumptions are chosen to capture important aspects of some features of the real world and not deviate too far from others, they must be taken into account when interpreting the simulation results. -->
+<!-- The results of the simulation must therefore be interpreted with these assumptions in mind. -->
 
-* Fitness curves: more senior researchers may also take the needs of their early-career mentees into account
+
+The purpose of this simulation study was to understand the effects of a small set of factors on author incentives for Registered Reports.
+Although this narrow focus ignores many other factors that play a role in real-world academia, the simulation results can be used to identify targets for further investigation.
+Specifically, our model predicts several situations in which researchers might avoid Registered Reports entirely.
+
+be used as a starting point for further investigation.
+provide a general expectation about the 
+we can use the results 
+the simulation results can help develop general expectations about the studied variables (making 'all else being equal' predictions)
+it allows us to infer general patterns 
+likely influence the adoption of Registered Reports in real-world academia, 
 
 
-## Future directions
+Our model isolates a small set of factors 
+The purpose of this narrow focus 
+This narrow focus allowed us to isolate the 
+The simulation results thus cannot and should not be mapped directly onto specific real-world situations.
+However, the results can be used to identify 
+The purpose of this study was instead to help form an intuition and develop general expectations about the effects of specific factors in isolation (i.e., all else being equal).
 
+In addition, situations 
+In addition to suggesting general trends, our results point to a number of situations in which these factors appear to drastically reduce the attractiveness of Registered Reports.
+For meta-scientists and for advocates of the format, these situations are targets for further investigation.
+
+
+* cartoonish concept of publication bias
+  + simplest fix: make it noisier/probabilistic --> likely result: more noisy in the outcome
+  + more realistic: model additional dimensions of papers
+  + simplification probably fine for the purposes
+* assignment of prior probability
+  + prior probably not uniform across 0 and 1
+    + many more wrong? but many also trivially true?
+    + can try different distributions
+      
+  + in all cycles randomly drawn hypothesis – not realistic, researchers pick hypotheses
+      + ability-based risk taking
+    + (Optional/low priority: perfect knowledge about prior; how accurate is knowledge in practice? Interindividual difference in knowledge about prior?)
+    
 #### Ability-based risk taking 
 The model presented in this chapter only considers the effects of situational factors on individuals' risk sensitivity.
 However, risk sensitivity can also be influenced by individual differences, such that individuals with traits or abilities that increase their expected payoff from a risky option (e.g., traits that increase their winning chances or the payoff when winning or that buffer the impact of losses) should be more risk-prone [@Barclay2018].
 Such factors may be important to consider in the context of research and publication practices.
 For example, researchers who are better at choosing research questions that are likely to result in high-impact publications (e.g., through talent or experience) may find Registered Reports less attractive.
 As a more nefarious version of this idea, Registered Reports may be relatively unpopular among researchers who are more inclined to using questionable research practices (or even fraud) to obtain publishable or impactful results.
+  
+    
+* ignores time as a factor
+  + mean and/or variance of time to publication may differ between RRs and SRs, and people may discount delays
+  
+<!-- + different variance in time to publication interacts with delay discounting (?) -->
+* model assumes researchers working alone
+  + senior researchers also have to take needs of ECRs into account etc.
+  + empirical pace compensated for by increased number of co-authors? -> future bibliometric analyses
 
-#### Registered Reports and post-publication peer review 
-The post-publication peer review platform *Peer Community In* (PCI) recently launched a new model of Registered Reports (_PCI Registered Reports_) in which authors are no longer tied to a specific journal.
-_PCI Registered Reports_ offers authors the regular process of Stage-1 and Stage-2 review, but the end result of a successful submission is 'only' a preprint with a so-called 'recommendation' from _PCI_. 
-Authors can subsequently publish their manuscript in one of several journals who partnered with _PCI_ and either rely on the _PCI_ review process alone or offer a streamlined review process for _PCI_-recommended preprints.
-Alternatively, authors are free to submit to any other journal as if their manuscript were a standard report.
-This innovation gives Registered-Reports authors significantly more freedom to capitalise on the results of their study because a submission to PCI Registered Reports does not preclude the chance of a high-impact publication.
-PCI Registered Reports thus constitute a significant change to the relative incentives and risk structure of Registered Reports compared to standard reports that merits a closer investigation in the future.
+* Narrow focus on one specific (and highly stylised) difference between Registered Reports and standard reports; there are many others. Model ignores a myriad other factors that influences who chooses Registered Reports for which studies when
+
+* Fitness concept: one caveat is that 
+
+* RRs may actually _slow_ the empirical pace, introducing an interaction that our model doesn't take into account
+
+
+
 
 
 ## Conclusion
@@ -1138,6 +1183,8 @@ This figure is much lower than the estimated prevalence of preregistration in th
 The difference in adoption rates could reflect that Registered Reports require a more profound change to researchers' habitual workflow, are more costly in other ways (e.g., require larger samples), are not available at all journals (although more than 300 journals offer them at this point) or simply are less well known.
 Nonetheless, one might expect the format to spread more quickly if it offered substantial advantages for researchers' careers.
 
+* add here that this might be explained by high competition being the default
+High levels competition may in fact be the default in many scientific disciplines and countries, as the last decades have seen vast increases in PhD graduates but relatively stable numbers of tenured positions [@Cyranoski2011].
 
 
 <!-- Could such an effect alone explain why Registered Reports have fewer positive results? -->
