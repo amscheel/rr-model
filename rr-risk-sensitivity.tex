@@ -56,6 +56,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage[normalem]{ulem}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -213,7 +214,7 @@ Correspondence concerning this article should be addressed to Anne M. Scheel, De
 \begin{document}
 \maketitle
 
-Registered Reports are an article format designed to reduce publication bias and `questionable research practices' (QRPs), which distort the published record of research findings in many scientific disciplines (Chambers, 2013; de Vries et al., 2018; Dickersin \& Min, 1993; Driessen, Hollon, Bockting, Cuijpers, \& Turner, 2015; Franco, Malhotra, \& Simonovits, 2014; Franco, Malhotra, \& Simonovits, 2016; Fraser, Parker, Nakagawa, Barnett, \& Fidler, 2018; Gerber, Green, \& Nickerson, 2001; Gopalakrishna et al., 2022; John, Loewenstein, \& Prelec, 2012; Kepes, Keener, McDaniel, \& Hartman, 2022; Makel, Hodges, Cook, \& Plucker, 2021; O'Boyle, Banks, \& Gonzalez-Mulé, 2017; Simmons, Nelson, \& Simonsohn, 2011; Stefan \& Schönbrodt, 2023).
+Registered Reports are an article format designed to reduce publication bias and `questionable research practices' (QRPs), which distort the published record of research findings in many scientific disciplines (Chambers, 2013; de Vries et al., 2018; Dickersin \& Min, 1993; Franco, Malhotra, \& Simonovits, 2014; Fraser, Parker, Nakagawa, Barnett, \& Fidler, 2018; Gerber, Green, \& Nickerson, 2001; Gopalakrishna et al., 2022; John, Loewenstein, \& Prelec, 2012; Kepes, Keener, McDaniel, \& Hartman, 2022; O'Boyle, Banks, \& Gonzalez-Mulé, 2017; Stefan \& Schönbrodt, 2023).
 In this format, peer review takes place before data collection and the decision to publish is made before authors, reviewers, and editors know the study results.
 In addition to preventing editors from selectively rejecting unfavourable results (in particular negative or null results), this is thought to remove incentives for authors to hide, embellish, or misrepresent results because publication no longer depends on them
 (Chambers, Dienes, McIntosh, Rotshtein, \& Willmes, 2015).
@@ -244,7 +245,7 @@ Publication bias can result from editors and reviewers disproportionately reject
 In Registered Reports, the
 in-principle acceptance issued at Stage 1 addresses both of these issues:
 Editors and reviewers cannot reject the Stage-2 report based on the direction of the results, which also reduces the incentives for authors to file-drawer the study in case of negative results.
-QRPs are practices that exploit undisclosed flexibility in data collection and analysis, for example when analysing different justifiable combinations of variables, subsamples, and decision criteria, and only reporting the ones with favourable results, or by presenting \emph{post hoc} inferences as having been predicted \emph{a priori} (Agnoli, Wicherts, Veldkamp, Albiero, \& Cubelli, 2017; Fiedler \& Schwarz, 2016; Fraser et al., 2018; Gopalakrishna et al., 2022; John et al., 2012; Kerr, 1998; Simmons et al., 2011).
+QRPs are practices that exploit undisclosed flexibility in data collection and analysis, for example when analysing different justifiable combinations of variables, subsamples, and decision criteria, and only reporting the ones with favourable results, or by presenting \emph{post hoc} inferences as having been predicted \emph{a priori} (Agnoli, Wicherts, Veldkamp, Albiero, \& Cubelli, 2017; Fiedler \& Schwarz, 2016; Fraser et al., 2018; Gopalakrishna et al., 2022; John et al., 2012; Kerr, 1998; Simmons, Nelson, \& Simonsohn, 2011).
 Registered Reports minimise the risk of QRPs via the two-stage review process, in which the Stage-1 protocol acts as a preregistration and reviewers' task during Stage-2 review is to flag any undisclosed deviations from it.
 
 \hypertarget{efficacy-of-registered-reports}{%
@@ -822,10 +823,6 @@ The only exception to this rule is high competition, but although Registered Rep
 Second, the effect of survival thresholds strongly depends on the shape of the fitness function, suggesting that publication targets may have the strongest impact in advanced career stages.
 Third, the opposite is true for high competition, which cancels out the effects of different fitness functions and thus appears to have virtually the same impact across career stages.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-DRAFT COMPLETE UP UNTIL HERE
-
 \hypertarget{implications}{%
 \subsection{Implications}\label{implications}}
 
@@ -834,6 +831,8 @@ Translated to real-world academia, this suggests that fields or labs in which pr
 Researchers in such situations may avoid the format when they must achieve publication targets that ask for a minimum number of publications in high-impact journals (e.g., as part of a tenure agreement), or when facing substantial competition for job positions or pressure to obtain competitive grants (e.g., if salary or research time depend on bringing in grants).
 When competition is high, such researchers may favour standard reports even if Registered Reports are almost as valuable as the best possible outcome from a standard report.
 Given that the last decades have seen vast increases in PhD students but relatively stable numbers of tenured positions in many countries (Cyranoski, Gilbert, Ledford, Nayar, \& Yahia, 2011), substantial competition may in fact be the default in many research fields, which could be one explanation for the currently low market share of Registered Reports.
+
+\par\vspace{.8\baselineskip}
 
 \hypertarget{possible-interventions-to-increase-the-popularity-of-registered-reports}{%
 \subsubsection{Possible interventions to increase the popularity of Registered Reports}\label{possible-interventions-to-increase-the-popularity-of-registered-reports}}
@@ -851,23 +850,28 @@ the payoffs associated with Registered Reports can thus be raised by either incr
 This implies three potential targets for intervention in total:
 the benefits of Registered Reports, the costs of Registered Reports, and the variance of the net payoff of Registered Reports, each relative to standard reports.
 
+\par\vspace{0.2\baselineskip}
+
 \hypertarget{increasing-the-benefits-of-registered-reports}{%
 \paragraph{Increasing the benefits of Registered Reports}\label{increasing-the-benefits-of-registered-reports}}
 
-Our study was designed to investigate the consequences of the fact that whether and where a study is published is partly influenced by the study's results in standard reports, but not in Registered Reports.
+The starting point of our study was that
+whether and where a study is published is partly influenced by the study's results in standard reports, but not in Registered Reports.
 We thus focus on the author benefits associated with the prestige and impact of the publishing journal (assuming that these parameters are both directly relevant for authors and causally influence citations, another relevant parameter, Traag, 2021).
-In this regard, raising the benefits of Registered Reports could be achieved if more prestigious, high-impact journals offered the format.
+These benefits could be raised if more prestigious, high-impact journals offered the format.
 High-impact journals may currently be particularly reluctant to offer
 Registered Reports for fear of being forced to publish studies with uninteresting results, which might be cited less often.
 Even when offering the format in principle, the same concern may lead such journals to be prohibitively selective during Stage-1 review and reject nearly all proposals.
 Perhaps as the result of such a dynamic, the journal \emph{Nature} launched a Registered-Reports submission track in February 2023 (Nature, 2023), but appears to have published at most one Registered Report by August 2024.\footnote{We used the search function on \emph{Nature}'s website to search for the string `Registered Report' (entered without quotes) in research articles published since 22\textsuperscript{nd} February 2023 and then searched the full texts of the 72 search hits for the string `registered'. None of the articles was unambiguously marked as a Registered Report. Only one article (Aslett et al., 2024) contained the term `registered report' and was phrased in a way that may be consistent with the Registered Reports format.}
-In practice, journals who are willing to participate in raising the value of Registered Reports should thus strive for designing an editorial process that, if ambitious, does not set unrealistic standards.
+In practice, journals who are willing to participate in raising the value of Registered Reports should thus strive for designing an editorial process which, if ambitious, does not set unrealistic standards.
 
 The value of Registered Reports can also be raised by those who ultimately provide the `career-relevant benefits' associated with a publication, namely faculty committees responsible for hiring and promotion decisions.
 Placing a premium on Registered Reports in tenure agreements, promotion criteria, and hiring processes could increase the attractiveness of the format substantially.
-This is in line with recent calls for greater emphasis on rigorous and transparent research methods in hiring, promotion, and tenure decisions (e.g., Moher et al., 2018), for example by including so-called `open-science statements' in job ads (Schönbrodt, 2016; Schönbrodt et al., 2018).
+This idea is in line with recent calls for greater emphasis on rigorous and transparent research methods in hiring, promotion, and tenure decisions (e.g., Moher et al., 2018), for example by including so-called `open-science statements' in job ads (Schönbrodt, 2016; Schönbrodt et al., 2018).
 However, most such statements currently either do not define specific practices or mention only preregistration and not Registered Reports (Schönbrodt et al., 2018).
-Explicitly highlighting Registered Reports in job ads and weighting them more heavily than standard reports in hiring, promotion, and tenure decisions could therefore be a promising strategy for increasing their popularity.
+Explicitly highlighting Registered Reports in job ads and weighting them more heavily than standard reports in hiring, promotion, and tenure decisions could therefore be a promising strategy.
+
+\par\vspace{0.2\baselineskip}
 
 \hypertarget{decreasing-the-costs-of-registered-reports}{%
 \paragraph{Decreasing the costs of Registered Reports}\label{decreasing-the-costs-of-registered-reports}}
@@ -876,187 +880,85 @@ Compared to standard reports, Registered Reports may be more costly for authors 
 and stricter requirements for methodological rigour and sample size.
 For example, Registered Reports (but not standard reports) in \emph{Nature Human Behaviour} currently must provide sampling plans aiming for at least \(95\%\) statistical power or a Bayes factor of 10 (Nature Human Behaviour, n.d.).
 However, although it may be relatively easy to lower such standards,
-doing so would also lower the value of Registered Reports to the scientific community (providing high-quality evidence) and thus partly defeat their purpose.
+doing so would also lower the quality of published Registered Reports and thus partly defeat their purpose of providing high-quality evidence.
 This problem illustrates that many of the additional costs associated with Registered Reports may be `good costs' that increase the quality of the resulting publications (see also Tiokhin, Yan, \& Morgan, 2021).
 To preserve this quality, cost cutting may need to be confined to removing unnecessary inefficiencies, such as certain bureaucratic aspects of the submission or review process.
 
-An alternative route to decreasing the relative costs of Registered Reports is to \emph{increase} the costs of standard reports.
+Alternatively, the relative costs of Registered Reports could be decreased by increasing the costs of standard reports.
 Going back to the example above, a high-impact journal like \emph{Nature Human Behaviour} could reasonably demand the same level of methodological rigour
 from standard reports as from Registered Reports.
 This
 would reduce the marginal advantage of standard reports over Registered Reports in terms of the investment required from authors (making Registered Reports relatively more attractive), while at the same time raising the quality of all studies published by the journal.
 
+\par\vspace{0.2\baselineskip}
+
 \hypertarget{increasing-payoff-variance}{%
 \paragraph{Increasing payoff variance}\label{increasing-payoff-variance}}
 
-\begin{itemize}
-\tightlist
-\item
-  increase variance of pay-offs
-
-  \begin{itemize}
-  \tightlist
-  \item
-    PCI RR: increases potential maximum pay-offs --\textgreater get even better journals on board
-  \end{itemize}
-\end{itemize}
-
-In Registered Reports,
-
-The post-publication peer review platform \emph{Peer Community In} (PCI) recently launched a new model of Registered Reports (\emph{PCI Registered Reports}) in which authors are no longer tied to a specific journal.
-\emph{PCI Registered Reports} offers authors the regular process of Stage-1 and Stage-2 review, but the end result of a successful submission is `only' a preprint with a so-called `recommendation' from \emph{PCI}.
+In the classic Registered Reports model, authors must choose a journal before having full knowledge of the value of the eventual study (i.e., before results are known and the final manuscript is written up).
+From the authors' perspective, the pre-data publication guarantee by the chosen journal puts a cap not only on the worst possible outcome, but also on the best possible outcome.\footnote{In principle, authors are free to withdraw a Registered Report before publication and submit their manuscript elsewhere, but this strategy would incur additional costs and risks (a new review process with unknown outcome) and may be perceived as violating a social norm.}
+Another approach to making Registered Reports more attractive is therefore to remove the upper cap and give authors more publication options after the research has been completed.
+This could be made possible by a recent initiative:
+In April 2021, the post-publication peer review platform \emph{Peer Community In} (PCI) introduced a new model of Registered Reports in which authors are no longer tied to a specific journal.
+\emph{PCI Registered Reports} offers authors the regular process of Stage-1 and Stage-2 review (including in-principle acceptance after Stage 1), but the end result of a successful submission is simply a preprint with a so-called `recommendation' from \emph{PCI}.
 Authors can subsequently publish their manuscript in one of several journals who partnered with \emph{PCI} and either rely on the \emph{PCI} review process alone or offer a streamlined review process for \emph{PCI}-recommended preprints.
 Alternatively, authors are free to submit to any other journal as if their manuscript were a standard report.
 This innovation gives Registered-Reports authors significantly more freedom to capitalise on the results of their study because a submission to PCI Registered Reports does not preclude the chance of a high-impact publication.
-PCI Registered Reports thus constitute a significant change to the relative incentives and risk structure of Registered Reports compared to standard reports that merits a closer investigation in the future.
-
-\hypertarget{general-implications-for-risk-taking-in-academic-research}{%
-\subsubsection{General implications for risk-taking in academic research}\label{general-implications-for-risk-taking-in-academic-research}}
-
-\begin{itemize}
-\tightlist
-\item
-  Implications for risk taking more generally
-
-  \begin{itemize}
-  \tightlist
-  \item
-    apply findings to different situations
-  \item
-    for example, implications for funding lotteries?
-  \end{itemize}
-\end{itemize}
-
-The core of our model is the choice between a high-risk option and a low-risk option, with `risk' meaning unpredictable variability in outcomes.
-We assume that the standard publication route always has greater risk than conducting a Registered Report.
-
-Our model also predicts that low but non-zero competition \emph{increases} the popularity of Registered Reports relative to baseline.
-This result is interesting in light of proposals for replacing traditional grant funding competitions with modified lotteries, in which grants are raffled between applicants whose proposals clear a certain quality threshold (Fang \& Casadevall, 2016; Heyard, Ott, Salanti, \& Egger, 2022; Smaldino, Turner, \& Contreras Kallens, 2019).
-Modified lotteries would represent low but non-zero competition if the quality threshold was set very low (e.g., excluding only the bottom 10\% of proposals).
-Whether such low-threshold lotteries would have a measurable effect on the popularity of Registered Reports is questionable because applicants' publication records are usually not a primary criterion for funding decisions (although they may have a sizeable influence on reviews, Simsek, de Vaan, \& van de Rijt, 2024).
-However, a more general interpretation of our results is
-
-In contrast, researchers in fields or labs with very high empirical pace (e.g., research areas relying on online surveys) should remain relatively indifferent to Registered Reports, preferring them when they are worth more than the expected payoff from the standard publication route and avoiding them when they are worth less than that.
-The only exception to this are situations with intense competition, which drives such researchers to avoid Registered Reports unless they are very valuable (e.g., when Registered Reports can be conducted at the best journal that researchers think would publish their study as a standard report).
-
-High levels competition may in fact be the default in many disciplines and countries, as the last decades have seen vast increases in PhD graduates but relatively stable numbers of tenured positions (Cyranoski et al., 2011).
-Given that the last decades have seen vast increases in PhD students but relatively stable numbers of tenured positions in many countries (Cyranoski et al., 2011), substantial competition may in fact be the default in many research fields.
-
-The simulation results we presented show clearly that the lower risk associated with Registered Reports does not automatically make them more attractive.
-Instead, we find many situations in which career-maximising researchers may favour the standard publication route or even avoid Registered Reports entirely.
-Most prominently, our model predicts such complete avoidance when competition is high and empirical pace\(\,\)---\(\,\)the number of studies researchers can complete before evaluation\(\,\)---\(\,\)is low.
-In this constellation, Registered Reports are not sustainable even if their value is almost as high as the maximum payoff that authors can achieve through the standard route.
-Substantial competition may in fact be the default in many disciplines and countries, as the last decades have seen vast increases in PhD graduates but relatively stable numbers of tenured positions (Cyranoski et al., 2011).
-This factor might thus be part of the explanation for the very low market share of Registered Reports.
-Two interesting question to study empirically would be 1) whether attitudes towards the format vary between researchers who experience different levels of competition (e.g., between regions or research fields) and 2) whether this effect, if present, is stronger in fields or labs where productivity is limited by slow data collection or lacking resources (low empirical pace).
-
-Another, less intuitive prediction of the model is that Registered Reports should be avoided by early-career researchers and preferred by more senior researchers, again particularly when empirical pace is low.
-This is based on the assumption that additional publications provide increasing returns for a junior researcher's career but decreasing returns for a senior researcher's career.
-
-Although Registered Reports have existed for over ten years at this point, surprisingly little is known about who uses the format and for what
-
-The most fundamental assumption of our model is that the career-relevant benefit authors receive from trying to publish a study varies less in Registered Reports than in standard reports.
-When this is true, and when the benefit associated with a Registered Report is lower than the maximum benefit authors could receive from a standard report, Registered Reports will often be an unattractive choice.
-
-have lower unpredictable outcome variability (risk) than the standard publication route
-
-The summary above highlights several situations in which a low-risk publication option may not be in researchers' interest.
-
-The model we presented focuses on the difference in risk\(\,\)---\(\,\)unpredictable outcome variance\(\,\)---\(\,\)between Registered Reports and the standard publication route.
-The goal of this study was to achieve a better understanding of the consequences of this difference and to identify situations in which Registered Reports may remain unattractive without further intervention, or be used in highly selective ways.
-
-\texttt{To\ do:}
-
-\begin{itemize}
-\tightlist
-\item
-  Implications of results
-
-  \begin{itemize}
-  \item
-    high competition may be the default: jobs, grants
-  \item
-    job selection not only on publication record. Beyond a certain threshold, more pubs may not matter much --\textgreater{} this basically means the fitness curve is concave
-  \item
-    \emph{low} competition may actually be good for grants: supports proposals for lotteries (after sifting out low-quality proposals) but not egalitarian funding distribution
-  \item
-    ECRs predicted to avoid RRs unless empirical pace is high or they want to leave academia --\textgreater{} conflicts with empirical finding suggesting that RRs are more likely to have junior first authors
-  \item
-    Tian, Su, \& Ru (2016): there are cases of high survival thresholds
-  \item
-    potential implications for meta-science
-  \item
-    potential implications for policy
-  \end{itemize}
-\end{itemize}
+As of August 2024, there are 35 journals which accept Registered Reports recommended by PCI without further review.
+With the growth of this list, and particularly the inclusion of more high-impact journals, the \emph{PCI Registered Reports} model has the potential to change the incentive structure of Registered Reports in a profound way.
 
 \hypertarget{limitations-and-future-directions}{%
 \subsection{Limitations and future directions}\label{limitations-and-future-directions}}
 
-\begin{itemize}
-\tightlist
-\item
-  General ``limitation'' of formal modeling
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Narrow focus, ignores many important factors (by design)
-  \end{itemize}
-\end{itemize}
-
 By design, our model is based on assumptions that simplify and exaggerate some aspects of real-world academia and ignore many others.
-First, we use an extreme, cartoonish concept of publication bias and its relation to the prior probability of tested hypotheses:
-All positive results are published, all negative results remain unpublished, and results are determined only by the prior probability of hypotheses.
+First, we use an extreme, one-dimensional concept of publication bias:
+All positive results are published, all negative results remain unpublished, and results are determined only by the prior probability of the hypotheses.
+Real-world publication decisions are of course based on many other factors as well, such as the relevance of the research question and the validity of the study design.
+And unlike in our model, tests of hypotheses with higher priors will not always be more publishable, for the simple reason that positive results of trivial (or previously tested) hypotheses are usually not highly valued (although it has been argued that
+research in social psychology is sometimes based on hidden tautologies, Wallach \& Wallach, 1994).
+
+A more ecologically valid approach may be to model publication bias as favouring results that shift prior beliefs (Gross \& Bergstrom, 2021).
+Adapting the model presented here to capture this concept of bias could be an interesting future direction.
+However, the present version of the model allows a conservative interpretation in which the prior probability of hypotheses simply reflects authors' predictions of the eventual publication value of different research questions.
+This interpretation is still congruent with Registered Reports and standard reports differing in risk, because publication value depends more strongly on the study results in standard reports than in Registered Reports.
+
+Second, we assume that authors have perfect knowledge of the probability that they will obtain positive (or publishable) results.
+The assumption that authors have \emph{some} prior knowledge of the results they might obtain is the starting point of our study, because this would enable strategic decisions about when to (not) use Registered Reports.
+As long as this assumption holds (i.e., authors are not completely ignorant), adding noise and even bias to authors' prior beliefs would have a diluting effect on the simulation results, but should not change the general pattern.
+Things may get more complicated, however, when considering individual differences in
+prediction accuracy or bias.
+In our model, researchers who are better at predicting the results (or publishability) of their studies would outperform researchers whose predictions are more noisy or biased.
+In reality, certain biases may actually be beneficial, for example if overconfident individuals are also better at convincing editors and reviewers of the value of their studies.
+
+A third, related limitation is that although researchers in the model know the prior of their hypotheses, they have no control over
+which hypotheses they test (hypotheses are randomly allocated).
+Of course real researchers can choose their own research questions, and this freedom may influence their publication strategies.
+In particular, researchers who are better at choosing research questions that are likely to result in high-impact publications (through talent or experience) may find Registered Reports less attractive.
+This is an example of ability-based risk taking:
+Individuals with traits or abilities that increase their expected payoff from a risky option\footnote{This includes traits that increase the chances of winning, traits that increase the payoff when winning, or traits that buffer the impact of losses.} should be more risk-prone (Barclay, Mishra, \& Sparks, 2018).
+A more nefarious version of this idea is that Registered Reports may be relatively unpopular among researchers who are more inclined to using questionable research practices (or even fraud) to obtain publishable or impactful results.
+
+Fourth, we make the simplifying assumption that researchers work alone.
+Of course this is not true in most scientific disciplines, where team work is the default and most publications have more than one author.
+As a consequence, publication decisions are usually made jointly by researchers who may have different career-related needs.
+For example, senior researchers may often take the needs of their PhD students into account, which could lead them to behave more in line with a convex fitness function (increasing returns).
+This does not invalidate our results, but it means that
+real-world publication strategies can be mixtures of the individual strategies represented by our model.
+An interesting related consideration is that researchers may be able to compensate for low empirical pace by forming larger teams, essentially sharing a smaller number of research projects with more colleagues.
+Such an effect could cause publication strategies in fields with very slow and/or costly data collection to resemble those expected under higher empirical pace.
+
+Finally, our model ignores the factor time.
+A common reservation towards Registered Reports is the concern that they take longer to publish because authors must wait for the outcome of the Stage-1 review process before starting to collect data.
+On the other hand, standard reports may occasionally have even longer publication delays, for example when they are rejected at several journals or when reviewers demand additional studies to be run.
+It is thus plausible that the formats differ in mean and/or variance of publication delays.
+Such differences could affect researchers' behaviour\(\,\)---\(\,\)as highlighted by the effect of empirical pace on the simulation results, publication speed can play an important role in academia.
+Because humans tend to discount delayed rewards (Odum et al., 2020), researchers who believe the standard publication route to be faster may prefer it even more strongly over Registered Reports than predicted by our model.
+To further investigate this possibility, data on the distribution of publication delays (from the beginning of a research project until publication) of Registered Reports and standard reports, as well as on researchers' beliefs regarding these delays, would be highly valuable.
 
 \begin{itemize}
 \tightlist
 \item
-  Concept of publication bias as filtering positive results of hypothesis tests (and the respective connection to hypothesis priors such that high priors --\textgreater{} better) is cartoonish and not entirely accurate for the simple reason that positive results of trivial (or otherwise boring) hypotheses are usually not highly valued (also, this approach only focuses on hypothesis testing, which is widely used in psychology but by far not the only means of doing science).
-  A more valid solution may be the concept of publication bias as favouring belief-shifting results presented by Gross \& Bergstrom (2021).
-  Adapting the model presented here to capture this concept of bias could be an interesting future direction.
-  However, the present version of the model also allows a conservative interpretation in which the prior probability of hypotheses simply reflects authors' predictions of the eventual publication value of different research questions.
-  This interpretation is still concordant with Registered Reports and standard reports differing in risk, because the publication value of standard reports certainly depends more strongly on the study results than the publication value of Registered Reports (even if not in the simplistic sense of positive hypothesis tests having higher value).
-\end{itemize}
-
-The purpose of this simulation study was to understand the effects of a small set of factors on author incentives for Registered Reports.
-Although this narrow focus ignores many other factors that play a role in real-world academia, the simulation results can be used to identify targets for further investigation.
-Specifically, our model predicts several situations in which researchers might avoid Registered Reports entirely.
-
-be used as a starting point for further investigation.
-provide a general expectation about the
-we can use the results
-the simulation results can help develop general expectations about the studied variables (making `all else being equal' predictions)
-it allows us to infer general patterns
-likely influence the adoption of Registered Reports in real-world academia,
-
-Our model isolates a small set of factors
-The purpose of this narrow focus
-This narrow focus allowed us to isolate the
-The simulation results thus cannot and should not be mapped directly onto specific real-world situations.
-However, the results can be used to identify
-The purpose of this study was instead to help form an intuition and develop general expectations about the effects of specific factors in isolation (i.e., all else being equal).
-
-In addition, situations
-In addition to suggesting general trends, our results point to a number of situations in which these factors appear to drastically reduce the attractiveness of Registered Reports.
-For meta-scientists and for advocates of the format, these situations are targets for further investigation.
-
-\begin{itemize}
-\tightlist
-\item
-  cartoonish concept of publication bias
-
-  \begin{itemize}
-  \tightlist
-  \item
-    simplest fix: make it noisier/probabilistic --\textgreater{} likely result: more noisy in the outcome
-  \item
-    more realistic: model additional dimensions of papers
-  \item
-    simplification probably fine for the purposes
-  \end{itemize}
-\item
-  assignment of prior probability
+  \sout{assignment of prior probability}
 
   \begin{itemize}
   \tightlist
@@ -1070,67 +972,35 @@ For meta-scientists and for advocates of the format, these situations are target
     \item
       can try different distributions
     \end{itemize}
-  \item
-    in all cycles randomly drawn hypothesis -- not realistic, researchers pick hypotheses
-
-    \begin{itemize}
-    \tightlist
-    \item
-      ability-based risk taking
-    \item
-      (Optional/low priority: perfect knowledge about prior; how accurate is knowledge in practice? Interindividual difference in knowledge about prior?)
-    \end{itemize}
   \end{itemize}
-\end{itemize}
-
-\hypertarget{ability-based-risk-taking}{%
-\paragraph{Ability-based risk taking}\label{ability-based-risk-taking}}
-
-The model presented in this chapter only considers the effects of situational factors on individuals' risk sensitivity.
-However, risk sensitivity can also be influenced by individual differences, such that individuals with traits or abilities that increase their expected payoff from a risky option (e.g., traits that increase their winning chances or the payoff when winning or that buffer the impact of losses) should be more risk-prone (Barclay, Mishra, \& Sparks, 2018).
-Such factors may be important to consider in the context of research and publication practices.
-For example, researchers who are better at choosing research questions that are likely to result in high-impact publications (e.g., through talent or experience) may find Registered Reports less attractive.
-As a more nefarious version of this idea, Registered Reports may be relatively unpopular among researchers who are more inclined to using questionable research practices (or even fraud) to obtain publishable or impactful results.
-
-\begin{itemize}
-\tightlist
-\item
-  ignores time as a factor
-
-  \begin{itemize}
-  \tightlist
-  \item
-    mean and/or variance of time to publication may differ between RRs and SRs, and people may discount delays
-  \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-\item
-  model assumes researchers working alone
-
-  \begin{itemize}
-  \tightlist
-  \item
-    senior researchers also have to take needs of ECRs into account etc.
-  \item
-    empirical pace compensated for by increased number of co-authors? -\textgreater{} future bibliometric analyses
-  \end{itemize}
-\item
-  Narrow focus on one specific (and highly stylised) difference between Registered Reports and standard reports; there are many others. Model ignores a myriad other factors that influences who chooses Registered Reports for which studies when
-\item
-  Fitness concept: one caveat is that
-\item
-  RRs may actually \emph{slow} the empirical pace, introducing an interaction that our model doesn't take into account
 \end{itemize}
 
 \hypertarget{conclusion}{%
 \subsection{Conclusion}\label{conclusion}}
 
+Registered Reports are the most promising solution to publication bias
+
+But their prevalence is still very low
+
+Reforms must take the prevailing incentive structure into account
+
+Here, we investigated one aspect of the incentives for Registered Reports
+
+Our model shows that many common situations in the academic ecosystem may cause risk-prone publication strategies
+
+The spread/growth of Registered Reports is thus not just a matter of time.
+
+There is potential for making them more popular, e.g.~by explicitly valuing them in hiring, promotion, \& tenure decisions, by increasing the costs for standard reports, or by adding more high-IF journals to PCI RR.
+
+In some cases, however, RRs may need to be commissioned if there is a demand for them. Highlights role of funding agencies (add ref)
+
 Around 600,000 journal articles per year are published in psychology alone.\footnote{Estimate was obtained via \url{https://lens.org} by applying the filters \texttt{Year\ Published\ =\ 2020-\/-2023}, \texttt{Publication\ Type\ =\ journal\ article}, and \texttt{Field\ of\ Study\ =\ Psychology}, and dividing the 2,448,670 resulting hits by 4.}
 Compared to this, the 591 Registered Reports published by 2021 (Chambers \& Tzavella, 2022) are a tiny number\(\,\)---\(\,\)even assuming that all of them were psychological studies and published in just one year, they would represent less than \(0.10\%\) of the literature.
-This figure is much lower than the estimated prevalence of preregistration in the psychology literature (\(7\%\) 2002, \(95\%\) CI = {[}\(2.5\%\)--\(12\%\){]}, Hardwicke et al., 2024), a reform that was introduced around the same time with similar goals (reducing bias in published results).
+This figure is much lower than the estimated prevalence of preregistration in the psychology literature (\(7\%\) 2002, \(95\%\) CI = {[}\(2.5\%\)--\(12\%\){]}, Hardwicke et al., 2024), a reform that was introduced around the same time with similar goals.
 The difference in adoption rates could reflect that Registered Reports require a more profound change to researchers' habitual workflow, are more costly in other ways (e.g., require larger samples), are not available at all journals (although more than 300 journals offer them at this point) or simply are less well known.
 Nonetheless, one might expect the format to spread more quickly if it offered substantial advantages for researchers' careers.
+
+We have presented a model
 
 \begin{itemize}
 \tightlist
@@ -1138,6 +1008,17 @@ Nonetheless, one might expect the format to spread more quickly if it offered su
   add here that this might be explained by high competition being the default
   High levels competition may in fact be the default in many scientific disciplines and countries, as the last decades have seen vast increases in PhD graduates but relatively stable numbers of tenured positions (Cyranoski et al., 2011).
 \end{itemize}
+
+The simulation results we presented show clearly that the lower risk associated with Registered Reports does not automatically make them more attractive.
+Instead, we find many situations in which career-maximising researchers may favour the standard publication route or even avoid Registered Reports entirely.
+Most prominently, our model predicts such complete avoidance when competition is high and empirical pace\(\,\)---\(\,\)the number of studies researchers can complete before evaluation\(\,\)---\(\,\)is low.
+In this constellation, Registered Reports are not sustainable even if their value is almost as high as the maximum payoff that authors can achieve through the standard route.
+Substantial competition may in fact be the default in many disciplines and countries, as the last decades have seen vast increases in PhD graduates but relatively stable numbers of tenured positions (Cyranoski et al., 2011).
+This factor might thus be part of the explanation for the very low market share of Registered Reports.
+Two interesting question to study empirically would be 1) whether attitudes towards the format vary between researchers who experience different levels of competition (e.g., between regions or research fields) and 2) whether this effect, if present, is stronger in fields or labs where productivity is limited by slow data collection or lacking resources (low empirical pace).
+
+The model we presented focuses on the difference in risk\(\,\)---\(\,\)unpredictable outcome variance\(\,\)---\(\,\)between Registered Reports and the standard publication route.
+The goal of this study was to achieve a better understanding of the consequences of this difference and to identify situations in which Registered Reports may remain unattractive without further intervention, or be used in highly selective ways.
 
 \hypertarget{disclosures}{%
 \subsection{Disclosures}\label{disclosures}}
@@ -1201,14 +1082,8 @@ de Vries, Y. A., Roest, A. M., Jonge, P. de, Cuijpers, P., Munafò, M. R., \& Ba
 \leavevmode\vadjust pre{\hypertarget{ref-Dickersin1993}{}}%
 Dickersin, K., \& Min, Y. I. (1993). Publication bias: The problem that won't go away. \emph{Annals of the New York Academy of Sciences}, \emph{703}, 135-146; discussion 146-148. \url{https://doi.org/10.1111/j.1749-6632.1993.tb26343.x}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Driessen2015}{}}%
-Driessen, E., Hollon, S. D., Bockting, C. L. H., Cuijpers, P., \& Turner, E. H. (2015). Does {Publication Bias Inflate} the {Apparent Efficacy} of {Psychological Treatment} for {Major Depressive Disorder}? {A Systematic Review} and {Meta-Analysis} of {US National Institutes} of {Health-Funded Trials}. \emph{PLOS ONE}, \emph{10}(9), e0137864. \url{https://doi.org/10.1371/journal.pone.0137864}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Ensinck2023}{}}%
 Ensinck, E., \& Lakens, D. (2023). \emph{An {Inception Cohort Study Quantifying How Many Registered Studies} are {Published}}. PsyArXiv. \url{https://doi.org/10.31234/osf.io/5hkjz}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Fang2016}{}}%
-Fang, F. C., \& Casadevall, A. (2016). Research {Funding}: The {Case} for a {Modified Lottery}. \emph{mBio}. \url{https://doi.org/10.1128/mbio.00422-16}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Ferguson2012}{}}%
 Ferguson, C. J., \& Heene, M. (2012). A {Vast Graveyard} of {Undead Theories}: {Publication Bias} and {Psychological Science}'s {Aversion} to the {Null}. \emph{Perspectives on Psychological Science}, \emph{7}(6), 555--561. \url{https://doi.org/10.1177/1745691612459059}
@@ -1218,9 +1093,6 @@ Fiedler, K., \& Schwarz, N. (2016). Questionable {Research Practices Revisited}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-Franco2014}{}}%
 Franco, A., Malhotra, N., \& Simonovits, G. (2014). Publication bias in the social sciences: {Unlocking} the file drawer. \emph{Science}, \emph{345}(6203), 1502--1505. \url{https://doi.org/10.1126/science.1255484}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Franco2016}{}}%
-Franco, A., Malhotra, N., \& Simonovits, G. (2016). Underreporting in {Psychology Experiments}: {Evidence From} a {Study Registry}. \emph{Social Psychological and Personality Science}, \emph{7}(1), 8--12. \url{https://doi.org/10.1177/1948550615598377}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Fraser2018}{}}%
 Fraser, H., Parker, T., Nakagawa, S., Barnett, A., \& Fidler, F. (2018). Questionable research practices in ecology and evolution. \emph{PLOS ONE}, \emph{13}(7), e0200303. \url{https://doi.org/10.1371/journal.pone.0200303}
@@ -1242,9 +1114,6 @@ Haaland, T. R., Wright, J., \& Ratikainen, I. I. (2019). Bet-hedging across gene
 
 \leavevmode\vadjust pre{\hypertarget{ref-Hardwicke2024}{}}%
 Hardwicke, T. E., Thibault, R. T., Clarke, B., Moodie, N., Crüwell, S., Schiavone, S. R., \ldots{} Vazire, S. (2024). \emph{Prevalence of transparent research practices in psychology: {A} cross-sectional study of empirical articles published in 2022}. OSF. \url{https://doi.org/10.31234/osf.io/t2zs9}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Heyard2022}{}}%
-Heyard, R., Ott, M., Salanti, G., \& Egger, M. (2022). Rethinking the {Funding Line} at the {Swiss National Science Foundation}: {Bayesian Ranking} and {Lottery}. \emph{Statistics and Public Policy}, \emph{9}(1), 110--121. \url{https://doi.org/10.1080/2330443X.2022.2086190}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Higginson2016}{}}%
 Higginson, A. D., \& Munafò, M. R. (2016). Current {Incentives} for {Scientists Lead} to {Underpowered Studies} with {Erroneous Conclusions}. \emph{PLOS Biology}, \emph{14}(11), e2000995. \url{https://doi.org/10.1371/journal.pbio.2000995}
@@ -1272,9 +1141,6 @@ Liner, G. H., \& Sewell, E. (2009). Research requirements for promotion and tenu
 
 \leavevmode\vadjust pre{\hypertarget{ref-Mahoney1977}{}}%
 Mahoney, M. J. (1977). Publication {Prejudices}: {An Experimental Study} of {Confirmatory Bias} in the {Peer Review System}. \emph{Cognitive Therapy and Research}, \emph{1}(2), 161--175. \url{https://doi.org/10.1007/BF01173636}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Makel2021}{}}%
-Makel, M. C., Hodges, J., Cook, B. G., \& Plucker, J. A. (2021). Both {Questionable} and {Open Research Practices Are Prevalent} in {Education Research}: \emph{Educational Researcher}. \url{https://doi.org/10.3102/0013189X211001356}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Miller2011a}{}}%
 Miller, A. N., Taylor, S. G., \& Bedeian, A. G. (2011). Publish or perish: Academic life as management faculty live it. \emph{Career Development International}, \emph{16}(5), 422--445. \url{https://doi.org/10.1108/13620431111167751}
@@ -1306,6 +1172,9 @@ O'Boyle, E. H., Banks, G. C., \& Gonzalez-Mulé, E. (2017). The {Chrysalis Effec
 \leavevmode\vadjust pre{\hypertarget{ref-OMahony2023}{}}%
 O'Mahony, A. (2023). \emph{Comparative analysis of {Registered Reports} and the standard research literature} (PhD thesis). Cardiff University.
 
+\leavevmode\vadjust pre{\hypertarget{ref-Odum2020}{}}%
+Odum, A. L., Becker, R. J., Haynes, J. M., Galizio, A., Frye, C. C. J., Downey, H., \ldots{} Perez, D. M. (2020). Delay discounting of different outcomes: {Review} and theory. \emph{Journal of the Experimental Analysis of Behavior}, \emph{113}(3), 657--679. \url{https://doi.org/10.1002/jeab.589}
+
 \leavevmode\vadjust pre{\hypertarget{ref-Paruzel-Czachura2021}{}}%
 Paruzel-Czachura, M., Baran, L., \& Spendel, Z. (2021). Publish or be ethical? {Publishing} pressure and scientific misconduct in research. \emph{Research Ethics}, \emph{17}(3), 375--397. \url{https://doi.org/10.1177/1747016120980562}
 
@@ -1330,14 +1199,8 @@ Schönbrodt, F. D., Schramm, L. F. F., Etzel, F. T., Bergmann, C., Mellor, D. T.
 \leavevmode\vadjust pre{\hypertarget{ref-Simmons2011}{}}%
 Simmons, J. P., Nelson, L. D., \& Simonsohn, U. (2011). False-positive psychology: {Undisclosed} flexibility in data collection and analysis allows presenting anything as significant. \emph{Psychological Science}, \emph{22}(11), 1359--1366. \url{https://doi.org/10.1177/0956797611417632}
 
-\leavevmode\vadjust pre{\hypertarget{ref-Simsek2024}{}}%
-Simsek, M., de Vaan, M., \& van de Rijt, A. (2024). Do grant proposal texts matter for funding decisions? {A} field experiment. \emph{Scientometrics}, \emph{129}(5), 2521--2532. \url{https://doi.org/10.1007/s11192-024-04968-7}
-
 \leavevmode\vadjust pre{\hypertarget{ref-Smaldino2016}{}}%
 Smaldino, P. E., \& McElreath, R. (2016). The natural selection of bad science. \emph{Royal Society Open Science}, \emph{3}, 160384. \url{https://doi.org/10.1098/rsos.160384}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Smaldino2019b}{}}%
-Smaldino, P. E., Turner, M. A., \& Contreras Kallens, P. A. (2019). Open science and modified funding lotteries can impede the natural selection of bad science. \emph{Royal Society Open Science}, \emph{6}(7), 190194. \url{https://doi.org/10.1098/rsos.190194}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Snyder2021}{}}%
 Snyder, R. E., Ellner, S. P., \& Hooker, G. (2021). Time and {Chance}: {Using Age Partitioning} to {Understand How Luck Drives Variation} in {Reproductive Success}. \emph{The American Naturalist}, \emph{197}(4), E110--E128. \url{https://doi.org/10.1086/712874}
@@ -1347,9 +1210,6 @@ Soderberg, C. K., Errington, T. M., Schiavone, S. R., Bottesini, J., Thorn, F. S
 
 \leavevmode\vadjust pre{\hypertarget{ref-Stefan2023}{}}%
 Stefan, A. M., \& Schönbrodt, F. D. (2023). Big little lies: A compendium and simulation of p-hacking strategies. \emph{Royal Society Open Science}, \emph{10}(2), 220346. \url{https://doi.org/10.1098/rsos.220346}
-
-\leavevmode\vadjust pre{\hypertarget{ref-Tian2016}{}}%
-Tian, M., Su, Y., \& Ru, X. (2016). Perish or {Publish} in {China}: {Pressures} on {Young Chinese Scholars} to {Publish} in {Internationally Indexed Journals}. \emph{Publications}, \emph{4}(2), 9. \url{https://doi.org/10.3390/publications4020009}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Tijdink2013}{}}%
 Tijdink, J. K., Vergouwen, A. C. M., \& Smulders, Y. M. (2013). Publication {Pressure} and {Burn Out} among {Dutch Medical Professors}: {A Nationwide Survey}. \emph{PLOS ONE}, \emph{8}(9), e73381. \url{https://doi.org/10.1371/journal.pone.0073381}
@@ -1371,6 +1231,9 @@ Waaijer, C. J. F., Teelken, C., Wouters, P. F., \& van der Weijden, I. C. M. (20
 
 \leavevmode\vadjust pre{\hypertarget{ref-Wagenmakers2012}{}}%
 Wagenmakers, E.-J., Wetzels, R., Borsboom, D., van der Maas, H. L. J., \& Kievit, R. A. (2012). An {Agenda} for {Purely Confirmatory Research}. \emph{Perspectives on Psychological Science}, \emph{7}(6), 632--638. \url{https://doi.org/10.1177/1745691612463078}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Wallach1994}{}}%
+Wallach, L., \& Wallach, M. A. (1994). Gergen versus the mainstream: {Are} hypotheses in social psychology subject to empirical test? \emph{Journal of Personality and Social Psychology}, \emph{67}(2), 233--242. \url{https://doi.org/10.1037/0022-3514.67.2.233}
 
 \leavevmode\vadjust pre{\hypertarget{ref-R-ggplot2}{}}%
 Wickham, H. (2016). \emph{Ggplot2: {Elegant} graphics for data analysis}. Springer-Verlag New York.
