@@ -1179,17 +1179,27 @@ To further investigate this possibility, data on the distribution of publication
 
 ## Conclusion
 
-Registered Reports are the most promising solution to publication bias
+The basic mechanism underlying Registered Reports$\,$---$\,$publication decisions before results are known$\,$---$\,$is currently the most convincing proposal for curbing publication bias.
+By selecting studies based only on the strength of the research question and methods, Registered Reports are indeed 'aligning what is beneficial for individual scientists with what is beneficial for science' [@Chambers2022, p. 29].
+However, the incentives for choosing the Registered Reports format in the first place may be less aligned with the interests of scientists.
+<!-- , whose careers depend in no small part on the quantity and impact of publications they can produce. -->
+In this study, we examined the consequences of 
+<!-- we made use of the fact that  -->
+the pre-data publication guarantee in Registered Reports, which effectively reduces the variance of publication outcomes and makes Registered Reports a low-risk option compared to the standard publication route.
+Our results show that many common situations in the academic ecosystem, such as publication targets and competition for tenured positions, may promote risk-prone publication strategies and lead researchers to avoid Registered Reports.
 
-But their prevalence is still very low
+This suggests that the spread of Registered Reports to larger parts of the scientific literature in more disciplines is not simply a matter of time.
+In psychology, where the format may be best known, a generous estimate puts the annual rate of published Registered Reports at $`r round(600/600000*100,1)`\%$ of the literature.^[Around 600,000 journal articles per year are published in psychology alone (Estimate was obtained via https://lens.org by applying the filters `Year Published = 2020--2023`, `Publication Type = journal article`, and `Field of Study = Psychology`, and dividing the 2,448,670 resulting hits by 4.) Compared to this, the 591 Registered Reports published by 2021 [@Chambers2022] are a tiny number$\,$---$\,$even assuming that all of them were psychological studies and published in just one year, they would represent less than $`r round(600/600000*100,1)`\%$ of the literature.]
+This figure is much lower than the estimated prevalence of preregistration [$7\%$ in 2022, @Hardwicke2024], a reform that was introduced around the same time with similar goals.
+Increasing the uptake of the format may thus require additional interventions.
+
+To the extent that scientific communities or external stakeholders have a demand for the kind of low-bias, high-quality evidence that Registered Reports can offer, additional interventions may be necessary to increase the adoption of the format.
+
+To the extent that the scientific community values 
+
+as long as researchers' careers depend to some degree on the journals they publish in and the impact of their publications, they will often choose risk-prone publication strategies
 
 Reforms must take the prevailing incentive structure into account
-
-Here, we investigated one aspect of the incentives for Registered Reports
-
-Our model shows that many common situations in the academic ecosystem may cause risk-prone publication strategies
-
-The spread/growth of Registered Reports is thus not just a matter of time.
 
 There is potential for making them more popular, e.g. by explicitly valuing them in hiring, promotion, & tenure decisions, by increasing the costs for standard reports, or by adding more high-IF journals to PCI RR.
 
