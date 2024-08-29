@@ -1,5 +1,5 @@
 ---
-title             : "Incentives for Registered Reports from a risk sensitivity perspective"
+title             : "Incentives for Registered Reports from a risk-sensitivity perspective"
 shorttitle        : "Risk-sensitive publication strategies"
 
 author: 
@@ -17,9 +17,9 @@ affiliation:
   - id            : "1"
     institution   : "Eindhoven University of Technology"
     
-note: "test"
+note: ""
 
-author_note: "test"
+author_note: ""
 
 #abstract: >
 # xxx Abstract xxx
@@ -99,7 +99,7 @@ Here, we examine these possibilities with an agent-based simulation, modelling a
 
 <!-- Although strategic concerns about publishability may plausibly influence researchers' choices for or against Registered reports, the consequences are likely more complex. -->
 <!-- In particular, it is unlikely that such strategic behaviour would always be risk-averse (i.e., favouring Registered Reports as a low-risk option). -->
-<!-- Researchers' willingness to take risks regarding publication sucess may instead vary across career stages, employment conditions, and research fields, potentially creating situations in which Registered Reports would never gain traction without additional incentives or interventions. -->
+<!-- Researchers' willingness to take risks regarding publication success may instead vary across career stages, employment conditions, and research fields, potentially creating situations in which Registered Reports would never gain traction without additional incentives or interventions. -->
 
 <!-- An important factor that has received little attention to date is why and in what situations authors choose Registered Reports over the standard publication route. -->
 <!-- In the context of the substantial pressure to publish documented in many countries and disciplines [@vanDalen2012;@vanDalen2021;@Tijdink2013;@Waaijer2018;@Miller2011a;@Paruzel-Czachura2021;@Gopalakrishna2022], it has been argued that the pre-data publication guarantee of Registered Reports is advantageous for researchers because it reduces uncertainty about the  -->
@@ -151,7 +151,7 @@ However, the existing estimates are based on purely observational evidence and m
 Systematic differences would act as confounders if they affected either the probability of a positive result when testing a true hypothesis (statistical power) or the base rate of true hypotheses.
 The first option is not supported by current evidence:
 A study comparing Registered Reports with matched controls found that Registered Reports have higher median sample sizes and, in blind reviews, are judged to be more rigorous in methodology and analysis and of higher overall quality [@Soderberg2021].
-Based on this finding, the increased amount of negative results in Registered Reports is unlikely to be an artifact of lower statistical power or poorer methods.
+Based on this finding, the increased amount of negative results in Registered Reports is unlikely to be an artefact of lower statistical power or poorer methods.
 But the second option$\,$---$\,$a difference in the rate of true hypotheses, or the (prior) probability that the tested hypothesis is true$\,$---$\,$has not yet been directly studied.
 <!-- The idea that hypotheses tested in Registered Reports are less often true is not implausible. -->
 <!-- It is not implausible to think  -->
@@ -182,7 +182,7 @@ Such knowledge could then be used to identify areas in which Registered Reports 
 Registered Reports are generally thought to '[neutralise] bad incentives' [@Chambers2013, p. 609], in particular the incentive to exaggerate or misrepresent a study's results in order to make them more publishable in the standard literature.
 This assumption is conditioned on the format: 
 Once authors have decided to take the Registered Report route, they can improve their publication chances only via the proposed research question and methods in Stage-1 review, and editors have an interest in selecting informative study designs because they are bound to publishing the study's results even when they turn out negative.
-In contrast to standard reports, the results are thus no longer a main target to 'hack' or select on, which should make them less biased and more trustworthy.
+In contrast to standard reports, the results are thus no longer a main target to 'hack' or select on, which should make them less biased and more trustworthy.^[Of course authors may still be biased themselves, for example because they are hoping to find supporting evidence for their own theories. However, behaviour motivated by such biases would not increase publication chances in a Registered Report, and the two-stage review process is designed to minimise their influence on the analysis and the interpretation of results.]
 
 The incentives for choosing the Registered Reports route in the first place, however, are less clear.
 Advocates of the format have argued that it 'serve[s] the interests of individual scientists' [p. 12, @Chambers2022] because it reduces scientists' risk of investing in research projects whose results turn out to be difficult to publish.
@@ -782,7 +782,7 @@ In all three cases, Registered Reports are essentially wiped out for low numbers
 Intense competition also negatively affects Registered Reports at high numbers of $m$, but here the general pattern of the baseline condition (a linear increase of Registered Reports popularity with $b_{RR}$) remains intact.
 
 Looking at the first three rows of panels in Figure \@ref(fig:competitionplot) (1%, 5%, and 10% competition), the extreme effect of competition at low $m$ appears to decrease slightly when competition is highest ($\gamma = .01$), indicated by the dark bar at the bottom of each panel becoming slightly lighter. 
-This paradoxial result is not due to Registered Reports being more lucrative in those conditions.
+This paradoxical result is not due to Registered Reports being more lucrative in those conditions.
 Rather, competition is so extreme that the natural selection in our model starts operating more on chance than on individuals' traits.
 Essentially, only individuals with the maximum possible payoff (publishing only standard reports with positive results) are able to reproduce. 
 Most likely to receive this maximum payoff are individuals who investigate hypotheses with high prior probabilities.
@@ -1120,7 +1120,7 @@ As a consequence, publication decisions are usually made jointly by researchers 
 For example, senior researchers may often take the needs of their PhD students into account, which could lead them to behave more in line with a convex fitness function (increasing returns).
 This does not invalidate our results, but it means that 
 real-world publication strategies can be mixtures of the individual strategies represented by our model.
-An interesting related consideration is that researchers may be able to compensate for low empirical pace by forming larger teams, essentially sharing a smaller number of research projects with more colleagues.
+An interesting related consideration is that researchers may be able to compensate for low empirical pace by forming larger teams, essentially sharing the payoffs from a limited number of research projects with more colleagues.
 Such an effect could cause publication strategies in fields with very slow and/or costly data collection to resemble those expected under higher empirical pace.
 
 Finally, our model ignores the factor time.
@@ -1156,7 +1156,7 @@ To further investigate this possibility, data on the distribution of publication
 
 <!-- By design, our model ignores many aspects of real-world academia that likely influence the adoption of Registered Reports. -->
 <!-- By design, our model is an unrealistic simplification that ignores many factors that likely influence the adoption of Registered Reports and exaggerates the ones it includes. -->
-<!-- This allowed us toisolate a small set of variables and understand their individual effects and interactions under specific assumptions. -->
+<!-- This allowed us to isolate a small set of variables and understand their individual effects and interactions under specific assumptions. -->
 
 <!-- Although these assumptions are chosen to capture important aspects of some features of the real world and not deviate too far from others, they must be taken into account when interpreting the simulation results. -->
 <!-- The results of the simulation must therefore be interpreted with these assumptions in mind. -->
@@ -1192,7 +1192,7 @@ Our results show that this feature does not make the format universally more att
 Instead, many common situations in the academic ecosystem, such as publication targets and competition for tenured positions, may promote risk-prone publication strategies and lead researchers to avoid Registered Reports.
 
 This suggests that the spread of Registered Reports to larger parts of the scientific literature in more disciplines is not simply a matter of time.
-In psychology, where the format may be best known, a generous estimate puts the annual rate of published Registered Reports at less than $`r apa_num(600/600000*100, digits = 1)`\%$ of the literature.^[We estimate that 600,000 journal articles per year are published in psychology and assume that at most 600 of these are Registered Reports [a generous estimate based on the 591 Registered Reports that had reportedly been published across disciplines by 2021, @Chambers2022]. The estimate of total publications per year was obtained via https://lens.org by applying the filters `Year Published = 2020--2023`, `Publication Type = journal article`, and `Field of Study = Psychology`, and dividing the 2,448,670 resulting hits by 4.]
+In psychology, where the format may be best known, a generous estimate puts the annual rate of published Registered Reports at less than $`r apa_num(600/600000*100, digits = 1)`\%$ of the literature.^[We estimate 600,000 journal publications per year in psychology and assume that less than 600 of them are Registered Reports [a generous estimate based on the 591 Registered Reports that had been published across disciplines by 2021, @Chambers2022]. The estimate of total publications per year was obtained via https://lens.org by applying the filters `Year Published = 2020--2023`, `Publication Type = journal article`, and `Field of Study = Psychology`, and dividing the 2,448,670 resulting hits by 4.]
 This figure is much lower than the estimated prevalence of preregistration [$7\%$ in 2022, @Hardwicke2024], a reform that was introduced around the same time with similar goals.
 Increasing the uptake of the format may require additional interventions, such as placing greater value on Registered Reports in hiring, promotion, and tenure decisions, raising the methodological requirements for standard reports in journals that offer both formats, or supporting the journal-independent model of _PCI Registered Reports_ and encouraging more high-impact journals to subscribe to it.
 <!-- Successful reforms to countering bias in the published literature  -->
@@ -1253,7 +1253,7 @@ To the extent that scientific communities or external stakeholders have a demand
 <!-- How much of the difference between these figures and estimates of the positive result rate in the standard literature is so large [`r 96-44` percentage points in @Scheel2021a] can be attributed to the reduction of bias in Registered Reports? -->
 
 <!-- presented initial evidence that published Registered Reports have a substantially lower rate of positive results than regular articles in psychology [$44\%$ vs $96\%$, @Scheel2021a]. -->
-<!-- A study comparing Registered Reports with matched controls additionally found that Registered Reports have higher median sample sizes and, in blind reviews, are judged to be more rigorous in methodology and analysis and of higher overall quality [@Soderberg2021], which suggests that the increased amount of negative results is not an artifact of lower power.^[We cannot rule out that the effect sizes studied in Registered Reports are smaller than in standard reports, in which case the larger samples may not translate into higher statistical power. However, it seems highly unlikely that such a difference would be large enough to explain the entire difference in the positive result rate (`r 96-44` percentage points) reported in Chapter 2 (see Fig. 3 in Chapter 2).] -->
+<!-- A study comparing Registered Reports with matched controls additionally found that Registered Reports have higher median sample sizes and, in blind reviews, are judged to be more rigorous in methodology and analysis and of higher overall quality [@Soderberg2021], which suggests that the increased amount of negative results is not an artefact of lower power.^[We cannot rule out that the effect sizes studied in Registered Reports are smaller than in standard reports, in which case the larger samples may not translate into higher statistical power. However, it seems highly unlikely that such a difference would be large enough to explain the entire difference in the positive result rate (`r 96-44` percentage points) reported in Chapter 2 (see Fig. 3 in Chapter 2).] -->
 
 <!-- These findings seem to support the effectiveness of Registered Reports in reducing publication bias and QRPs.  -->
 <!-- However, one remaining alternative explanation for the lower rate of positive results is that the hypotheses tested in the Registered Reports literature are less often true (have a lower prior probability) than those in the standard literature. -->
@@ -1273,12 +1273,12 @@ To the extent that scientific communities or external stakeholders have a demand
 
 <!-- Do these figures mean that Registered Reports are effective in reducing bias? -->
 <!-- Two alternative explanations are that Registered Reports have lower statistical power or  -->
-<!-- A study comparing Registered Reports with matched controls found that Registered Reports have higher median sample sizes and are judged to be more rigorous in methodology and analysis and of higher overall quality in blind reviews [@Soderberg2021], suggesting that the increased amount of negative results is not an artifact of lower power^[We cannot rule out that the effect sizes studied in Registered Reports are smaller than in standard reports, in which case the larger samples may not translate into higher statistical power. However, it seems unlikely that such a difference would be large enough to explain the `r 96-44` percentage point difference in the positive result rate reported in Chapter 2.] or poor study design. -->
+<!-- A study comparing Registered Reports with matched controls found that Registered Reports have higher median sample sizes and are judged to be more rigorous in methodology and analysis and of higher overall quality in blind reviews [@Soderberg2021], suggesting that the increased amount of negative results is not an artefact of lower power^[We cannot rule out that the effect sizes studied in Registered Reports are smaller than in standard reports, in which case the larger samples may not translate into higher statistical power. However, it seems unlikely that such a difference would be large enough to explain the `r 96-44` percentage point difference in the positive result rate reported in Chapter 2.] or poor study design. -->
 <!-- However, one remaining  -->
 
 <!-- Can these findings be taken as evidence for the effectiveness of Registered Reports? -->
 <!-- When comparing two literatures observationally as we did in Chapter 2 [@Scheel2021a], differences in the positive result rate can have three causes: differences in bias (i.e., publication bias and QRPs), differences in statistical power, and differences in the prior probability of the tested hypotheses.  -->
-<!-- As just mentioned, differences in power are unlikely to be the cause in this case, because Registered Reports are often required to fulfill strict power requirements and have been found to have larger sample sizes than matched controls [@Soderberg2021].^[We cannot rule out that the effect sizes studied in Registered Reports are smaller than in standard reports, in which case the larger samples may not translate into higher statistical power. However, it seems unlikely that such a difference would be large enough to explain the `r 96-44` percentage point difference in the positive result rate reported in Chapter 2.] -->
+<!-- As just mentioned, differences in power are unlikely to be the cause in this case, because Registered Reports are often required to fulfil strict power requirements and have been found to have larger sample sizes than matched controls [@Soderberg2021].^[We cannot rule out that the effect sizes studied in Registered Reports are smaller than in standard reports, in which case the larger samples may not translate into higher statistical power. However, it seems unlikely that such a difference would be large enough to explain the `r 96-44` percentage point difference in the positive result rate reported in Chapter 2.] -->
 <!-- This leaves bias and prior probability as possible culprits. -->
 <!-- A difference in bias is the most plausible option, given that a) the extremely high positive result rate in the standard literature [around or exceeding 90%,@Motyl2017;@Scheel2021a;@Sterling1959;@Sterling1995] cannot be explained without assuming a substantial amount of bias [@Ingre2018;@Scheel2021a] and b) the design of Registered Reports places considerable barriers in the way of publication bias and QRPs. -->
 <!-- However, a difference in prior probability is _also_ plausible, and there is currently no evidence speaking against this possibility. -->
@@ -1325,8 +1325,8 @@ This manuscript was created using RStudio [1.2.5019, @RStudioTeam2019] and `r my
 <!-- ### Conflicts of Interest -->
 <!-- The authors declare that they have no conflicts of interest with respect to the authorship or the publication of this article. -->
 
-<!-- ### Acknowledgements -->
-<!-- This work was funded by VIDI grant 452-17-013. We thank Chris Chambers, Emma Henderson, Leo Tiokhin, Stuart Ritchie, and Simine Vazire for valuable comments that helped improve this manuscript. -->
+### Acknowledgements
+This work was funded by VIDI grant 452-17-013. We thank Julia Rohrer for valuable comments that helped improve this manuscript.
 
 
 # References
