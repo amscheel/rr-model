@@ -4,9 +4,14 @@ library(data.table)
 
 # load competition data
 data_gamma <- readRDS(here("data", "data_gamma.RData"))
+colnames(data_gamma) <- c("generation_duration", "payoff_SR_neg",
+                          "payoff_SR_pos", "payoff_RR",
+                          "epsilon", "survival_threshold",
+                          "relative_top_n", "run_id",
+                          "publication_strategy")
 
-# calculate median submission threshold of every run
-data_gamma_summary <- data_gamma[, median(submission_threshold), 
+# calculate median publication strategy of every run
+data_gamma_summary <- data_gamma[, median(publication_strategy), 
                                by = .(run_id, generation_duration, 
                                       payoff_SR_neg, payoff_SR_pos, 
                                       payoff_RR,
@@ -47,7 +52,7 @@ plot_gamma <- ggplot(data_gamma_tile,
                     aes(x = payoff_RR,
                                    y = generation_duration,
                                    fill = median)) +
-  scale_x_continuous(expand = c(0,0), name = expression(italic(b)[RR]),
+  scale_x_continuous(expand = c(0,0), name = expression(italic(b)[R]),
                      breaks = seq(.1, .9, .1),
                      labels = c(".1", ".2", ".3", ".4", ".5", 
                                 ".6", ".7", ".8", ".9"))+
@@ -74,6 +79,5 @@ plot_gamma <- ggplot(data_gamma_tile,
                  `1` = "linear\n(epsilon = 1)",
                  `5` = "increasing returns\n(epsilon = 5)")))
 
-ggsave(paste("plot_gamma_evo_epsilon_", viridis_option, ".png", sep = ""), 
-       plot_gamma, bg = "white",
-       width = 18, height = 21, units = "cm")
+ggsave(here::here("plots", "plot_gamma_tile_evo.png"), plot_gamma, 
+       bg = "white", width = 18, height = 21, units = "cm")

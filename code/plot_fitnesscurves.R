@@ -25,9 +25,9 @@ line_thickness <- 0.5 # use 1.2 for presentation slides, 0.5 otherwise (paper)
 basic_plot <- ggplot(data.frame(x=c(0,1)), aes(x)) + 
   scale_x_continuous(name="payoff", limits = c(0, 1),
                      breaks = c(payoff_SR_neg, payoff_RR, payoff_SR_pos),
-                     labels = c(expression(italic(b)["-"]), 
+                     labels = c(expression(italic(b)["low"]), 
                                 expression(italic(b)[safe]), 
-                                expression(italic(b)["+"])),
+                                expression(italic(b)["high"])),
                      expand = c(0, 0)) +
   scale_y_continuous(name="fitness", limits = c(0, 1), 
                      # breaks = c(fitness.curve(x = c(payoff_SR_neg,

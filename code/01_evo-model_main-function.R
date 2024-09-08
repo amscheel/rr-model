@@ -162,8 +162,8 @@ simulate.research <- function(pop_size = 500,
     # Set competition level:
     relative_top_n <- pop_size * settings$relative_top_n[i]
     
-    # Each run starts with a random allocation of submission strategies
-    submission_strategy <- runif(pop_size, 0,1)
+    # Each run starts with a random allocation of publication strategies
+    publication_strategy <- runif(pop_size, 0,1)
     
     for (k in 1:generations) {
       
@@ -176,12 +176,12 @@ simulate.research <- function(pop_size = 500,
         
         # 4.1.1 We use research.fun (from script 02_evo-model_helper-functions.R) 
         #       to "do the research":
-        #       Assign priors, compare with submission strategies, 
+        #       Assign priors, compare with publication strategies, 
         #       decide who submits RRs and who doesn't, 
         #       and calculate the resulting payoffs
         payoff <- payoff + research.fun.unif(n = pop_size,
                                              submission.strategy = 
-                                               submission_strategy,
+                                               publication_strategy,
                                              payoff.SR.neg = payoff_SR_neg,
                                              payoff.SR.pos = payoff_SR_pos,
                                              payoff.RR = payoff_RR)
@@ -200,18 +200,18 @@ simulate.research <- function(pop_size = 500,
       selection <- selection.fun(n = pop_size, top.n = relative_top_n,
                                  fitness = fitness, 
                                  submission.strategy.parent =
-                                   submission_strategy)
+                                   publication_strategy)
       
       # 4.2.3 Mutation: 
       #     We use mutation.fun (from script 02_evo-model_helper-functions.R) to 
-      #     generate the evolved submission strategies of the new generation
-      submission_strategy <- mutation.fun(n = pop_size,
+      #     generate the evolved publication strategies of the new generation
+      publication_strategy <- mutation.fun(n = pop_size,
                                            submission.strategy.selected = selection,
                                            mutation.sd = mutation_sd)
     }
     
     # Store the results of this run in the run.output list (i.e., the index 
-    # of the run and the submission strategies of the final generation)
+    # of the run and the publication strategies of the final generation)
     
     # Store the results of all sim_runs of the current combination of parameter
     # settings in the sim list
@@ -224,7 +224,7 @@ simulate.research <- function(pop_size = 500,
                        settings$survival_threshold[i],
                      relative_top_n = settings$relative_top_n[i],
                      run_id = settings$run_id[i],
-                     submission_strategy = submission_strategy)
+                     publication_strategy = publication_strategy)
   }
   
   # turn the model list into a data frame in long format:

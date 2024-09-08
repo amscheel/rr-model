@@ -4,9 +4,14 @@ library(data.table)
 
 # load m data
 data_m <- readRDS(here("data", "data_m.RData"))
+colnames(data_m) <- c("generation_duration", "payoff_SR_neg",
+                      "payoff_SR_pos", "payoff_RR",
+                      "epsilon", "survival_threshold",
+                      "relative_top_n", "run_id",
+                      "publication_strategy")
 
-# calculate median submission threshold of every run
-data_m_summary <- data_m[, median(submission_threshold), 
+# calculate median publication strategy of every run
+data_m_summary <- data_m[, median(publication_strategy), 
                          by = .(run_id, generation_duration, 
                                 payoff_SR_neg, payoff_SR_pos, 
                                 payoff_RR,
@@ -35,7 +40,7 @@ plot_m <- ggplot(data_m_tile,
                  aes(x = payoff_RR,
                      y = generation_duration,
                      fill = median)) +
-  scale_x_continuous(expand = c(0,0), name = expression(italic(b)[RR]),
+  scale_x_continuous(expand = c(0,0), name = expression(italic(b)[R]),
                      breaks = seq(.1, .9, .1),
                      labels = c(".1", ".2", ".3", ".4", ".5", 
                                 ".6", ".7", ".8", ".9"))+
@@ -54,7 +59,6 @@ plot_m <- ggplot(data_m_tile,
                  `1` = "linear\n(epsilon = 1)",
                  `5` = "increasing returns\n(epsilon = 5)")))
 
-ggsave(paste("plot_m_evo_", viridis_option, ".png", sep = ""), 
-       plot_m, bg = "white",
+ggsave(here::here("plots", "plot_m_tile_evo.png"), plot_m, bg = "white",
        width = 18, height = 6, units = "cm")
 

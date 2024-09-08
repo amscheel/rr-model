@@ -25,7 +25,7 @@
 ##----------------------------------------------------------------------------##
 ## Research function: This function "does the research"
 #   1.a  It generates a set of priors for the researcher population
-#   1.b  It compares the priors to the submission strategies of the 
+#   1.b  It compares the priors to the publication strategies of the 
 #         population and calculates who submits an RR and who a normal study
 #   1.c  It calculates everyone's study results based on their respective prior
 #   1.d  It outputs everyone's payoffs, based on their chosen submission format, 
@@ -33,7 +33,7 @@
 
 research.fun <- function(n, 
                          prior.dist, prior.dist.m, prior.dist.sd,
-                         submission.strategy,
+                         publication.strategy,
                          payoff.SR.neg, payoff.SR.pos, payoff.RR){
   
   # 1.1 Each researcher is assigned a hypothesis with a random prior 
@@ -47,8 +47,8 @@ research.fun <- function(n,
   }
   
   # 1.2 Researchers decide to run an RR or a normal study by comparing their
-  #     current prior with their current submission strategy
-  submit.as.RR <-  ifelse(prior < submission.strategy, 1, 0)
+  #     current prior with their current publication strategy
+  submit.as.RR <-  ifelse(prior < publication.strategy, 1, 0)
   
   # 1.3 Researchers test their hypotheses and get either a positive or a 
   #     negative result (based on their prior)
@@ -98,7 +98,7 @@ fitness.fun <- function(x, epsilon, survival.threshold){
 ## Selection function:
 #     This function uses researchers' acquired fitness and the level of
 #     competition to decide whose traits are passed on to the next generation.
-selection.fun <- function(n, top.n, fitness, submission.strategy.parent){
+selection.fun <- function(n, top.n, fitness, publication.strategy.parent){
   
   # When all researchers have 0 fitness, the population would die out
   # and the model would stop. To prevent this, we'll initialise a new
@@ -107,7 +107,7 @@ selection.fun <- function(n, top.n, fitness, submission.strategy.parent){
   # their trait to the next generation, everyone's chances will instead
   # be set to the same positive value.
   if(sum(fitness)==0){
-    sample(submission.strategy.parent, 
+    sample(publication.strategy.parent, 
            size = n, 
            replace = TRUE) 
   } else {
@@ -115,14 +115,14 @@ selection.fun <- function(n, top.n, fitness, submission.strategy.parent){
   # Competition: 
   # When top.n < n, only those researchers with fitness values in the 
   # top n are selected for reproduction.
-  # Here, we sample only those researchers' submission strategies whose fitness
-  # is in the top n (submission.strategy.parent[order(fitness, 
+  # Here, we sample only those researchers' publication strategies whose fitness
+  # is in the top n (publication.strategy.parent[order(fitness, 
   # decreasing = TRUE)][1:top.n]) and weight them by their respective 
   # fitness (sort(fitness, decreasing = TRUE)[1:top.n])
 
   # Produce a new generation based on the top n researchers of the previous
   # generation, weighted by fitness. This is the function's output:
-  sample(submission.strategy.parent[order(fitness, 
+  sample(publication.strategy.parent[order(fitness, 
                                            decreasing = TRUE)][1:top.n], 
          size = n, 
          replace = TRUE, prob = sort(fitness, decreasing = TRUE)[1:top.n])
@@ -137,18 +137,18 @@ selection.fun <- function(n, top.n, fitness, submission.strategy.parent){
 
 ##----------------------------------------------------------------------------##
 ## Mutation function:
-#    This function adds random noise to the submission strategies
+#    This function adds random noise to the publication strategies
 #    of the new generation that was produced in the previous step
 #    and truncates the mutated values so that they lie between 0 and 1.
-mutation.fun <- function(n, submission.strategy.selected, mutation.sd){
+mutation.fun <- function(n, publication.strategy.selected, mutation.sd){
   
   # Mutation:
-  # Mutate the new submission strategies by adding random noise
-  # (submission.strategy.selected + rnorm(n, 0, mutation.sd; 
+  # Mutate the new publication strategies by adding random noise
+  # (publication.strategy.selected + rnorm(n, 0, mutation.sd; 
   # sd changes the size of mutations) and
   # truncate them so that they're  between 0 and 1. 
   # This is the function's output:
-  pmin(pmax(submission.strategy.selected + rnorm(n, 0, mutation.sd), 0), 1)
+  pmin(pmax(publication.strategy.selected + rnorm(n, 0, mutation.sd), 0), 1)
 }
 ##----------------------------------------------------------------------------##
 
@@ -161,7 +161,7 @@ mutation.fun <- function(n, submission.strategy.selected, mutation.sd){
 ## ALTERNATIVE VERSION of research.fun that is faster when only uniform priors
 ## are used (it does not work with other prior distributions):
 
-research.fun.unif <- function(n, submission.strategy,
+research.fun.unif <- function(n, publication.strategy,
                               payoff.SR.neg, payoff.SR.pos, payoff.RR){
   
   # 5.1 Each researcher is assigned a hypothesis with a random prior 
@@ -169,8 +169,8 @@ research.fun.unif <- function(n, submission.strategy,
   prior <- runif(n, 0, 1)
   
   # 5.2 Researchers decide to run an RR or a normal study by comparing their
-  #     current prior with their current submission strategy
-  submit.as.RR <-  ifelse(prior < submission.strategy, 1, 0)
+  #     current prior with their current publication strategy
+  submit.as.RR <-  ifelse(prior < publication.strategy, 1, 0)
   
   # 5.3 Researchers test their hypotheses and get either a positive or a 
   #     negative result (based on their prior)

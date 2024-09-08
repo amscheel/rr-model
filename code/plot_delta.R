@@ -4,9 +4,14 @@ library(data.table)
 
 # load delta data
 data_delta <- readRDS(here("data", "data_delta.RData"))
-       
-# calculate median submission threshold of every run
-data_delta_summary <- data_delta[, median(submission_threshold), 
+colnames(data_delta) <- c("generation_duration", "payoff_SR_neg",
+                              "payoff_SR_pos", "payoff_RR",
+                              "epsilon", "survival_threshold",
+                              "relative_top_n", "run_id",
+                              "publication_strategy")
+
+# calculate median publication strategy of every run
+data_delta_summary <- data_delta[, median(publication_strategy), 
                            by = .(run_id, generation_duration, 
                                   payoff_SR_neg, payoff_SR_pos, 
                                   payoff_RR,
@@ -60,7 +65,7 @@ plot_delta_tile <- ggplot(data_delta_tile,
                           aes(x = payoff_RR,
                               y = generation_duration,
                               fill = median)) +
-  scale_x_continuous(expand = c(0,0), name = expression(italic(b)[RR]),
+  scale_x_continuous(expand = c(0,0), name = expression(italic(b)[R]),
                      breaks = seq(.1, .9, .1),
                      labels = c(".1", ".2", ".3", ".4", ".5", 
                                 ".6", ".7", ".8", ".9"))+
@@ -85,7 +90,7 @@ plot_delta_tile <- ggplot(data_delta_tile,
                         `5` = "increasing returns\n(epsilon = 5)")))
 #facet_grid(epsilon ~ survival_threshold) # to plot facets the other way around
 
-ggsave(here("plots", paste("plot_delta_tile_evo_epsilon_", viridis_option, ".png", sep = ""), plot_delta_tile), bg = "white",
+ggsave(here::here("plots", "plot_delta_tile_evo.png"), plot_delta_tile, bg = "white",
        #width = 21, height = 10, # setting when plotting facets the other way round
        width = 18, height = 15, 
        units = "cm")

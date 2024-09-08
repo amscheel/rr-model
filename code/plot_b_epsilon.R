@@ -8,10 +8,10 @@ colnames(data_b_epsilon) <- c("generation_duration", "payoff_SR_neg",
                               "payoff_SR_pos", "payoff_RR",
                               "epsilon", "survival_threshold",
                               "relative_top_n", "run_id",
-                              "submission_threshold")
+                              "publication_strategy")
 
-# calculate median submission threshold of every run
-data_b_epsilon_summary <- data_b_epsilon[, median(submission_threshold), 
+# calculate median publication strategy of every run
+data_b_epsilon_summary <- data_b_epsilon[, median(publication_strategy), 
                                  by = .(run_id, generation_duration, 
                                         payoff_SR_neg, payoff_SR_pos, 
                                         payoff_RR,
@@ -31,10 +31,10 @@ plot_b_epsilon <- ggplot(data_b_epsilon_summary,
       y = median,
       colour = factor(epsilon),
       group = run_id)) +
-  scale_x_discrete(name = expression(italic(b)[RR])) +
+  scale_x_discrete(name = expression(italic(b)[R])) +
   scale_y_continuous(lim = c(0, 1), expand = c(0,0),
                      breaks = seq(0, 1, .1),
-                     name = "submission threshold (s)") +
+                     name = "publication strategy (s)") +
   scale_colour_manual(values = colorbrewer5, name = expression(epsilon)) +
   theme_light() +
   theme(panel.grid.major.x = element_blank(),
@@ -51,10 +51,10 @@ plot_b_epsilon <- ggplot(data_b_epsilon_summary,
                    group = factor(epsilon)),
                geom = "line",
                fun = "median", 
-               position = position_dodge(width = .3), size = .2) +
+               position = position_dodge(width = .3), linewidth = .2) +
   stat_summary(aes(x = as.numeric(factor(payoff_RR))-0.1, 
                    group = factor(epsilon)),
                fun.data = "median_hilow", 
                position = position_dodge(width = .3),  size = .2)
 
-ggsave("plot_b_epsilon.png", plot_b_epsilon, width = 10.5, height = 8.5, units = "cm")
+ggsave(here::here("plots", "plot_epsilon_evo.png"), plot_b_epsilon, width = 10.5, height = 8.5, units = "cm")

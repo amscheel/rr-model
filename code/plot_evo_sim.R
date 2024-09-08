@@ -1,6 +1,6 @@
 ##============================================================================#
 ## This script runs and plots the outcomes of a simulation that stores the 
-## evolved submission thresholds of every generation
+## evolved publication strategies of every generation
 ##============================================================================##
 ##----------------------------------------------------------------------------##
 ## Basic setup: load model functions and required packages
@@ -52,10 +52,10 @@ top_n <- pop_size # this number determines the size of the bottleneck: when top_
 
 # Create a dataframe with all combinations of the varying model 
 # parameters specified above:
-# generation's submission threshold (hence "2 + generations")
+# generation's publication strategy (hence "2 + generations")
 
 
-# Rename the submission threshold variables to 0 - 100
+# Rename the publication strategy variables to 0 - 100
 
 x <- expand.grid(payoff_RR = payoff_RR, e = e, run = runs)
 df_loop <- as.data.frame(matrix(ncol = ncol(x) + generations + 1, 
@@ -76,7 +76,7 @@ for (i in 1:length(payoff_RR)) {
   
   for (j in 1:runs) {
     
-    # Each run starts with a random allocation of submission thresholds
+    # Each run starts with a random allocation of publication strategies
     df <- df_loop
     df$payoff_RR <- b_RR
     df$run <- j
@@ -85,10 +85,10 @@ for (i in 1:length(payoff_RR)) {
     for (k in 1:generations) {
       # gen_output_new <- data.frame(df_evo[i,], run = rep(j, pop_size), 
       #                              gen = rep(k, pop_size), 
-      #                              submission_threshold = rep(NA, pop_size))
+      #                              publication_strategy = rep(NA, pop_size))
       # 
         # 1.1 We use research.fun to "do the research":
-        #     Assign priors, compare with submission thresholds, 
+        #     Assign priors, compare with publication strategies, 
         #     decide who submits RRs and who doesn't, 
         #     and calculate the resulting payoffs
         payoff <- research.fun(n = pop_size, prior.dist = prior_dist,
@@ -114,20 +114,20 @@ for (i in 1:length(payoff_RR)) {
                                  submission.threshold.parent =
                                    df[,3+k])
       
-      # Check: Stop the loop if any of the selected submission threshold is NA
+      # Check: Stop the loop if any of the selected publication strategy is NA
       stopifnot(all(!is.na(selection)))
       
       # 2.3 Mutation: 
-      #     We use mutation.fun to generate the evolved submission thresholds
+      #     We use mutation.fun to generate the evolved publication strategies
       #     of the new generation
-      submission_threshold <- mutation.fun(n = pop_size,
+      publication_strategy <- mutation.fun(n = pop_size,
                                            submission.threshold.selected =
                                              selection,
                                            mutation.sd = mutation_sd)
       
-      df[,3+k+1] <- submission_threshold
+      df[,3+k+1] <- publication_strategy
       
-      # gen_output_new$submission_threshold <- submission_threshold
+      # gen_output_new$publication_strategy <- publication_strategy
       # gen_output <- rbind(gen_output, gen_output_new)
     }
     sim_evo <- rbind(sim_evo, df)
@@ -136,12 +136,12 @@ for (i in 1:length(payoff_RR)) {
 
 x <- sim_evo[-1,]
 x <- data.table::data.table(x)
-x <- data.table::melt.data.table(x, measure.vars = c(4:generations+4), variable.name = "gen", value.name = "submission_threshold")
+x <- data.table::melt.data.table(x, measure.vars = c(4:generations+4), variable.name = "gen", value.name = "publication_strategy")
 
 
-evo_summary <- x[, median(submission_threshold), by = .(payoff_RR, run, gen)]
+evo_summary <- x[, median(publication_strategy), by = .(payoff_RR, run, gen)]
 colnames(evo_summary)[4] <- "median"
-evo_summary$IQR <- x[, IQR(submission_threshold), by = .(payoff_RR, run, gen)]$V1
+evo_summary$IQR <- x[, IQR(publication_strategy), by = .(payoff_RR, run, gen)]$V1
 evo_summary$IQR_lower <- ifelse(evo_summary$median-evo_summary$IQR/2>0,
                               evo_summary$median-evo_summary$IQR/2, 0)
 evo_summary$IQR_upper <- ifelse(evo_summary$median+evo_summary$IQR/2<1,
@@ -167,8 +167,8 @@ plot_evo <- ggplot(evo_summary,
                      name = "generation", expand = c(0,0)) +
   scale_y_continuous(lim = c(0, 1),
                      breaks = seq(0, 1, .1),
-                     name = "submission threshold (s)", expand = c(0,0)) +
-  scale_colour_manual(values = evocolours3, name = expression(italic(b)[RR]),
+                     name = "publication strategy (s)", expand = c(0,0)) +
+  scale_colour_manual(values = evocolours3, name = expression(italic(b)[R]),
                       guide = guide_legend(reverse = TRUE)) +
   scale_fill_manual(values = evocolours3, guide = "none") +
   theme_light() +
