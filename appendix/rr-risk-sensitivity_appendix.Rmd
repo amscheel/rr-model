@@ -1,0 +1,91 @@
+---
+title         : "Appendix"
+shorttitle    : "Incentives for Registered Reports from a risk-sensitivity perspective --- Appendix"
+
+header-includes:
+  - \usepackage{float}
+  - \usepackage{framed}
+  - \usepackage{caption}
+  - \usepackage{setspace}
+  - \usepackage{wrapfig}
+  - \captionsetup[figure]{font={stretch=1, small}, skip=10pt}
+  - \newcommand{\beginsupplement}{\setcounter{table}{0}\renewcommand{\thetable}{A\arabic{table}}\setcounter{figure}{0}\renewcommand{\thefigure}{A\arabic{figure}}}
+  
+figsintext        : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+toc               : no
+lineno            : true
+numbersections    : false 
+mask              : true
+
+lang              : "en-UK"
+output:
+  bookdown::pdf_document2:
+    fig_caption: true
+    keep_tex: true
+---
+
+```{r include = FALSE}
+library("papaja")
+library("bookdown")
+library("rmarkdown")
+library("knitr")
+library("here")
+```
+
+\raggedright
+\beginsupplement
+
+This document contains additional figures for the manuscript '**Incentives for Registered Reports from a risk-sensitivity perspective**'. This PDF was created in RMarkdown. The reproducible RMarkdown file is available in our online repository at <https://github.com/amscheel/rr-model/> ([`appendix/rr-risk-sensitivity_appendix.Rmd`](address)).
+
+
+# 1. Alternative simulation model
+
+The results in the main manuscript are based on an evolutionary simulation model.
+Here, we show that an alternative, non-evolutionary simulation model produces virtually identical results for the effects of non-linear fitness functions ($\epsilon$, Fig. \@ref(fig:A1-epsilonplot)), empirical pace ($m$, Fig. \@ref(fig:A2-mplot)), and survival thresholds ($\delta$, Fig. \@ref(fig:A3-deltaplot)).
+This model calculates expected fitness (i.e., the long-run average) for a wide range of $s$ and identifies the publication strategy ($s$) that maximises expected fitness in each condition.
+Because it is not an agent-based model, it cannot account for population dynamics and therefore cannot simulate the effects of competition ($\gamma$).
+
+The data underlying figures \@ref(fig:A1-epsilonplot)--\@ref(fig:A3-deltaplot) was generated with the alternative expected-fitness model. 
+The simulation code for this model and all figures is available in the online repository.
+
+```{r A1-epsilonplot, echo=FALSE, warning=FALSE, fig.cap = "Effect of fitness functions on publication strategies. Shown are publication strategies ($s$) that maximise expected fitness for different fitness functions, with one research cycle per generation ($m = 1$), no survival threshold ($\\delta = 0$) and no competition ($\\gamma = 1$). Fitness functions with $\\epsilon = 0.2$ and $\\epsilon = 0.5$ (blue lines) are concave with diminishing returns, functions with $\\epsilon = 2$ and $\\epsilon = 5$ (red lines) are convex with increasing returns; the function with $\\epsilon = 1$ (grey line) is linear.", out.width="65%", fig.pos="H", fig.align='center'}
+
+# Important additional chunk option when using journal mode: fig.env="figure*"
+
+knitr::include_graphics(here("plots", "plot_epsilon_line_EF.png"))
+```
+
+
+```{r A2-mplot, echo=FALSE, warning=FALSE, fig.cap = "Effect of research cycles per generation on publication strategies. Shown are publication strategies ($s$) that maximise expected fitness for different fitness functions ($\\epsilon$) and numbers of research cycles per generation ($m$), with no survival threshold ($\\delta = 0$) and no competition ($\\gamma = 1$).", out.width = "\\textwidth", fig.pos = "H", fig.align='center'}
+
+# Important additional chunk option when using journal mode: fig.env="figure*"
+
+knitr::include_graphics(here("plots", "plot_m_tile_EF.png"))
+```
+
+
+```{r A3-deltaplot, echo=FALSE, warning=FALSE, fig.cap = "Effect of survival thresholds on publication strategies. Shown are publication strategies ($s$) that maximise expected fitness for different fitness functions ($\\epsilon$), numbers of research cycles per generation ($m$), and survival thresholds ($\\delta$), with no competition ($\\gamma = 1$). Survival thresholds are set as proportions of the maximum possible payoff in each condition and represented by vertical yellow lines.", out.width="\\textwidth", fig.pos="H"}
+
+# Important additional chunk option when using journal mode: fig.env="figure*"
+
+knitr::include_graphics(here("plots", "plot_delta_tile_EF.png"))
+```
+
+
+# 2. Alternative plot for competition results
+
+Footnote 7 in the main manuscript explains that publication strategies paradoxically seem to increase slightly when competition is extremely high and empirical pace is low because natural selection starts operating more strongly on random chance than on heritable traits in this scenario.
+Figure \@ref(fig:A4-gammalineplot) shows the same data as Figure 7 but plotted in a different way to provide a better insight into this effect:
+Under low empirical pace, one can clearly see that high levels of competition drastically increase the variance of evolved publication strategies.
+
+```{r A4-gammalineplot, echo=FALSE, warning=FALSE, fig.cap = "Effect of competition on publication strategies. Shown are median publication strategies in the final ($250^{th}$) generations of 50 runs for different fitness functions ($\\epsilon$), numbers of research cycles per generation ($m$), and competition ($\\gamma$), with no survival threshold ($\\delta = 0$). Small dots represent median $s$ of the final generation in each run, large dots represent the median of these 50 run medians per condition. Error bars represent the $95\\%$ capture probability around the median of medians.", out.width="110%", fig.pos="H"}
+
+# Important additional chunk option when using journal mode: fig.env="figure*"
+
+knitr::include_graphics(here("plots", "plot_gamma_line_evo.png"))
+```
+
+

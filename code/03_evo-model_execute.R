@@ -26,7 +26,7 @@
 # We use the package "here" to navigate to the directory storing the script.
 
 # Install "here" unless it is already installed:
-if(!require(data.table)){install.packages("data.table")}
+if(!require(here)){install.packages("here")}
 
 # load model functions
 source(here::here("code", "01_evo-model_main-function.R"))
@@ -165,7 +165,7 @@ simdata_evo_epsilon <- simulate.research(pop_size = pop_size,
                                          settings = settings_df_epsilon)
 
 # 4.2.3 Store the data
-saveRDS(simdata_evo_epsilon, "simdata_evo_epsilon.RData")
+saveRDS(simdata_evo_epsilon, "simdata_epsilon_evo.RData")
 ##----------------------------------------------------------------------------##
 
 ##----------------------------------------------------------------------------##
@@ -189,7 +189,7 @@ simdata_evo_m <- simulate.research(pop_size = pop_size,
                                    settings = settings_df_m)
 
 # 4.3.3 Store the data
-saveRDS(simdata_evo_m, "simdata_evo_m.RData")
+saveRDS(simdata_evo_m, "simdata_m_evo.RData")
 ##----------------------------------------------------------------------------##
 
 ##----------------------------------------------------------------------------##
@@ -213,7 +213,7 @@ simdata_evo_delta <- simulate.research(pop_size = pop_size,
                                        settings = settings_df_delta)
 
 # 4.4.3 Store the data
-saveRDS(simdata_evo_delta, "simdata_evo_delta.RData")
+saveRDS(simdata_evo_delta, "simdata_delta_evo.RData")
 ##----------------------------------------------------------------------------##
 
 ##----------------------------------------------------------------------------##
@@ -237,6 +237,6 @@ simdata_evo_gamma <- simulate.research(pop_size = pop_size,
                                    settings = settings_df_gamma)
 
 # 4.5.3 Store the data
-saveRDS(simdata_evo_gamma, "simdata_evo_gamma.RData")
+saveRDS(simdata_evo_gamma, "simdata_gamma_evo.RData")
 ##----------------------------------------------------------------------------##
 

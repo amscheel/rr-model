@@ -1,0 +1,148 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{british}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\usepackage{float}
+\usepackage{framed}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{wrapfig}
+\captionsetup[figure]{font={stretch=1, small}, skip=10pt}
+\newcommand{\beginsupplement}{\setcounter{table}{0}\renewcommand{\thetable}{A\arabic{table}}\setcounter{figure}{0}\renewcommand{\thefigure}{A\arabic{figure}}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Appendix},
+  pdflang={en-UK},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Appendix}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\raggedright
+\setcounter{table}{0}\renewcommand{\thetable}{A\arabic{table}}\setcounter{figure}{0}\renewcommand{\thefigure}{A\arabic{figure}}
+
+This document contains additional figures for the manuscript `\textbf{Incentives for Registered Reports from a risk-sensitivity perspective}'. This PDF was created in RMarkdown. The reproducible RMarkdown file is available in our online repository at \url{https://github.com/amscheel/rr-model/} (\href{address}{\texttt{appendix/rr-risk-sensitivity\_appendix.Rmd}}).
+
+\hypertarget{alternative-simulation-model}{%
+\section{1. Alternative simulation model}\label{alternative-simulation-model}}
+
+The results in the main manuscript are based on an evolutionary simulation model.
+Here, we show that an alternative, non-evolutionary simulation model produces virtually identical results for the effects of non-linear fitness functions (\(\epsilon\), Fig. \ref{fig:A1-epsilonplot}), empirical pace (\(m\), Fig. \ref{fig:A2-mplot}), and survival thresholds (\(\delta\), Fig. \ref{fig:A3-deltaplot}).
+This model calculates expected fitness (i.e., the long-run average) for a wide range of \(s\) and identifies the publication strategy (\(s\)) that maximises expected fitness in each condition.
+Because it is not an agent-based model, it cannot account for population dynamics and therefore cannot simulate the effects of competition (\(\gamma\)).
+
+The data underlying figures \ref{fig:A1-epsilonplot}--\ref{fig:A3-deltaplot} was generated with the alternative expected-fitness model.
+The simulation code for this model and all figures is available in the online repository.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.65\linewidth]{../plots/plot_epsilon_line_EF} 
+
+}
+
+\caption{Effect of fitness functions on publication strategies. Shown are publication strategies ($s$) that maximise expected fitness for different fitness functions, with one research cycle per generation ($m = 1$), no survival threshold ($\delta = 0$) and no competition ($\gamma = 1$). Fitness functions with $\epsilon = 0.2$ and $\epsilon = 0.5$ (blue lines) are concave with diminishing returns, functions with $\epsilon = 2$ and $\epsilon = 5$ (red lines) are convex with increasing returns; the function with $\epsilon = 1$ (grey line) is linear.}\label{fig:A1-epsilonplot}
+\end{figure}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=\textwidth]{../plots/plot_m_tile_EF} 
+
+}
+
+\caption{Effect of research cycles per generation on publication strategies. Shown are publication strategies ($s$) that maximise expected fitness for different fitness functions ($\epsilon$) and numbers of research cycles per generation ($m$), with no survival threshold ($\delta = 0$) and no competition ($\gamma = 1$).}\label{fig:A2-mplot}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{../plots/plot_delta_tile_EF} \caption{Effect of survival thresholds on publication strategies. Shown are publication strategies ($s$) that maximise expected fitness for different fitness functions ($\epsilon$), numbers of research cycles per generation ($m$), and survival thresholds ($\delta$), with no competition ($\gamma = 1$). Survival thresholds are set as proportions of the maximum possible payoff in each condition and represented by vertical yellow lines.}\label{fig:A3-deltaplot}
+\end{figure}
+
+\hypertarget{alternative-plot-for-competition-results}{%
+\section{2. Alternative plot for competition results}\label{alternative-plot-for-competition-results}}
+
+Footnote 7 in the main manuscript explains that publication strategies paradoxically seem to increase slightly when competition is extremely high and empirical pace is low because natural selection starts operating more strongly on random chance than on heritable traits in this scenario.
+Figure \ref{fig:A4-gammalineplot} shows the same data as Figure 7 but plotted in a different way to provide a better insight into this effect:
+Under low empirical pace, one can clearly see that high levels of competition drastically increase the variance of evolved publication strategies.
+
+\begin{figure}[H]
+\includegraphics[width=1.1\linewidth]{../plots/plot_gamma_line_evo} \caption{Effect of competition on publication strategies. Shown are median publication strategies in the final ($250^{th}$) generations of 50 runs for different fitness functions ($\epsilon$), numbers of research cycles per generation ($m$), and competition ($\gamma$), with no survival threshold ($\delta = 0$). Small dots represent median $s$ of the final generation in each run, large dots represent the median of these 50 run medians per condition. Error bars represent the $95\%$ capture probability around the median of medians.}\label{fig:A4-gammalineplot}
+\end{figure}
+
+\end{document}

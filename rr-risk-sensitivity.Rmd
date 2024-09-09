@@ -369,7 +369,7 @@ However, we do assume that selection for career-promoting behaviours has a notic
 # 2. use the plot code below instead of `mainplot`
 #    (otherwise font will be too small)!
 
-source(here("code", "plot_fitnesscurves.R"))
+source(here("code", "04_plot_fitnesscurves.R"))
 fitness_plot
 ```
 \par\vspace{.5\baselineskip}
@@ -625,7 +625,7 @@ Every alternative is inferior in the long run because researchers with $s > b_{R
 
 # Important additional chunk option when using journal mode: fig.env="figure*"
 
-knitr::include_graphics(here("plots", "plot_epsilon_evo.png"))
+knitr::include_graphics(here("plots", "plot_epsilon_line_evo.png"))
 ```
 
 ## Allowing for non-linear fitness functions
@@ -809,7 +809,7 @@ Among individuals who experience this kind of luck, the variance of publication 
 A hypothesis with prior $p = .95$ will be submitted as a standard report and likely yield a positive result (and thus the maximum payoff) regardless of whether the researcher's publication strategy is as low as $s = .1$ or has high as $s = .9$.
 The higher average $s$ at low $m$ under extreme competition thus reflects relaxed selection pressure on $s$.
 <!-- This is also evident by the shades of the dark bar at the bottom of the panels for $\gamma = .01$ (Fig. \@ref(fig:gammaplot)), which fluctuate randomly for each level of $m$ rather than showing a specific pattern. -->
-A clearer illustration of the effect can be found in Figure XXX in the appendix, which shows large increases in the variance of evolved publication strategies in these conditions.
+A clearer illustration of the effect can be found in Figure A4 in the Appendix, which shows large increases in the variance of evolved publication strategies in these conditions.
 At higher $m$, selection on $s$ stays intact simply because much fewer individuals will be very lucky 4, 8, 16, or 32 times in a row than once or twice in a row, and publication strategy thus remains an important factor.
 This effect of relaxed selection is not an arbitrary feature of our model, but commonly encountered in natural populations [@Snyder2021].
 In many species, luck can have an outsized impact on survival and reproduction, rendering the effects of individual traits relatively less important.
@@ -1334,7 +1334,7 @@ my_citation <- cite_r(file = "rr-risk-sensitivity_software.bib")
 
 ## Disclosures
 ### Data, materials, and online resources
-<!-- [Data](https://osf.io/aqr2s/) and code necessary to reproduce all analyses reported here, as well as the [Appendix](https://osf.io/qw798/), the [preregistration](https://osf.io/sy927/), and additional supplementary files, are available at <https://osf.io/dbhgr>.  -->
+The [code](https://github.com/amscheel/rr-model/tree/master/code) required for reproducing all analyses and figures reported here and the [Appendix](https://osf.io/qw798/), are available at <https://github.com/amscheel/rr-model>.
 This manuscript was created using RStudio [1.2.5019, @RStudioTeam2019] and `r my_citation`.
 
 <!-- ### Reporting -->
