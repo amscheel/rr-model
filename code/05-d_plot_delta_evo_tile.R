@@ -34,7 +34,7 @@ if(!require(ggplot2)){install.packages("ggplot2")}
 
 ##----------------------------------------------------------------------------##
 ## 2.1 Load data
-data_delta <- readRDS(here::here("data", "simdata_delta_evo.RData"))
+data_delta <- readRDS(here::here("..", "rr-model", "data", "simdata_delta_evo.RData"))
 colnames(data_delta) <- c("generation_duration", "payoff_SR_neg",
                               "payoff_SR_pos", "payoff_RR",
                               "epsilon", "survival_threshold",
@@ -123,7 +123,7 @@ plot_delta_tile_evo <- ggplot(data_delta_tile,
 #facet_grid(epsilon ~ survival_threshold) # to plot facets the other way around
 
 ## 3.3 Save the plot
-ggsave(here::here("plots", "plot_delta_tile_evo.png"), plot_delta_tile_evo, bg = "white",
+ggsave(here::here("..", "rr-model", "plots", "plot_delta_tile_evo.png"), plot_delta_tile_evo, bg = "white",
        #width = 21, height = 10, # setting when plotting facets the other way round
        width = 18, height = 15, 
        units = "cm")

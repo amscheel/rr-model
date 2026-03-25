@@ -1,11 +1,34 @@
-##============================================================================#
-## This script runs and plots the outcomes of a simulation that stores the 
-## evolved publication strategies of every generation
+################################################################################
+####                                                                        ####
+#### Script 5a: Script to run a simulation that stores the evolved          ####        
+####            publication strategies of every generation and plot the     ####
+####            outcomes                                                    ####
+####                                                                        ####
+#### ---------------------------------------------------------------------- ####
+#### Content:                                                               ####
+####  * 1: Setup                                                            ####
+####  * 2: Prepare data                                                     ####
+####  * 3: Generate plot                                                    ####
+####                                                                        ####
+################################################################################
+
 ##============================================================================##
+## 1. Setup
+##============================================================================##
+
 ##----------------------------------------------------------------------------##
+# This script requires the packages "here" and "ggplot2".
+
+# Install "here" unless it is already installed:
+if(!require(here)){install.packages("here")}
+
+# Install "ggplot2" unless it is already installed:
+if(!require(ggplot2)){install.packages("ggplot2")}
+
 ## Basic setup: load model functions and required packages
-source("model_functions_outcomeST.R") # load model functions
+source(here::here("..", "rr-model", "code", "02_evo-model_helper-functions.R")) # load model function
 ##----------------------------------------------------------------------------##
+
 
 ##----------------------------------------------------------------------------##
 ## Fixed model parameters: These are kept constant for all simulations
@@ -94,7 +117,7 @@ for (i in 1:length(payoff_RR)) {
         payoff <- research.fun(n = pop_size, prior.dist = prior_dist,
                                    prior.dist.m = prior_dist_m,
                                    prior.dist.sd = prior_dist_sd,
-                                   submission.threshold = 
+                                   publication.strategy = 
                                  df[,3+k],
                                    payoff.SR.neg = payoff_SR_neg,
                                    payoff.SR.pos = payoff_SR_pos,
@@ -111,7 +134,7 @@ for (i in 1:length(payoff_RR)) {
       #     next generation
       selection <- selection.fun(n = pop_size, top.n = top_n,
                                  fitness = fitness, 
-                                 submission.threshold.parent =
+                                 publication.strategy.parent =
                                    df[,3+k])
       
       # Check: Stop the loop if any of the selected publication strategy is NA
@@ -121,7 +144,7 @@ for (i in 1:length(payoff_RR)) {
       #     We use mutation.fun to generate the evolved publication strategies
       #     of the new generation
       publication_strategy <- mutation.fun(n = pop_size,
-                                           submission.threshold.selected =
+                                           publication.strategy.selected =
                                              selection,
                                            mutation.sd = mutation_sd)
       
@@ -151,7 +174,7 @@ evo_summary$IQR_upper <- ifelse(evo_summary$median+evo_summary$IQR/2<1,
 saveRDS(evo_summary, "data_evo_summary_forplotting.RData")
 
 # load evo data
-evo_summary <- readRDS(here::here("data", 
+evo_summary <- readRDS(here::here("..", "rr-model", "data", 
                                   "data_evo_summary_forplotting.RData"))
 
 # make a custom colour palette
@@ -161,6 +184,7 @@ evocolours3[1] <- "#EFC16A"
 #evocolours3 <- viridisLite::rocket(3, begin = 0.6, end = 0.85, direction = -1)
 
 # plot
+library(ggplot2)
 plot_evo <- ggplot(evo_summary,
   aes(x = as.numeric(gen), y = median)) +
   scale_x_continuous(breaks = seq(0, 250, 50),
@@ -185,6 +209,6 @@ plot_evo <- ggplot(evo_summary,
   stat_summary(aes(group = payoff_RR, colour = factor(payoff_RR)), 
                geom = "line", fun = median, linewidth = 1.5) 
 
-ggsave(here::here("plots", "plot_evo.png"), plot_evo, width = 12.8, height = 9, units = "cm")
+ggsave(here::here("..", "rr-model", "plots", "plot_evo.png"), plot_evo, width = 12.8, height = 9, units = "cm")
 #ggsave("plot_evo.7.png", plot_evo, scale = .7)
 

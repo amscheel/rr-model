@@ -35,7 +35,7 @@ if(!require(ggplot2)){install.packages("ggplot2")}
 
 ##----------------------------------------------------------------------------##
 ## 2.1 Load data
-data_m_EF <- readRDS(here::here("data", "simdata_m_EF.RData"))
+data_m_EF <- readRDS(here::here("..", "rr-model", "data", "simdata_m_EF.RData"))
 
 ## 2.2 Data wrangling
 #      Turn variable m into a factor to facilitate plotting
@@ -78,7 +78,7 @@ plot_m_EF <- ggplot(data_m_EF,
 
 
 ## 3.3 Save plot
-ggsave(here::here("plots", "plot_m_tile_EF.png"), plot_m_EF, bg = "white",
+ggsave(here::here("..", "rr-model", "plots", "plot_m_tile_EF.png"), plot_m_EF, bg = "white",
        width = 18, height = 6, units = "cm")
 ##----------------------------------------------------------------------------##
 

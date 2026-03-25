@@ -76,7 +76,6 @@
 \usepackage{setspace}
 \usepackage{wrapfig}
 \captionsetup[figure]{font={stretch=1, small}, skip=10pt}
-\newcommand{\beginsupplement}{\setcounter{table}{0}\renewcommand{\thetable}{A\arabic{table}}\setcounter{figure}{0}\renewcommand{\thefigure}{A\arabic{figure}}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -97,7 +96,7 @@
 \maketitle
 
 \raggedright
-\setcounter{table}{0}\renewcommand{\thetable}{A\arabic{table}}\setcounter{figure}{0}\renewcommand{\thefigure}{A\arabic{figure}}
+\beginsupplement
 
 This document contains additional figures for the manuscript `\textbf{Incentives for Registered Reports from a risk-sensitivity perspective}'. This PDF was created in RMarkdown. The reproducible RMarkdown file is available in our online repository at \url{https://github.com/amscheel/rr-model/}.
 

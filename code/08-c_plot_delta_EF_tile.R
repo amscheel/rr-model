@@ -35,7 +35,7 @@ if(!require(ggplot2)){install.packages("ggplot2")}
 
 ##----------------------------------------------------------------------------##
 ## 2.1 Load data
-data_delta_EF <- readRDS(here::here("data", "simdata_delta_EF.RData"))
+data_delta_EF <- readRDS(here::here("..", "rr-model", "data", "simdata_delta_EF.RData"))
 
 ## 2.2 Data wrangling
 
@@ -99,7 +99,7 @@ plot_delta_tile_EF <- ggplot(data_delta_EF,
 
 
 ## 3.3 Save the plot
-ggsave(here::here("plots", "plot_delta_tile_EF.png"), plot_delta_tile_EF, bg = "white",
+ggsave(here::here("..", "rr-model", "plots", "plot_delta_tile_EF.png"), plot_delta_tile_EF, bg = "white",
        #width = 21, height = 10, # setting when plotting facets the other way round
        width = 18, height = 15, 
        units = "cm")

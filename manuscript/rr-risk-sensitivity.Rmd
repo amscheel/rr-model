@@ -61,6 +61,7 @@ documentclass     : "apa6"
 lang              : "en-UK"
 class             : "man"
 output            : papaja::apa6_pdf
+papersize         : "a4"
 ---
 
 ```{r include = FALSE}
@@ -634,7 +635,7 @@ Every alternative is inferior in the long run because researchers with $s > b_{R
 
 # Important additional chunk option when using journal mode: fig.env="figure*"
 
-knitr::include_graphics(here("plots", "plot_epsilon_line_evo.png"))
+knitr::include_graphics(here("plots", "plot_epsilon_line_evo2.png"))
 ```
 
 ## Allowing for non-linear fitness functions

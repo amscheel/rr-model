@@ -34,7 +34,7 @@ if(!require(ggplot2)){install.packages("ggplot2")}
 
 ##----------------------------------------------------------------------------##
 ## 2.1 Load data
-data_m <- readRDS(here::here("data", "simdata_m_evo.RData"))
+data_m <- readRDS(here::here("..", "rr-model", "data", "simdata_m_evo.RData"))
 colnames(data_m) <- c("generation_duration", "payoff_SR_neg",
                       "payoff_SR_pos", "payoff_RR",
                       "epsilon", "survival_threshold",
@@ -103,6 +103,6 @@ plot_m_evo <- ggplot(data_m_tile,
                `5` = "increasing returns\n(epsilon = 5)")))
 
 ## 3.3 Save plot
-ggsave(here::here("plots", "plot_m_tile_evo.png"), plot_m_evo, bg = "white",
+ggsave(here::here("..", "rr-model", "plots", "plot_m_tile_evo.png"), plot_m_evo, bg = "white",
        width = 18, height = 6, units = "cm")
 ##----------------------------------------------------------------------------##

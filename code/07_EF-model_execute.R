@@ -30,7 +30,7 @@
 if(!require(here)){install.packages("here")}
 
 # load model functions
-source(here::here("code", "06_EF-model_function.R"))
+source(here::here("..", "rr-model", "code", "06_EF-model_function.R"))
 ##----------------------------------------------------------------------------##
 
 
@@ -95,7 +95,7 @@ simdata_EF <- max.EF.sim(m = m,
                          survival_threshold = survival_threshold,
                          competition = competition)
 
-saveRDS(simdata_EF, here::here("data", "simdata_EF.RData"))
+saveRDS(simdata_EF, here::here("..", "rr-model", "data", "simdata_EF.RData"))
 ##----------------------------------------------------------------------------##
 
 
@@ -121,7 +121,7 @@ simdata_EF_epsilon <- max.EF.sim(m = 1,
                                  competition = 1)
 
 # Store the data
-saveRDS(simdata_EF_epsilon, here::here("data", "simdata_epsilon_EF.RData"))
+saveRDS(simdata_EF_epsilon, here::here("..", "rr-model", "data", "simdata_epsilon_EF.RData"))
 ##----------------------------------------------------------------------------##
 
 ##----------------------------------------------------------------------------##
@@ -138,7 +138,7 @@ simdata_EF_m <- max.EF.sim(m = c(1, 2, 4, 8, 16, 32),
                                  competition = 1)
 
 # Store the data
-saveRDS(simdata_EF_m, here::here("data", "simdata_m_EF.RData"))
+saveRDS(simdata_EF_m, here::here("..", "rr-model", "data", "simdata_m_EF.RData"))
 ##----------------------------------------------------------------------------##
 
 ##----------------------------------------------------------------------------##
@@ -155,7 +155,7 @@ simdata_EF_delta <- max.EF.sim(m = c(1, 2, 4, 8, 16, 32),
                                competition = 1)
 
 # Store the data
-saveRDS(simdata_EF_delta, here::here("data", "simdata_delta_EF.RData"))
+saveRDS(simdata_EF_delta, here::here("..", "rr-model", "data", "simdata_delta_EF.RData"))
 ##----------------------------------------------------------------------------##
 
 

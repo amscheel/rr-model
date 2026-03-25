@@ -34,7 +34,7 @@ if(!require(ggplot2)){install.packages("ggplot2")}
 
 ##----------------------------------------------------------------------------##
 ## 2.1 Load epsilon data
-data_epsilon <- readRDS(here::here("data", "simdata_epsilon_evo.RData"))
+data_epsilon <- readRDS(here::here("..", "rr-model", "data", "simdata_epsilon_evo.RData"))
 colnames(data_epsilon) <- c("generation_duration", "payoff_SR_neg",
                             "payoff_SR_pos", "payoff_RR",
                             "epsilon", "survival_threshold",
@@ -99,6 +99,6 @@ plot_epsilon_evo <- ggplot(data_epsilon_summary,
 
 
 ## 3.3 Save plot
-ggsave(here::here("plots", "plot_epsilon_evo.png"), plot_epsilon_evo, width = 10.5, height = 8.5, units = "cm")
+ggsave(here::here("..", "rr-model", "plots", "plot_epsilon_line_evo.png"), plot_epsilon_evo, width = 10.5, height = 8.5, units = "cm")
 ##----------------------------------------------------------------------------##
 

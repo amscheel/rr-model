@@ -35,7 +35,7 @@ if(!require(ggplot2)){install.packages("ggplot2")}
 
 ##----------------------------------------------------------------------------##
 # Load data
-data_epsilon_EF <- readRDS(here::here("data", "simdata_epsilon_EF.RData"))
+data_epsilon_EF <- readRDS(here::here("..", "rr-model", "data", "simdata_epsilon_EF.RData"))
 ##----------------------------------------------------------------------------##
 
 
@@ -74,5 +74,5 @@ plot_epsilon_EF <- ggplot(data_epsilon_EF,
 
 
 ## 3.3 Save plot
-ggsave(here::here("plots", "plot_epsilon_EF.png"), plot_epsilon_EF, width = 10.5, height = 8.5, units = "cm")
+ggsave(here::here("..", "rr-model", "plots", "plot_epsilon_EF.png"), plot_epsilon_EF, width = 10.5, height = 8.5, units = "cm")
 ##----------------------------------------------------------------------------##

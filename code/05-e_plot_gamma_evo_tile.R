@@ -34,7 +34,7 @@ if(!require(ggplot2)){install.packages("ggplot2")}
 
 ##----------------------------------------------------------------------------##
 ## 2.1 Load data
-data_gamma <- readRDS(here::here("data", "simdata_gamma_evo.RData"))
+data_gamma <- readRDS(here::here("..", "rr-model", "data", "simdata_gamma_evo.RData"))
 colnames(data_gamma) <- c("generation_duration", "payoff_SR_neg",
                           "payoff_SR_pos", "payoff_RR",
                           "epsilon", "survival_threshold",
@@ -122,6 +122,6 @@ plot_gamma_evo <- ggplot(data_gamma_tile,
                  `5` = "increasing returns\n(epsilon = 5)")))
 
 ## 3.3. Save plot
-ggsave(here::here("plots", "plot_gamma_tile_evo.png"), plot_gamma_evo, 
+ggsave(here::here("..", "rr-model", "plots", "plot_gamma_tile_evo.png"), plot_gamma_evo, 
        bg = "white", width = 18, height = 21, units = "cm")
 ##----------------------------------------------------------------------------##

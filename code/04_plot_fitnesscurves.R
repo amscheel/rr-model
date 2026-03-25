@@ -42,7 +42,7 @@ basic_plot <- ggplot(data.frame(x=c(0,1)), aes(x)) +
                      labels = c(), expand = c(0, 0)) +
   theme_bw() +
   theme(panel.grid = element_blank()
-       #, text = element_text(size = text_size)
+       , text = element_text(size = text_size)
        , plot.margin = unit(c(0,0,0,0), "cm")
         ) +
   coord_fixed(ratio = 1/1)
@@ -126,6 +126,7 @@ fitness_plot <- annotations +
                 geom="line", color = colour_low,
                 linewidth = line_thickness) 
 
-# Save the final plot: 
-# ggsave("plot_fitness_curves.png", fitness_plot, bg = "white",
-#        width = plot_size, height = plot_size, units = "cm")
+# Save the final plot:
+ggsave("plot_fitness_curves.png", fitness_plot, bg = "white",
+       width = plot_size, height = plot_size, units = "cm", 
+       dpi = 330)
