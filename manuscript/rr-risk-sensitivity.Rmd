@@ -60,7 +60,7 @@ replace_ampersands: no
 documentclass     : "apa6"
 lang              : "en-UK"
 class             : "man"
-output            : papaja::apa6_pdf
+output            : papaja::apa6_docx
 papersize         : "a4"
 ---
 
