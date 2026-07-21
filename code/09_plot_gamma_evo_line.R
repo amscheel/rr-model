@@ -78,11 +78,11 @@ plot_gamma_line_evo <- ggplot(data_gamma_summary,
                                   y = median,
                                   colour = factor(epsilon),
                                   group = run_id)) +
-  scale_x_discrete(name = expression(italic(b)[R]),
+  scale_x_discrete(name = expression("payoff for Registered Reports (" * italic(b)[R] * ")"),
                    breaks = c(0.1, "", 0.3, "", 0.5, "", 0.7, "", 0.9)) +
   scale_y_continuous(lim = c(0, 1), expand = c(0,0),
                      breaks = seq(0, 1, .2),
-                     name = "publication strategy (s)") +
+                     name = expression("research cycles before evaluation ("* italic(m) * ")")) +
   scale_colour_manual(values = colorbrewer3, name = expression(epsilon)) +
   theme_light() +
   theme(panel.grid.major.x = element_blank(),
@@ -107,12 +107,12 @@ plot_gamma_line_evo <- ggplot(data_gamma_summary,
   facet_grid(relative_top_n ~ generation_duration,
              labeller = labeller(
                relative_top_n = c(
-                 `0.01` = "top 1%\n(gamma = .01)",
-                 `0.05` = "top 5%\n(gamma = .05)",
-                 `0.1` = "top 10%\n(gamma = .1)",
-                 `0.5` = "top 50%\n(gamma = .5)",
-                 `0.9` = "top 90%\n(gamma = .9)",
-                 `1` = "no competition\n(gamma = 1)"),
+                 `0.01` = "top 1%\n(\u03b3 = .01)",
+                 `0.05` = "top 5%\n(\u03b3 = .05)",
+                 `0.1` = "top 10%\n(\u03b3 = .1)",
+                 `0.5` = "top 50%\n(\u03b3 = .5)",
+                 `0.9` = "top 90%\n(\u03b3 = .9)",
+                 `1` = "no competition\n(\u03b3 = 1)"),
                generation_duration = c(
                  `1` = "m = 1",
                  `2` = "m = 2",

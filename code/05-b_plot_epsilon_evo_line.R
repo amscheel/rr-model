@@ -71,10 +71,11 @@ plot_epsilon_evo <- ggplot(data_epsilon_summary,
                                         y = median,
                                         colour = factor(epsilon),
                                         group = run_id)) +
-  scale_x_discrete(name = expression(italic(b)[R])) +
+  scale_x_discrete(name = expression("payoff for Registered Reports (" * italic(b)[R] * ")")) +
   scale_y_continuous(lim = c(0, 1), expand = c(0,0),
                      breaks = seq(0, 1, .1),
-                     name = "publication strategy (s)") +
+                     #name = "publication strategy (s)") +
+                     name = expression("publication strategy (" * italic(s) * ")")) +
   scale_colour_manual(values = colorbrewer5, name = expression(epsilon)) +
   theme_light() +
   theme(panel.grid.major.x = element_blank(),

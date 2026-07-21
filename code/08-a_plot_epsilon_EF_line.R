@@ -53,10 +53,10 @@ plot_epsilon_EF <- ggplot(data_epsilon_EF,
                           aes(x = factor(b_RR),
                               y = s_max_EF,
                               colour = factor(epsilon))) +
-  scale_x_discrete(name = expression(italic(b)[R])) +
+  scale_x_discrete(name = expression("payoff for Registered Reports (" * italic(b)[R] * ")")) +
   scale_y_continuous(lim = c(0, 1), expand = c(0,0),
                      breaks = seq(0, 1, .1),
-                     name = "publication strategy (s)") +
+                     name = expression("publication strategy (" * italic(s) * ")")) +
   scale_colour_manual(values = colorbrewer5, name = expression(epsilon)) +
   theme_light() +
   theme(panel.grid.major.x = element_blank(),
@@ -74,5 +74,5 @@ plot_epsilon_EF <- ggplot(data_epsilon_EF,
 
 
 ## 3.3 Save plot
-ggsave(here::here("..", "rr-model", "plots", "plot_epsilon_EF.png"), plot_epsilon_EF, width = 10.5, height = 8.5, units = "cm")
+ggsave(here::here("..", "rr-model", "plots", "plot_epsilon_line_EF.png"), plot_epsilon_EF, width = 10.5, height = 8.5, units = "cm")
 ##----------------------------------------------------------------------------##

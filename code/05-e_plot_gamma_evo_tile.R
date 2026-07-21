@@ -94,34 +94,40 @@ plot_gamma_evo <- ggplot(data_gamma_tile,
                          aes(x = payoff_RR,
                              y = generation_duration,
                              fill = median)) +
-  scale_x_continuous(expand = c(0,0), name = expression(italic(b)[R]),
+  scale_x_continuous(expand = c(0,0), 
+                     name = expression("payoff for Registered Reports (" * italic(b)[R] * ")"),
                      breaks = seq(.1, .9, .1),
                      labels = c(".1", ".2", ".3", ".4", ".5", 
                                 ".6", ".7", ".8", ".9"))+
   scale_y_discrete(expand = c(0,0), 
-                   name = "research cycles before evaluation (m)")+
+                   name = expression("research cycles before evaluation ("* italic(m) * ")"))+
   coord_fixed(ratio = 1/10) +
   theme_minimal() +
   theme(panel.grid = element_blank(),
         plot.margin=grid::unit(c(1,0,1,1), "mm"),
-        legend.title = element_text(hjust = 0.2)) +
+        legend.title = element_text(hjust = 0.2),
+        legend.position = "bottom") +
   geom_tile() +
-  scale_fill_viridis_c(name = "s", limits = c(0,1), option = viridis_option)+ 
+  scale_fill_viridis_c(name = expression("evolved publication strategy (" * italic(s) * ")"), limits = c(0,1), option = viridis_option)+ 
   facet_grid(relative_top_n ~ epsilon,
              labeller = labeller(
                relative_top_n = c(
-                 `0.01` = "top 1%\n(gamma = .01)",
-                 `0.05` = "top 5%\n(gamma = .05)",
-                 `0.1` = "top 10%\n(gamma = .1)",
-                 `0.5` = "top 50%\n(gamma = .5)",
-                 `0.9` = "top 90%\n(gamma = .9)",
-                 `1` = "no competition\n(gamma = 1)"),
+                 `0.01` = "top 1%\n(\u03b3 = .01)",
+                 `0.05` = "top 5%\n(\u03b3 = .05)",
+                 `0.1` = "top 10%\n(\u03b3 = .1)",
+                 `0.5` = "top 50%\n(\u03b3 = .5)",
+                 `0.9` = "top 90%\n(\u03b3 = .9)",
+                 `1` = "no competition\n(\u03b3 = 1)"),
                epsilon = c(
-                 `0.2` = "decreasing returns\n(epsilon = 0.2)",
-                 `1` = "linear\n(epsilon = 1)",
-                 `5` = "increasing returns\n(epsilon = 5)")))
+                 `0.2` = "decreasing returns\n(\u03b5 = 0.2)",
+                 `1` = "linear\n(\u03b5 = 1)",
+                 `5` = "increasing returns\n(\u03b5 = 5)"))) +
+  guides(fill = guide_colourbar(title.position = "top",
+                                title.hjust = 0.5,
+                                barwidth = grid::unit(50, "mm"),
+                                barheight = grid::unit(3, "mm")))
 
 ## 3.3. Save plot
 ggsave(here::here("..", "rr-model", "plots", "plot_gamma_tile_evo.png"), plot_gamma_evo, 
-       bg = "white", width = 18, height = 21, units = "cm")
+       bg = "white", width = 15.5, height = 22.5, units = "cm")
 ##----------------------------------------------------------------------------##

@@ -57,28 +57,34 @@ plot_m_EF <- ggplot(data_m_EF,
                      aes(x = b_RR,
                          y = m,
                          fill = s_max_EF)) +
-  scale_x_continuous(expand = c(0,0), name = expression(italic(b)[R]),
+  scale_x_continuous(expand = c(0,0), 
+                     name = expression("payoff for Registered Reports (" * italic(b)[R] * ")"),
                      breaks = seq(.1, .9, .1),
                      labels = c(".1", ".2", ".3", ".4", ".5", 
                                 ".6", ".7", ".8", ".9"))+
   scale_y_discrete(expand = c(0,0), 
-                   name = "research cycles\nbefore evaluation (m)")+
+                   name = expression("research cycles\nbefore evaluation ("* italic(m) * ")"))+
   coord_fixed(ratio = 1/10) +
   theme_minimal() +
   theme(panel.grid = element_blank(),
         plot.margin=grid::unit(c(1,0,1,0), "mm"),
-        legend.title = element_text(hjust = 0.2)) +
+        legend.title = element_text(hjust = 0.2),
+        legend.position = "bottom") +
   geom_tile() +
-  scale_fill_viridis_c(name = "s", limits = c(0,1), option = viridis_option)+ 
+  scale_fill_viridis_c(name = expression("evolved publication strategy (" * italic(s) * ")"), limits = c(0,1), option = viridis_option)+ 
   facet_grid(. ~ epsilon,
              labeller = labeller(epsilon = c(
-               `0.2` = "decreasing returns\n(epsilon = 0.2)",
-               `1` = "linear\n(epsilon = 1)",
-               `5` = "increasing returns\n(epsilon = 5)")))
+               `0.2` = "decreasing returns\n(\u03b5 = 0.2)",
+               `1` = "linear\n(\u03b5 = 1)",
+               `5` = "increasing returns\n(\u03b5 = 5)")))+
+  guides(fill = guide_colourbar(title.position = "top",
+                                title.hjust = 0.5,
+                                barwidth = grid::unit(50, "mm"),
+                                barheight = grid::unit(3, "mm")))
 
 
 ## 3.3 Save plot
 ggsave(here::here("..", "rr-model", "plots", "plot_m_tile_EF.png"), plot_m_EF, bg = "white",
-       width = 18, height = 6, units = "cm")
+       width = 16.5, height = 7.5, units = "cm")
 ##----------------------------------------------------------------------------##
 
