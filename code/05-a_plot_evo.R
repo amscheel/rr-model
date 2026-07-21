@@ -22,6 +22,12 @@
 # Install "here" unless it is already installed:
 if(!require(here)){install.packages("here")}
 
+# Install "data.table" unless it is already installed:
+if(!require(data.table)){install.packages("data.table")}
+
+# Install "wesanderson" unless it is already installed:
+if(!require(wesanderson)){install.packages("wesanderson")}
+
 # Install "ggplot2" unless it is already installed:
 if(!require(ggplot2)){install.packages("ggplot2")}
 
