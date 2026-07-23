@@ -26,7 +26,7 @@ note: ""
 author_note: ""
 
 abstract: > 
-  Registered Reports are a publication format designed to reduce publication bias by guaranteeing publication before results are known. This guarantee is considered attractive in the prevailing 'publish or perish' culture. But would researchers always prefer such a low-risk option? When strong results allow publication in prestigious journals, the results-dependent nature of standard publications can actually be an advantage for authors. Given this trade-off, the choice between publication formats represents decision making under risk, and researchers may not always be risk-averse. To better understand under which circumstances Registered Reports are likely to be popular, we draw on risk-sensitivity theory from behavioural ecology and develop an agent-based model that explores how four factors shape publication strategies: whether additional publications yield diminishing or increasing career returns, the pace at which studies are completed, publication targets, and competition. We find that many realistic configurations lead researchers to avoid Registered Reports, even when Registered Reports are nearly as valuable as the best possible standard publication. Intense competition and low empirical pace can make the format unviable, while high empirical pace attenuates most other effects. Given prevailing career incentives in many fields, these results suggest that the market share of Registered Reports may remain trivially low without additional incentives or interventions.
+  Registered Reports are a publication format designed to reduce publication bias by guaranteeing publication before results are known. This guarantee is considered attractive in the prevailing 'publish or perish' culture. But would researchers always prefer such a low-risk option? When strong results allow publication in prestigious journals, the results-dependent nature of standard publications can actually be an advantage for authors. Given this trade-off, the choice between publication formats represents decision making under risk, and researchers may not always be risk-averse. To better understand under which circumstances Registered Reports are likely to be popular, we draw on risk-sensitivity theory from behavioural ecology and develop an agent-based model that explores how four factors shape publication strategies: whether additional publications yield diminishing or increasing career returns, the pace at which studies are completed, publication targets, and competition. We find that many realistic configurations lead researchers to avoid Registered Reports, even when Registered Reports are nearly as valuable as the best possible standard publication. Intense competition and low empirical pace can make the format unviable, while high empirical pace attenuates most other effects. Without additional incentives or interventions, current career incentives may prevent the spread of Registered Reports in many fields.
 
   
 #keywords          : "Publication bias, Registered Reports, hypothesis testing"
@@ -58,7 +58,7 @@ tablelist         : no
 footnotelist      : no
 lineno            : true
 numbersections    : false 
-mask              : false
+mask              : true
 replace_ampersands: no 
 
 documentclass     : "apa6"
@@ -667,14 +667,14 @@ None of the omitted parameter values produced results that contradict the report
 Interested readers are invited to explore alternative settings using the open model code.
 
 
-### Author Contributions
-Conceptualisation: A.S. \& L.T., with input from D.L.; data curation, formal analysis, and software: A.S. \& L.T.; investigation, methodology, and validation: A.S. \& L.T.; supervision: L.T. \& D.L.; visualisation and writing$\,$---$\,$original draft: A.S; writing$\,$---$\,$review and editing: A.S., L.T., \& D.L.
+<!-- ### Author Contributions -->
+<!-- Conceptualisation: A.S. \& L.T., with input from D.L.; data curation, formal analysis, and software: A.S. \& L.T.; investigation, methodology, and validation: A.S. \& L.T.; supervision: L.T. \& D.L.; visualisation and writing$\,$---$\,$original draft: A.S; writing$\,$---$\,$review and editing: A.S., L.T., \& D.L. -->
 
 ### Conflicts of Interest
 The authors declare that they have no conflicts of interest with respect to the authorship or the publication of this article.
 
-### Acknowledgements
-This work was funded by VIDI grant 452-17-013. We thank Julia Rohrer, Wybo Houkes, and Chris Chambers for valuable comments that helped improve this manuscript.
+<!-- ### Acknowledgements -->
+<!-- This work was funded by VIDI grant 452-17-013. We thank Julia Rohrer, Wybo Houkes, and Chris Chambers for valuable comments that helped improve this manuscript. -->
 
 
 # References

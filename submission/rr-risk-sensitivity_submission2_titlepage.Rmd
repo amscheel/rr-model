@@ -1,0 +1,91 @@
+---
+title             : "Career incentives make Registered Reports unattractive under realistic academic conditions"
+shorttitle        : "Career incentives make Registered Reports unattractive"
+
+author: 
+  - name          : "Anne M. Scheel"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Padualaan 14, 3584 CH Utrecht, The Netherlands"
+    email         : "a.m.scheel@uu.nl"
+  - name          : "Leo Tiokhin"
+    affiliation   : "2"
+  - name          : "Daniël Lakens"
+    affiliation   : "3"
+
+affiliation:
+  - id            : "1"
+    institution   : "Utrecht University"
+  - id            : "2"
+    institution   : "Deciding Better"    
+  - id            : "3"
+    institution   : "Eindhoven University of Technology"
+        
+note: ""
+
+author_note: ""
+
+
+
+  
+#keywords          : "Publication bias, Registered Reports, hypothesis testing"
+#wordcount         : "5870"
+
+header-includes:
+  - \usepackage{float}
+  - \usepackage{framed}
+  - \usepackage{caption}
+  - \usepackage{setspace}
+  - \usepackage{amsmath}
+  - \usepackage{wrapfig}
+  - \captionsetup[figure]{font={stretch=1, small}, skip=10pt}
+  - \captionsetup[textbox]{name=Box,labelsep=period,labelfont=it}
+  - \newfloat{textbox}{thp}{lop}
+  - \floatname{textbox}{Box}
+  - \usepackage[most]{tcolorbox}
+  - \definecolor{electricviolet}{rgb}{0.56, 0.0, 1.0}
+
+
+bibliography      : ["rr-risk-sensitivity.bib","rr-risk-sensitivity_software.bib"]
+# IMPORTANT: To successfully knit this document, prr.bib must be edited manually:
+# All instances of "howpublished" must be changed to "url". This is an issue for
+# three references: Goldacre 2016, Mitchell 2014, and RRR (nd).
+
+figsintext        : yes
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : false
+numbersections    : false 
+mask              : false
+replace_ampersands: no 
+
+documentclass     : "apa6"
+lang              : "en-UK"
+class             : "man"
+output            : papaja::apa6_pdf
+papersize         : "a4"
+---
+
+```{r include = FALSE}
+library("papaja")
+library("bookdown")
+library("rmarkdown")
+library("knitr")
+library("here")
+library("ggplot2")
+library("data.table")
+#library("stringr")
+```
+
+
+### Author Contributions
+Conceptualisation: A.S. \& L.T., with input from D.L.; data curation, formal analysis, and software: A.S. \& L.T.; investigation, methodology, and validation: A.S. \& L.T.; supervision: L.T. \& D.L.; visualisation and writing$\,$---$\,$original draft: A.S; writing$\,$---$\,$review and editing: A.S., L.T., \& D.L.
+
+### Conflicts of Interest
+The authors declare that they have no conflicts of interest with respect to the authorship or the publication of this article.
+
+### Acknowledgements
+This work was funded by VIDI grant 452-17-013. We thank Julia Rohrer, Wybo Houkes, and Chris Chambers for valuable comments that helped improve this manuscript.
+
+
